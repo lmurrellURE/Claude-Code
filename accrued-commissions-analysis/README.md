@@ -77,8 +77,8 @@ today and 106,204.14 at the next cutoff (Summary cols T and V: Dallas 17,639.54 
 from the statute text: the Texas 1-year rule (Prop. Code 72.1015) uses the Labor Code 61.001
 definition of wages, which is compensation owed by an employer to an employee and expressly excludes
 independent contractors, and the Comptroller's own property-code table (Pub. 96-478, rev. March 2026)
-lists commissions (code MS02) at 3 years and wages (MS01) at 1 year. The 3-year test is therefore the
-Texas position; counsel need only confirm that the agents' contractor status holds.
+lists commissions (code MS02) at 3 years and wages (MS01) at 1 year. Management adopted the 3-year test as
+the Texas position on 10/6/2026; the 1-year wage rule is not applied.
 Philly's figure falls from 8,566.41 to 419.35 because its unknown-agent items are now tested under
 Texas's 3-year period rather than Pennsylvania's 2-year period; entering a PA address for an item
 restores the 2-year test for that item.
@@ -90,9 +90,10 @@ closing and retains 100% where a license is not reactivated within 30 days. Veri
 Texas (74.308), Illinois (15-610), Florida (717.129) and Alabama (35-12-88) each provide that the
 expiration of a period set by contract does not prevent property from being presumed abandoned, and
 Texas 74.309 bars taking funds into income by private agreement to circumvent the process.
-Pennsylvania's 1301.16 mentions only statute and court order, so the Philly clause is a contract-law
-question there; most Philly items default to Texas in any case. Treat a forfeiture as the company's
-money only with counsel's support and documented facts per item.
+Pennsylvania's 1301.16 mentions only statute and court order; most Philly items default to Texas in
+any case. Decision 10/6/2026: the forfeiture clauses are not relied on against an escheat claim; an
+item past dormancy is paid or reported at the agent's share regardless of them. Documented offsets
+still reduce the agent's share.
 
 ## Files
 
@@ -105,7 +106,8 @@ money only with counsel's support and documented facts per item.
 - `Accrued_Commissions_CFO_Controller_Briefing.docx` - one-page briefing for the CFO and Controller
   (10/6/2026): the decision requested, the balance, exposure under the verified rules with the Texas
   1-year sensitivity, cash and P&L impact, the four sign-offs, the timeline to the 2027 filings, and
-  what is still unverified. Snapshot of the editable Claude Doc.
+  what is still unverified. Snapshot of the editable Claude Doc, whose second tab holds the one-paragraph
+  rollout note that accompanies the one-pager.
 
 - `Accrued_Commissions_Unclaimed_Property_Analysis.xlsx` - Summary (fee amounts and small-amount
   threshold are inputs in rows 4-5), Detail (181 items with yellow fill-in columns for owner, owner
@@ -140,9 +142,25 @@ Pennsylvania's program is current and waives penalties and interest; Florida's l
 report years, not five). None of these corrections changes a dollar figure above: Chicago and Gallery
 have no aged items.
 
-Still open: no court decision or Comptroller ruling specifically on broker-to-agent commissions was
-found, so the Texas 3-year position rests on the statutory definitions and the Comptroller's MS02
-table; whether a court would enforce the Philly ICA 60-day forfeiture against an escheat claim;
-deposit date is a proxy for the payable date; Missouri and DC were not researched (no holder is formed
-in Missouri and the DC balance is $0); and Texas VDA eligibility for an entity that has filed before is
-not stated on the Comptroller's pages. Nothing here is legal advice.
+Positions adopted 10/6/2026: Texas applies the 3-year rule (no court decision or Comptroller ruling
+specifically on broker-to-agent commissions was found; the position rests on the statutory definitions
+and the Comptroller's MS02 table); the Philly and TUR forfeiture clauses are not relied on against an
+escheat claim. Still open for counsel's confirmation: deposit date is a proxy for the payable date;
+Missouri and DC were not researched (no holder is formed in Missouri and the DC balance is $0); and
+Texas VDA eligibility for an entity that has filed before is not stated on the Comptroller's pages.
+Nothing here is legal advice.
+
+## Decisions and process notes (10/6/2026)
+
+- Process owner: the quarterly threshold review and the annual state filings are owned by the Director
+  of Financial Reporting and Analysis, with counsel. The CFO approves any VDA and any retention.
+- Revenue timing: fee checks and confirmed small items are company revenue, not unclaimed property,
+  but they are not moved to revenue en masse. They stay in the accrued balance, are recognized when
+  matched in the ordinary course, and are already captured by the year-end revenue true-up. At a
+  quarterly review only an item being written off at that time is booked to revenue.
+- After remittance: good-faith delivery to a state relieves the holder of liability for the property
+  (Tex. Prop. Code 74.304; 72 P.S. 1301.14; Fla. Stat. 717.1201; Ala. Code 35-12-79; 765 ILCS
+  1026/15-604). If an agent later submits the file for a remitted commission, the transaction is still
+  processed and the agent is still paid: the agent claims from the state, or the company pays the agent
+  and files for reimbursement from the state (Texas 74.502; Pennsylvania 1301.14, with interest;
+  Florida 717.1201(3); Alabama 35-12-79(c); Illinois 15-605). The company's fee is revenue as usual.

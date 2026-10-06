@@ -11,10 +11,10 @@ This is a standing policy. It carries no balances or dates of its own; the curre
 | Cadence | What happens | Owner | Output |
 | --- | --- | --- | --- |
 | Ongoing | Deposits logged on the entity tab and applied as transactions are identified; booked items marked with an x | Cash team, office accountants | Cash Requirements workbook |
-| Quarterly, within 30 days of quarter end | Aged items tested against the dormancy threshold; items past it or approaching the next cutoff are resolved; due-diligence letters queued | Controller | Updated analysis workbook; quarterly findings memo |
-| Annually, per state | Reports filed and funds remitted for items past dormancy that were not resolved | Controller with counsel | State filings; remittance JEs |
+| Quarterly, within 30 days of quarter end | Aged items tested against the dormancy threshold; items past it or approaching the next cutoff are resolved; due-diligence letters queued | Director of Financial Reporting and Analysis | Updated analysis workbook; quarterly findings memo |
+| Annually, per state | Reports filed and funds remitted for items past dormancy that were not resolved | Director of Financial Reporting and Analysis with counsel | State filings; remittance JEs |
 
-This SOP is not legal advice. The state rules it relies on were compiled from statute summaries and state treasury guidance on 10/6/2026 and must be confirmed by counsel before the first filing.
+This SOP is not legal advice. The state rules it relies on were verified from the statute text and state treasury pages on 10/6/2026 (appendix); counsel confirms the adopted positions before the first filing.
 
 ## What the accrued commission balance is
 
@@ -32,21 +32,21 @@ Texas rules govern most of the population, because five of the seven holder enti
 
 1. **Which state gets the property.** Under Texas v. New Jersey, 379 U.S. 674 (1965), property goes first to the state of the owner's last-known address in the holder's records, and second, where the records show no address, to the holder's state of formation. Per the Entity Management Database, URE Dallas, URE Houston, Quick Close Properties (TUR), URE Chicago and URE Philadelphia are Texas LLCs; RaySon Partners d/b/a URE Gallery is a Florida LLC; Leading Edge Realty is an Alabama entity. Chicago and Philadelphia are only registered as foreign LLCs in Illinois and Pennsylvania. An unknown-agent item at Philly therefore goes to Texas, not Pennsylvania.
 2. **When it becomes reportable.** Each state presumes property abandoned after a dormancy period that runs from the date the amount became payable. Under the Houston agreement the agent's share is payable when the Broker receives its fee; the other agreements pay promptly after receipt subject to a complete file. The deposit date is used as the trigger throughout.
-3. **Which period applies.** Texas uses 3 years for general property and 1 year for wages, but Texas defines wages through Labor Code 61.001, which excludes independent contractors, so the 3-year period is the likely test. Illinois (1 year for other compensation for personal services), Alabama (1 year, same wording) and Pennsylvania (2 years for wages and commissions) likely apply their shorter periods to contractor commissions. Florida's 1-year wage rule has not been shown to reach contractors, so its 5-year general period is the likely test.
-4. **What the company may keep.** The company's contractual fee and E&O on each check is revenue and is never unclaimed property. Amounts an agent owes the company may be offset under every agreement. A contractual forfeiture (the Philly 60-day incomplete-file clause, the TUR breach clauses) is not a safe basis for keeping money: unclaimed property acts carry anti-limitation provisions, Alabama's expressly, that disregard contractual limits on the owner's right. Treat forfeiture as a counsel question, item by item.
+3. **Which period applies.** Texas uses 3 years for general property and 1 year for wages, but Texas defines wages through Labor Code 61.001, which excludes independent contractors, so the 3-year period applies; management adopted it on 10/6/2026 after verifying the statute and the Comptroller's property-code table, which lists commissions at 3 years and wages at 1. Illinois (1 year for other compensation for personal services), Alabama (1 year, same wording) and Pennsylvania (2 years for wages and commissions) apply their shorter periods to contractor commissions. Florida's 1-year wage rule does not reach contractors; for a Florida-organized holder with an unknown owner address the period is 3 years (717.1035), and 5 years where the owner has a Florida address (717.102).
+4. **What the company may keep.** The company's contractual fee and E&O on each check is revenue and is never unclaimed property. Amounts an agent owes the company may be offset under every agreement. A contractual forfeiture (the Philly 60-day incomplete-file clause, the TUR breach clauses) is not relied on against the state: Texas, Illinois, Florida and Alabama provide that the expiration of a period set by contract does not prevent property from being presumed abandoned, Texas also prohibits diverting funds into income by private agreement, and Pennsylvania's act is silent. Management decided on 10/6/2026 that an item past dormancy is paid or reported at the agent's share regardless of those clauses.
 5. **Private escheat is prohibited.** An unknown owner does not make the money the company's. Amounts owed to others that are written off to income remain reportable, and audits look back ten years or more.
 
-Voluntary disclosure agreements are available in Texas (penalty and interest waived; not available once the Comptroller has made contact) and Florida (no penalties, five-year look-back). Pennsylvania's amnesty ended in 2010 and interest of 12% per year is cited from the due date. Illinois and Missouri programs were not researched.
+Voluntary disclosure agreements are available in all five states (appendix). Texas waives penalty and interest for a good-faith holder, with a 10-year look-back, and the request must precede any Comptroller contact; Pennsylvania waives penalties and its 12% interest with a 10-year look-back; Illinois and Alabama waive penalties and interest; Florida's program is open only to holders that have never filed. In every state in scope a holder that pays or delivers property in good faith is relieved of liability for it, and a holder that later pays the owner may recover the amount from the state.
 
 ## Roles and responsibilities
 
-The Controller owns the process end to end; the office accountants own the matching; counsel owns the legal positions.
+The Director of Financial Reporting and Analysis owns the process end to end; the office accountants own the matching; counsel owns the legal positions.
 
 | Role | Responsibilities |
 | --- | --- |
 | Cash team | Log every deposit on the entity tab the day it posts, with date, check number, amount, payer and memo. Mark the x when the item is booked in Sage. |
 | Office accountant (per entity) | Apply deposits to transactions in the ordinary course. When an item is applied, book the fee to revenue, pay the agent, or refund the payer. Record the agent's name and address state whenever it becomes known. |
-| Controller | Run the quarterly threshold review, maintain the analysis workbook, approve estimated splits, approve due-diligence letters, prepare state reports and remittance JEs, write the quarterly findings memo, keep the filing calendar. |
+| Director of Financial Reporting and Analysis | Run the quarterly threshold review, maintain the analysis workbook, approve estimated splits, approve due-diligence letters, prepare state reports and remittance JEs, write the quarterly findings memo, keep the filing calendar. |
 | Counsel or unclaimed property advisor | Confirm dormancy periods, the priority-rule application, treatment of forfeiture and offset clauses, VDA strategy, and sign off before each filing. |
 | CFO | Approve any VDA submission and any decision to retain an amount under a forfeiture clause. |
 
@@ -62,11 +62,11 @@ An item is never written off to income because the owner cannot be found. It sta
 
 ## Quarterly unclaimed property review
 
-Within 30 days of each quarter end, the Controller re-runs the analysis workbook and works only the items that matter for unclaimed property: those past their state's dormancy threshold today, and those that will be past it at the next state report cutoff. Everything younger is left to the ordinary application process. The result is documented in a short quarterly findings memo.
+Within 30 days of each quarter end, the Director of Financial Reporting and Analysis re-runs the analysis workbook and works only the items that matter for unclaimed property: those past their state's dormancy threshold today, and those that will be past it at the next state report cutoff. Everything younger is left to the ordinary application process. The result is documented in a short quarterly findings memo.
 
 1. **Refresh the data.** Re-extract the prior-month accrued blocks from the Cash Requirements workbook into the analysis workbook (the build script does this from the two CSV extracts) and set the as-of date to quarter end. Confirm every entity total ties to the tab's outstanding amount. Update the fee lists if an office changed its schedule.
 2. **Pull the threshold list.** Filter the Detail tab to items flagged dormant today or dormant at the next cutoff under the likely test for their governing state. This is the working list for the quarter.
-3. **Classify each item on the list.** Fee, small amount, memo-flagged, or larger commission check. Fee and confirmed small items are booked to revenue and removed. Memo-flagged items are refunded to the payer and removed.
+3. **Classify each item on the list.** Fee, small amount, memo-flagged, or larger commission check. Fee and confirmed small items are confirmed as company fees and left to the ordinary matching process and the year-end revenue true-up; only an item being written off at this review is booked to revenue now. Memo-flagged items are refunded to the payer and removed.
 4. **Identify the owner of each remaining item.** Record the agent's name and last-known address state from the Agent Information sheet or Paperless Pipeline. Where the agent cannot be identified, the item defaults to the entity's formation state.
 5. **Set the agent share.** Enter the documented split where the Disbursement Authorization or Closing Disclosure exists; otherwise apply the estimation rule. Enter any documented offset.
 6. **Send due-diligence letters** to every owner with an address, within that state's window before the cutoff. A response lets the company pay the owner and close the item.
@@ -77,12 +77,12 @@ The findings memo and the quarter's workbook are saved to the Unclaimed Property
 
 ## Treatment rules by item class
 
-Each class has one treatment. The Controller may override a classification with documented reasons, never the treatment.
+Each class has one treatment. The Director of Financial Reporting and Analysis may override a classification with documented reasons, never the treatment.
 
 | Class | How it is identified | Treatment |
 | --- | --- | --- |
-| Fee check | Amount matches an office fee amount exactly ($644, $1,044, $69, $595, $995, $49 and the office-specific lists) | Company revenue. Book to transaction fee or E&O revenue. Not unclaimed property. |
-| Small amount | At or under $250 and not an exact fee amount | Presumed fee; review the memo. Book to revenue once confirmed, otherwise treat as a commission check. |
+| Fee check | Amount matches an office fee amount exactly ($644, $1,044, $69, $595, $995, $49 and the office-specific lists) | Company revenue, not unclaimed property. Recognized when the item is matched in the ordinary course and captured by the year-end revenue true-up; fee checks are not moved to revenue en masse. At a quarterly review only a fee item being written off at that time is booked to revenue. |
+| Small amount | At or under $250 and not an exact fee amount | Presumed fee; review the memo. Treated as a fee check once confirmed, otherwise as a commission check. |
 | Memo-flagged | Memo says not ours, unknown property or agent, duplicate, or hold | Owed back to the payer. Refund it. If the payer cannot be identified, the amount is reportable to the formation state with the payer as owner. |
 | Larger commission check | Everything else above $250 | Company fee is revenue; the remainder is the agent's and is reportable if unpaid past dormancy. |
 | Legal hold | Memo cites law enforcement, litigation or a dispute | Segregate. No payment, refund or escheat without counsel. |
@@ -91,7 +91,7 @@ Each class has one treatment. The Controller may override a classification with 
 
 **Offsets.** Amounts an agent owes the company (dues, fees, E&O deductibles, indemnity) may be deducted from the agent's share under every agreement, provided the amount owed is documented at the time of offset. Attach the support to the item.
 
-**Forfeitures.** The Philly agreement forfeits the agent's share on files still incomplete 60 days after closing and retains 100% where a lapsed license is not reactivated within 30 days; the TUR agreement forfeits accrued commissions on certain breaches. These are not applied without written confirmation from counsel that the governing state will honor them, and without the triggering facts documented per item.
+**Forfeitures.** The Philly agreement forfeits the agent's share on files still incomplete 60 days after closing and retains 100% where a lapsed license is not reactivated within 30 days; the TUR agreement forfeits accrued commissions on certain breaches. These clauses are not relied on against the state: an item past dormancy is paid or reported at the agent's share regardless of them (decision 10/6/2026; Legal framework, principle 4). They may be applied only to an item matched and settled in the ordinary course before dormancy, with the triggering facts documented per item.
 
 ## Due diligence letters and the annual reporting calendar
 
@@ -100,12 +100,12 @@ A due-diligence letter goes to every owner with a usable address before any amou
 | State | Report cutoff | Report and remittance due | Due-diligence rule | Governs |
 | --- | --- | --- | --- | --- |
 | Texas | March 1 | July 1 | Notice at least 60 days before delivery for property over $250 (Prop. Code 74.1011) | Dallas, Houston, TUR, and unknown-agent items at Chicago, Philly and DC |
-| Florida | December 31 | Before May 1 | Owners of $50 or more listed on the report; notice rule in Fla. Stat. 717.117 | Gallery |
-| Alabama | June 30 | November 1 | $50 threshold per secondary sources | Leading Edge |
+| Florida | December 31 | Before May 1 | Notice 60 to 120 days before filing for $50 or more (Fla. Stat. 717.117(6)) | Gallery |
+| Alabama | June 30 | November 1 | Notice at least 60 days before filing for $50 or more (Ala. Code 35-12-76(d)) | Leading Edge |
 | Pennsylvania | December 31 | April 15 | Notice 60 to 120 days before the deadline for $50 or more | Philly items with a PA agent address |
-| Illinois | June 30 for financial and government holders; business-holder cutoff not confirmed | November 1 for those holders | Letter 60 to 365 days before the report for property over $50 | Chicago items with an IL agent address |
+| Illinois | December 31 (business associations, 765 ILCS 1026/15-403(b)) | Before May 1 | Letter 60 days to one year before filing for $50 or more (15-501) | Chicago items with an IL agent address |
 
-For Texas, the practical sequence each year is: quarterly review at December 31 identifies items that will be dormant on March 1; letters go out in March; the report is filed and funds remitted by July 1. For Florida and Pennsylvania the December 31 review feeds letters in January or February and filings in April. Alabama's June 30 cutoff is fed by the June quarterly review.
+For Texas, the practical sequence each year is: quarterly review at December 31 identifies items that will be dormant on March 1; letters go out in March; the report is filed and funds remitted by July 1. For Florida, Pennsylvania and Illinois the December 31 review feeds letters in January or February and filings in April and May. Alabama's June 30 cutoff is fed by the June quarterly review.
 
 ## Accounting treatment
 
@@ -114,13 +114,15 @@ The accrued commission balance should be carried as a liability until each item 
 | Event | Debit | Credit | Note |
 | --- | --- | --- | --- |
 | Deposit received, unmatched | Cash | Accrued commissions (260000) | Already how the cash tabs work |
-| Fee check matched | Accrued commissions | Transaction fee revenue / E&O revenue | Company's money |
+| Fee check matched | Accrued commissions | Transaction fee revenue / E&O revenue | Company's money; booked when matched in the ordinary course, at the year-end true-up, or when written off at a quarterly review |
 | Commission check matched, agent paid | Accrued commissions | Revenue (company fee) and Commissions payable (221000), then Cash when paid | Split per the file or the estimation rule |
 | Refund to payer | Accrued commissions | Cash | Attach the refund support |
 | Remittance to a state | Commissions payable (or accrued commissions) | Cash | One entry per state report; attach the report |
 | Retention under a forfeiture or offset confirmed by counsel | Accrued commissions | Revenue | Only with the counsel memo and item support attached |
 
 Two things never happen: an aged item is not written off to revenue because the owner is unknown, and an estimated agent share is not reversed into income because no claim arrived. Reserve the estimated agent share in commissions payable until it is paid or remitted.
+
+**After remittance.** Good-faith delivery to a state relieves the holder of liability for the property (Tex. Prop. Code 74.304; 72 P.S. 1301.14; Fla. Stat. 717.1201; Ala. Code 35-12-79; 765 ILCS 1026/15-604). If an agent later submits the file for a transaction whose commission has already been remitted, the transaction is still processed in Paperless Pipeline and the agent is still paid: either the agent claims the money from the state, or the company pays the agent and files for reimbursement from the state (Texas 74.502; Pennsylvania 1301.14, with interest; Florida 717.1201(3); Alabama 35-12-79(c); Illinois 15-605). The company's fee on that transaction is revenue as usual. Keep the state report reference on the item so the reimbursement claim can be filed.
 
 ## Records retention
 
@@ -132,10 +134,10 @@ For each item, retain: the deposit record and check image, the Paperless Pipelin
 
 The first review under this policy works the backlog that accumulated before it existed. It follows the same quarterly steps, applied to every item already past a threshold or approaching the next cutoff, and it packages the open legal questions for counsel in one submission rather than piecemeal.
 
-1. Book the fee checks and confirmed small items to revenue.
+1. Confirm the fee checks and small items as company fees; they stay in the ordinary matching process and the year-end revenue true-up, and only an item being written off at this review is booked to revenue now.
 2. Refund the memo-flagged items to their payers; keep any legal-hold item segregated.
 3. Work the threshold items oldest first: identify the owner, set the split, send letters.
-4. Take the open questions to counsel in one package: the Texas period for contractor commissions, the formation-state default for the Chicago and Philly entities, the Philly forfeiture and offset clauses, and whether to file a Texas voluntary disclosure for the Texas entities together.
+4. Take the adopted positions to counsel in one package for confirmation: the Texas 3-year period for contractor commissions, the formation-state default for the Chicago and Philly entities, the decision not to rely on the Philly and TUR forfeiture clauses, the offset clauses, and the Texas voluntary disclosure for the Texas entities together.
 5. Report and remit the dormant remainder on each state's next cycle, through a VDA where counsel recommends it.
 
 The figures, the item list and the decisions put to the CFO and counsel for the initial remediation are in the findings memo dated 10/6/2026 and the analysis workbook, not here.
@@ -155,7 +157,7 @@ The test of this policy is that no amount owed to an agent or payer reaches a st
 | Filings made by each state deadline | 100% | Annually |
 | Quarterly findings memo issued | Within 30 days of quarter end | Quarterly |
 
-Escalation: any threshold item over $5,000 that cannot be resolved by the quarterly memo date goes to the CFO with the reason. Any contact from a state administrator or audit firm about unclaimed property goes to the Controller and counsel the same day, because a voluntary disclosure is no longer available once contact has been made.
+Escalation: any threshold item over $5,000 that cannot be resolved by the quarterly memo date goes to the CFO with the reason. Any contact from a state administrator or audit firm about unclaimed property goes to the Director of Financial Reporting and Analysis and counsel the same day, because a voluntary disclosure is no longer available once contact has been made.
 
 ## Appendix
 
@@ -184,4 +186,4 @@ Escalation: any threshold item over $5,000 that cannot be resolved by the quarte
 
 **Documents relied on.** United Cash Requirements workbook (10/6/2026). Accrued_Commissions_Unclaimed_Property_Analysis.xlsx and its build script, in the repository folder accrued-commissions-analysis. Independent contractor agreements for Dallas/Frisco (rev. 4/18/2023), Chicago, Houston (TXR-2301, 07-08-22), TUR legacy sign-up documents, and the Pennsylvania ICA (08.2023). ICA Fee Structure Cheat Sheet and JV ICA Transaction Fee Summary. Entity Management Database.
 
-**Verification and what remains open.** The periods, section numbers, report dates, due-diligence rules, voluntary disclosure terms and anti-limitation provisions above were read from the statute text and the state treasury pages on 10/6/2026; the links are the pages actually read. Still open for counsel: no court decision or Comptroller ruling specifically on broker-to-agent commissions was found, so the Texas 3-year position rests on the statutory definitions and the Comptroller's property-code table; whether a court would enforce the Philadelphia ICA 60-day forfeiture against an escheat claim (the Pennsylvania statute is silent on contract-based bars, while Texas 74.308 and 74.309 cut against it); the deposit date is used as a proxy for the payable date; Missouri and the District of Columbia were not researched (no holder is formed in Missouri and the DC balance is zero); and Texas VDA eligibility for an entity that has filed before is not stated on the Comptroller's pages.
+**Verification and positions adopted.** The periods, section numbers, report dates, due-diligence rules, voluntary disclosure terms and anti-limitation provisions above were read from the statute text and the state treasury pages on 10/6/2026; the links are the pages actually read. Positions adopted by management on 10/6/2026: Texas applies the 3-year rule to independent-contractor commissions (no court decision or Comptroller ruling specifically on broker-to-agent commissions was found; the position rests on the statutory definitions and the Comptroller's property-code table), and the Philadelphia and TUR forfeiture clauses are not relied on against an escheat claim. Still open for counsel's confirmation: the deposit date is used as a proxy for the payable date; Missouri and the District of Columbia were not researched (no holder is formed in Missouri and the DC balance is zero); and Texas VDA eligibility for an entity that has filed before is not stated on the Comptroller's pages.

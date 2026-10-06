@@ -25,6 +25,14 @@ intermediate to the CA bundle and send a browser user agent); fltreasurehunt.gov
 firewall (use portal.claimyourcashfl.gov); palegis.us returned only a page shell (PA Treasury's PA_UCP_Law.pdf
 is the usable text).
 
+Decisions the user made on 10/6/2026 after the verification (reflected in every document): the quarterly
+review and annual filings are owned by the Director of Financial Reporting and Analysis, not the Controller;
+Texas applies the 3-year rule and the 1-year wage rule is ignored; the Philly/TUR forfeiture clauses are not
+relied on against an escheat claim; fee checks are NOT moved to revenue en masse (they stay in the ordinary
+matching process and the year-end revenue true-up; only an item being written off at a quarterly review is
+booked to revenue then). The SOP body was updated for these (the earlier "appendix only" restriction no longer
+applies). The briefing doc has a second tab with the one-paragraph rollout note to the user's bosses.
+
 ## 1. What exists in this folder (branch `claude/accrued-commissions-analysis-mmu04n`)
 
 | File | What it is |
