@@ -86,6 +86,10 @@ claim honors such clauses is a legal question (anti-limitation provisions).
 
 ## Files
 
+- `Accrued_Commissions_Unclaimed_Property_SOP.md` / `.docx` - the SOP and memo (monthly matching, quarterly
+  unclaimed property review, treatment rules, state calendar, accounting, remediation plan). Snapshot of the
+  editable Claude Doc.
+
 - `Accrued_Commissions_Unclaimed_Property_Analysis.xlsx` - Summary (fee amounts and small-amount
   threshold are inputs in rows 4-5), Detail (181 items with yellow fill-in columns for owner, owner
   state and the fee/agent/refund split), Current Month, State Rules (with the likely test per state
