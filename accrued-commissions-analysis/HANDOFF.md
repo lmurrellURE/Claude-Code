@@ -5,6 +5,26 @@ Read this whole file before doing anything. Everything the next session needs is
 folder or recorded here. The uploads from the prior session (cash workbook, agreements, fee
 documents, entity database) are NOT available in a new session; the facts taken from them are below.
 
+## Status update 10/6/2026 (second session, https://claude.ai/code/session_01SVpE7ymJvQuwNuD1Yq5LvD)
+
+Section 2 below is DONE. Every TX, IL, PA, FL and AL rule on the State Rules tab was verified from the
+statute text and state treasury pages; the URLs read and the dates are in the tab's Verification status
+and Sources columns, and the README's "Verification of the state rules" section lists what was confirmed,
+what was corrected (IL business-holder deadline May 1 / Dec 31 cutoff; FL 717.1035 3-year rule for a
+Florida holder with an unknown owner address; PA commissions rule is 1301.10(2); VDA descriptions) and
+what is still open. No dollar figure moved. The Summary still ties to 226,764.46. The SOP appendix in the
+Claude Doc carries the verified citations; the SOP body (Legal framework section) still has the pre-
+verification wording (Florida 5 years, PA amnesty ended 2010, IL/MO VDAs not researched) because the user
+asked that only the appendix be changed - flag this to the user before editing it. A one-page CFO /
+Controller briefing was added as a Claude Doc (https://claude.ai/code/artifact/9241f6ec-bf29-48d4-b42c-1e258290ceb8)
+with a .docx snapshot in this folder.
+
+Fetching notes for next time: statutes.capitol.texas.gov is a JavaScript app (render with headless Chromium);
+ilga.gov serves an incomplete TLS chain and blocks non-browser user agents (add the Sectigo OV R40
+intermediate to the CA bundle and send a browser user agent); fltreasurehunt.gov/Holder.jsp is behind a
+firewall (use portal.claimyourcashfl.gov); palegis.us returned only a page shell (PA Treasury's PA_UCP_Law.pdf
+is the usable text).
+
 ## 1. What exists in this folder (branch `claude/accrued-commissions-analysis-mmu04n`)
 
 | File | What it is |
@@ -13,7 +33,8 @@ documents, entity database) are NOT available in a new session; the facts taken 
 | `build_workbook.py` | Rebuilds the workbook from the two CSVs. Edit this, not the xlsx. Run `python3 build_workbook.py <out.xlsx>` from the folder containing the CSVs, then recalc with the xlsx skill's `recalc.py`. |
 | `source-extract/accrued_rows.csv` | Every row of every entity's "Previous Month's Accrued Commissions" block, booked or not. |
 | `source-extract/current_month_unbooked.csv` | Current-month unbooked deposits (all Sept/Oct 2026). |
-| `README.md` | Memo-style summary with the current figures. Keep its numbers in sync with the workbook. |
+| `README.md` | Memo-style summary with the current figures (the 10/6/2026 findings memo). Keep its numbers in sync with the workbook. |
+| `Accrued_Commissions_CFO_Controller_Briefing.docx` | Snapshot of the one-page CFO / Controller briefing Claude Doc (10/6/2026). |
 | `Accrued_Commissions_Unclaimed_Property_SOP.md` / `.docx` | Snapshots of the SOP. The editable master is the Claude Doc: https://claude.ai/code/artifact/047dd24f-815c-4fdd-8c8c-414c9201c552. The SOP is a STANDING POLICY with no figures in it (for the team and for auditors); it is not updated each quarter. Point-in-time figures and the backlog plan live in the README (which serves as the 10/6/2026 findings memo) and the workbook. |
 
 **How the user wants the process to work (stated 10/6/2026, after reviewing the SOP draft):**
