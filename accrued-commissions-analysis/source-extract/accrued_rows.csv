@@ -1,0 +1,219 @@
+entity,sheet,bank,row,date_raw,date,check,amount,amount_raw,booked,memo,payer,in_formula_range
+Dallas,Dallas,Dallas,21,2023-03-03 00:00:00,2023-03-03,1839,1097.5,1097.5,False,"Vera Garza2538 Emmett St-agent hasn’t uploaded docs, emailed again",Jogip Management,True
+Dallas,Dallas,Dallas,22,2023-04-19 00:00:00,2023-04-19,167928,444,444,False,File 23067608FM-CC,Freedom Title,True
+Dallas,Dallas,Dallas,23,2023-05-05 00:00:00,2023-05-05,593095968,2147.5,2147.5,False,,Chicago Title of Texas,True
+Dallas,Dallas,Dallas,24,2023-05-25 00:00:00,2023-05-25,15215,694.68,694.68,False,,JARA INVESTMENTS INC,True
+Dallas,Dallas,Dallas,25,2023-06-29 00:00:00,2023-06-29,9478743248,500,500,False,6050 N Central Exp 314-not for this address unsure of address,Jaden International,True
+Dallas,Dallas,Dallas,26,2023-08-14 00:00:00,2023-08-14,310781,824.12,824.12,False,,Colliers International,True
+Dallas,Dallas,Dallas,27,2023-09-07 00:00:00,2023-09-07,5384,91.5,91.5,False,,Roxana Handal,True
+Dallas,Dallas,Dallas,28,2023-09-14 00:00:00,2023-09-14,554402,1000,1000,False,,Soleste West Gables c/o Waterton Residential,True
+Dallas,Dallas,Dallas,29,2023-11-07 00:00:00,2023-11-07,158770,800,800,False,,McKnight Title,True
+Dallas,Dallas,Dallas,30,2024-02-22 00:00:00,2024-02-22,7201577987,534.5,534.5,False,Summit Property Management,Hampton on Jupiter,True
+Dallas,Dallas,Dallas,31,2024-03-14 00:00:00,2024-03-14,3536,945,945,False,709 Golden Bear- Junko Cummings- ck 3604 processed with this transaction(duplicate?),Guildford LLC,True
+Dallas,Dallas,Dallas,32,2024-03-28 00:00:00,2024-03-28,7725,1000,1000,False,1311 12th St- Lease,Go Spring Branch,True
+Dallas,Dallas,Dallas,33,2024-06-07 00:00:00,2024-06-07,22833,44,44,False,5740 Cutler Ln- waiting to hear back from title about missing portion,,True
+Dallas,Dallas,Dallas,34,2024-07-03 00:00:00,2024-07-03,3399,10,10,False,,Texas Title Escrow Account,True
+Dallas,Dallas,Dallas,35,2024-07-03 00:00:00,2024-07-03,3409,1549,1549,False,,Texas Title Escrow Account,True
+Dallas,Dallas,Dallas,36,2024-07-12 00:00:00,2024-07-12,36710,609.24,609.24,False,,TC Lincoln Centre- Cushman & Wakefield,True
+Dallas,Dallas,Dallas,37,2024-07-15 00:00:00,2024-07-15,30197,644,644,False,,Diversified National Title,True
+Dallas,Dallas,Dallas,38,2024-08-02 00:00:00,2024-08-02,103232,1044,1044,False,,,True
+Dallas,Dallas,Dallas,39,2024-10-14 00:00:00,2024-10-14,CK 3000000008,449.75,449.75,False,"2304 Magnolia-Not in PP, not sure who agent is",,True
+Dallas,Dallas,Dallas,40,2024-11-15 00:00:00,2024-11-15,CK 14122,800,800,False,5322 Columbia Ave (their transaction #059210-A)-Not in PP,,True
+Dallas,Dallas,Dallas,41,2024-11-19 00:00:00,2024-11-19,CK 2704,4.5,4.5,False,18333 Roehampton- supposed to be for 450,,True
+Dallas,Dallas,Dallas,42,2024-11-20 00:00:00,2024-11-20,CK 5603,2865,2865,False,The Ashton-not sure of property address or agent ,,True
+Dallas,Dallas,Dallas,43,2025-02-20 00:00:00,2025-02-20,7005146010,106.96,106.96,False,,,True
+Dallas,Dallas,Dallas,44,2025-02-28 00:00:00,2025-02-28,37572,644,644,False,1423 Main St.,,True
+Dallas,Dallas,Dallas,45,2025-03-24 00:00:00,2025-03-24,502001684,750,750,False,3430 Calhoun Ave,,True
+Dallas,Dallas,Dallas,46,2025-06-11 00:00:00,2025-06-11,2209,324.75,324.75,False,Whitney Williams written by Danny Elms,,True
+Dallas,Dallas,Dallas,47,2025-06-23 00:00:00,2025-06-23,41343,300,300,False,7618 Harbor Dr,,True
+Dallas,Dallas,Dallas,48,2025-11-07 00:00:00,2025-11-07,1233,1239,1239,False,,,True
+Dallas,Dallas,Dallas,49,2025-12-05 00:00:00,2025-12-05,3356,800,800,False,"208 Glenwic Place, agent: Deba Cadet",,True
+Dallas,Dallas,Dallas,50,2025-12-09 00:00:00,2025-12-09,353531,824.12,824.12,False,,,True
+Dallas,Dallas,Dallas,51,2025-12-09 00:00:00,2025-12-09,515,1450,1450,False,Referral Fees R. Shaw #208,,True
+Dallas,Dallas,Dallas,52,2026-02-11 00:00:00,2026-02-11,27966,41.87,41.87,False,,Coastal Realty Information,True
+Dallas,Dallas,Dallas,53,2026-04-22 00:00:00,2026-04-22,573013801,394,394,False,Commissions,Chicago Title of Texas,True
+Dallas,Dallas,Dallas,54,2026-05-04 00:00:00,2026-05-04,3601909,540,540,False,,,True
+Dallas,Dallas,Dallas,55,06/15/2026,2026-06-15,11735,695,695,True,2617 Boedecker Dr. Buying Side,Infinitie Title LLC,True
+Dallas,Dallas,Dallas,56,06/22/2026,2026-06-22,104315,9761.14,9761.14,False,Cashier's Check - No memo,Phillips Edison Grocery Center,True
+Dallas,Dallas,Dallas,57,06/29/2026,2026-06-29,1638,4176,4176,False,,"LROC, LLC",True
+Dallas,Dallas,Dallas,58,07/10/2026,2026-07-10,7226642918,2280,2280,False,[review check stub],Bellrock Upper North(?),True
+Dallas,Dallas,Dallas,59,07/13/2026,2026-07-13,1480,238,238,False,Rental Commission,NEIMAX LLC,True
+Dallas,Dallas,Dallas,60,07/13/2026,2026-07-13,928546934,89.75,89.75,False,630 Woodacre,,True
+Dallas,Dallas,Dallas,61,2026-07-20 00:00:00,2026-07-20,103690,69,69,False,510 Simmons Dr,MH Title,True
+Dallas,Dallas,Dallas,62,2026-07-21 00:00:00,2026-07-21,82931,6078,6078,False,UR25025(?),Steward Title,True
+Dallas,Dallas,Dallas,63,07/28/2026,2026-07-28,392627,701.5,701.5,False,37753 S. Golf Course Dr.(?),Long Realty,True
+Dallas,Dallas,Dallas,64,08/03/2026,2026-08-03,1012,1440,1440,True,14165 Gadseeder(?) Way,Sarah Nunneley / Timoth Myles Peterson,True
+Dallas,Dallas,Dallas,65,08/03/2026,2026-08-03,603820,703,703,True,6306 N MacArthur Blvd #1092,Westdale Sunbelt Properties,True
+Dallas,Dallas,Dallas,66,08/07/2026,2026-08-07,2500,532.5,532.5,False,,S2 Hyde Park,True
+Dallas,Dallas,Dallas,67,08/10/2026,2026-08-10,2285,2691,2691,False,3205 Harvard St,Rendon Realty,True
+Dallas,Dallas,Dallas,68,08/11/2026,2026-08-11,2257,1000,1000,False,5110 Lyndsley,Daniel Elms,True
+Dallas,Dallas,Dallas,69,08/14/2026,2026-08-14,1084,349,349,True,5005 Frontier Lane,Remon Aziz,True
+Dallas,Dallas,Dallas,70,08/17/2026,2026-08-17,1778,644,644,True,4484 Bonney Ave,Carmel A Minton,True
+Dallas,Dallas,Dallas,71,08/17/2026,2026-08-17,26613,778.5,778.5,True,3900 Coloma,The Michael Group,True
+Dallas,Dallas,Dallas,72,2026-08-21 00:00:00,2026-08-21,1675,900,900,False,410 E. Brackett,Tracy Realty,True
+Dallas,Dallas,Dallas,73,2026-08-21 00:00:00,2026-08-21,178460,875,875,False,"1012 Bessie Dr,",eXp Realty,True
+Dallas,Dallas,Dallas,74,2026-08-24 00:00:00,2026-08-24,66515,2950,2950,True,3235 Turtle Creek #142,Certified Autoplex inc.,True
+Dallas,Dallas,Dallas,75,08/26/2026,2026-08-26,3091,343.75,343.75,True,,,True
+Dallas,Dallas,Dallas,76,08/27/2026,2026-08-27,45377,15750,15750,True,,,True
+Dallas,Dallas,Dallas,77,08/27/2026,2026-08-27,932397891,2350,2350,True,,,True
+Dallas,Dallas,Dallas,78,08/28/2026,2026-08-28,1235,1400,1400,False,6401 Everest Dr,Mazahra Pasha Mohammad,True
+Dallas,Dallas,Dallas,79,08/28/2026,2026-08-28,4790,2936.74,2936.74,False,2402 Navigation(?) Blvd. 316 & 843,,True
+Dallas,Dallas,Dallas,80,08/31/2026,2026-08-31,1515,750,750,False,Gaylord Drive 8931 #157,Blue Bpmmet Properties,True
+Dallas,Dallas,Dallas,81,08/31/2026,2026-08-31,3156,5800,5800,True,,,True
+Dallas,Dallas,Dallas,82,08/31/2026,2026-08-31,Wire,2300,2300,True,,,True
+Houston,Houston,Houston,21,2022-01-31 00:00:00,2022-01-31,17830,539.6,539.6,False,,,True
+Houston,Houston,Houston,22,2022-03-29 00:00:00,2022-03-29,26398,300,300,False,,,True
+Houston,Houston,Houston,23,2022-07-20 00:00:00,2022-07-20,4357,1260,1260,False,185 Country Rd 709,Aaron Shorey,True
+Houston,Houston,Houston,24,2022-08-02 00:00:00,2022-08-02,14812016,1000,1000,False,File:22339037767,Stewart Title Company,True
+Houston,Houston,Houston,25,2023-03-23 00:00:00,2023-03-23,2127,340,340,False,3525 Sage #1009,WY-TX CO LLC,True
+Houston,Houston,Houston,26,2023-03-23 00:00:00,2023-03-23,2128,340,340,False,3525 Sage #1009,WY-TX CO LLC,True
+Houston,Houston,Houston,27,2023-07-18 00:00:00,2023-07-18,103164,1500,1500,False,6223 Millbridge-on hold due to agent commiting fraud- n not disburse per law enforcement and TREC,Exp Realty,True
+Houston,Houston,Houston,28,2023-07-18 00:00:00,2023-07-18,593013245,357,357,False,,Fidelity National Title,True
+Houston,Houston,Houston,29,2023-11-02 00:00:00,2023-11-02,330721,375,375,False,cant locate,,True
+Houston,Houston,Houston,30,2024-04-30 00:00:00,2024-04-30,3007,517.5,517.5,False,SWSTG4645,Secured Title of Texas,True
+Houston,Houston,Houston,31,2024-05-20 00:00:00,2024-05-20,323248,49,49,False,,Southland Title,True
+Houston,Houston,Houston,32,2024-06-13 00:00:00,2024-06-13,323050,100,100,False,,Southland Title,True
+Houston,Houston,Houston,33,2024-06-13 00:00:00,2024-06-13,323054,644,644,False,,Southland Title,True
+Houston,Houston,Houston,34,2024-07-01 00:00:00,2024-07-01,42740,7500,7500,False,,Capital Title of Texas,True
+Houston,Houston,Houston,35,2024-10-09 00:00:00,2024-10-09,591110199,495,495,False,Commissions,Fidelity National Title Agency,True
+Houston,Houston,Houston,36,2024-12-23 00:00:00,2024-12-23,7213229449,999.99,999.99,False,Dallas Transaction 4110 Fairmount 2171,,True
+Houston,Houston,Houston,37,2025-01-31 00:00:00,2025-01-31,275615,305.91,305.91,False,,"Move Sales, Inc",True
+Houston,Houston,Houston,38,2025-06-17 00:00:00,2025-06-17,3045688,1044,1044,False,Old Republic Title,,True
+Houston,Houston,Houston,39,2025-07-02 00:00:00,2025-07-02,14111,250,250,False,,HomeRiver Group - Houston,True
+Houston,Houston,Houston,40,2025-07-15 00:00:00,2025-07-15,31310,475,475,False,5803 Southmund St #B,Keller Williams Realty Professionals,True
+Houston,Houston,Houston,41,2025-07-16 00:00:00,2025-07-16,1179006686,263,263,False,,,True
+Houston,Houston,Houston,42,2025-07-28 00:00:00,2025-07-28,674,3750,3750,False,310 Magnolia ,Fresh Start Home Services,True
+Houston,Houston,Houston,43,2025-07-31 00:00:00,2025-07-31,103931,10600,10600,False,,InFocus Title LLC,True
+Houston,Houston,Houston,44,2025-08-08 00:00:00,2025-08-08,7042,531.25,531.25,False,2507 Montrose 22,,True
+Houston,Houston,Houston,45,2025-08-19 00:00:00,2025-08-19,533019415,16200,16200,False,2332 Shadow Falls Ln,,True
+Houston,Houston,Houston,46,2025-09-16 00:00:00,2025-09-16,1527,636.75,636.75,False,,,True
+Houston,Houston,Houston,47,2025-09-30 00:00:00,2025-09-30,104004,100,100,False,,,True
+Houston,Houston,Houston,48,2026-01-23 00:00:00,2026-01-23,1334,850,850,False,,,True
+Houston,Houston,Houston,49,2026-01-30 00:00:00,2026-01-30,101147,644,644,False,,,True
+Houston,Houston,Houston,50,2026-03-17 00:00:00,2026-03-17,916573566,1397.5,1397.5,False,,5th Stream Realty LLC,True
+Houston,Houston,Houston,51,2026-04-07 00:00:00,2026-04-07,8504541397,999.5,999.5,False,,"AvidXchange, Inc",True
+Houston,Houston,Houston,52,2026-05-04 00:00:00,2026-05-04,593035158,15450,15450,False,Fidelity National Title,,True
+Houston,Houston,Houston,53,2026-05-20 00:00:00,2026-05-20,103360,644,644,False,6919 Calhoun Road,,True
+Houston,Houston,Houston,54,06/15/2026,2026-06-15,211594,875,875,False,329485 - 19410 Bold River Road,LPT Realty,True
+Houston,Houston,Houston,55,06/24/2026,2026-06-24,514,922.5,922.5,False,"5710 Quinn Landing Houston, TX 77091","Evergreen Residential Holdings, LLC",True
+Houston,Houston,Houston,56,06/29/2026,2026-06-29,2419,1000,1000,False,,SG Management LLC,True
+Houston,Houston,Houston,57,06/30/2026,2026-06-30,1299881,1700,1700,False,3318 Schroeder,TDECU,True
+Houston,Houston,Houston,58,07/01/2026,2026-07-01,104665,644,644,False,Listing agent commission,InFocus Title LLC,True
+Houston,Houston,Houston,59,2026-07-21 00:00:00,2026-07-21,232098,495,495,False,2703 Glenn Lakes,Patten title,True
+Houston,Houston,Houston,60,08/05/2026,2026-08-05,,795,795,False,,,True
+Houston,Houston,Houston,61,08/14/2026,2026-08-14,2225,450,450,True,,,True
+Houston,Houston,Houston,62,08/25/2026,2026-08-25,4772,1601.25,1601.25,True,,,True
+Philly,Philly,Philly,22,2023-09-06 00:00:00,2023-09-06,2712000749,419.35,419.35,False,Remitted by Malik Dontal McGill,,True
+Philly,Philly,Philly,23,2024-01-04 00:00:00,2024-01-04,44511,495,495,False,6126 Larchwood St,,True
+Philly,Philly,Philly,24,2024-01-04 00:00:00,2024-01-04,44512,4410,4410,False,6126 Larchwood St,,True
+Philly,Philly,Philly,25,2024-06-10 00:00:00,2024-06-10,126415,500,500,False,EXP Realty (2219 Rimland Dr),,True
+Philly,Philly,Philly,26,2024-06-20 00:00:00,2024-06-20,15119,995,995,False,Penn Land Transfer - Broker fees,,True
+Philly,Philly,Philly,27,2024-06-20 00:00:00,2024-06-20,15121,49,49,False,Penn Land Transfer - E&O,,True
+Philly,Philly,Philly,28,2024-07-12 00:00:00,2024-07-12,Wire 7/12/24,1614,1614,False,1233 W VENANGO,,True
+Philly,Philly,Philly,29,2024-07-15 00:00:00,2024-07-15,2887,400,400,False,1324 Locust St 213,,True
+Philly,Philly,Philly,30,2024-07-26 00:00:00,2024-07-26,2900,400,400,False,5437 Baltimore Ave 1,,True
+Philly,Philly,Philly,31,2024-08-20 00:00:00,2024-08-20,518928999,595,595,False,Citizens,,True
+Philly,Philly,Philly,32,2024-08-28 00:00:00,2024-08-28,417459,823.06,823.06,False,Loandepot.com LLC,,True
+Philly,Philly,Philly,33,2024-10-23 00:00:00,2024-10-23,417053,495,495,False,Commissions,,True
+Philly,Philly,Philly,34,2024-11-01 00:00:00,2024-11-01,1331,152,152,False,,,True
+Philly,Philly,Philly,35,2024-11-15 00:00:00,2024-11-15,241,270,270,False,NJ Brokers License,,True
+Philly,Philly,Philly,36,2024-12-04 00:00:00,2024-12-04,15907,2936.25,2936.25,False,PA Land Settlement Services,,True
+Philly,Philly,Philly,37,2024-12-04 00:00:00,2024-12-04,15908,400,400,False,PA Land Settlement Services,,True
+Philly,Philly,Philly,38,2024-12-04 00:00:00,2024-12-04,15910,595,595,False,PA Land Settlement Services,,True
+Philly,Philly,Philly,39,2025-01-31 00:00:00,2025-01-31,wire,2500,2500,False,,,True
+Philly,Philly,Philly,40,2025-02-10 00:00:00,2025-02-10,13836,595,595,False,9 SUMMIT AVE,,True
+Philly,Philly,Philly,41,2025-02-27 00:00:00,2025-02-27,13835,295,295,False,conveyance,,True
+Philly,Philly,Philly,42,2025-07-10 00:00:00,2025-07-10,5282446,100,100,False,Dominique Hill,,True
+Philly,Philly,Philly,43,2025-07-24 00:00:00,2025-07-24,169,49,49,False,E&O,,True
+Philly,Philly,Philly,44,2025-07-24 00:00:00,2025-07-24,168,451,451,False,Convey,,True
+Philly,Philly,Philly,45,2025-08-04 00:00:00,2025-08-04,701611,595,595,False,N&J Abstract (651 Germantown Pike),,True
+Philly,Philly,Philly,46,2025-08-19 00:00:00,2025-08-19,2113251,644,644,False,16130202600,,True
+Philly,Philly,Philly,47,2025-11-13 00:00:00,2025-11-13,519627385,2000,2000,False,519627385-8,,True
+Philly,Philly,Philly,48,2025-11-24 00:00:00,2025-11-24,wire,1462.12,1462.12,False,2721 NEWELL DR Love Beasley,,True
+Philly,Philly,Philly,49,2025-12-17 00:00:00,2025-12-17,6537,1060,1060,False,506 Lincoln Avenue (found searching Pending Paperless),,True
+Philly,Philly,Philly,50,2026-02-02 00:00:00,2026-02-02,wire,625,625,False,,,True
+Philly,Philly,Philly,51,2026-04-20 00:00:00,2026-04-20,162,1000,1000,False,,,True
+Philly,Philly,Philly,52,2026-06-16 00:00:00,2026-06-16,wire,595,595,False,,,True
+Philly,Philly,Philly,53,07/15/2026,2026-07-15,47111,595,595,False,"""commissions""",,True
+Philly,Philly,Philly,54,2026-07-24 00:00:00,2026-07-24,Wire,1250,1250,False,,,True
+Philly,Philly,Philly,55,07/28/2026,2026-07-28,3129494,700,700,True,Demetrius Hicks,,True
+Philly,Philly,Philly,56,08/04/2026,2026-08-04,1009,1015,1015,True,MSA Payment,,True
+Philly,Philly,Philly,57,08/04/2026,2026-08-04,1010,2735,2735,True,MSA Payment,,True
+Philly,Philly,Philly,58,08/14/2026,2026-08-14,Wire,344,344,False,27 S Woodland Ave,,True
+Philly,Philly,Philly,59,08/14/2026,2026-08-14,Wire,3320,3320,True,5138 Arch Street,,True
+Philly,Philly,Philly,60,2026-08-21 00:00:00,2026-08-21,5147059946,2420,2420,True,4711 Worth St,,True
+Philly,Philly,Philly,61,08/27/2026,2026-08-27,105709,6125,6125,True,,,True
+Philly,Philly,Philly,62,08/27/2026,2026-08-27,Wire,7325,7325,True,,,True
+Philly,Philly,Philly,63,08/27/2026,2026-08-27,Wire,10015,10015,True,30 S Elmwood,,True
+Philly,Philly,Philly,64,08/31/2026,2026-08-31,1053,550,550,True,,,True
+Philly,Philly,Philly,65,08/31/2026,2026-08-31,Wire,49,49,True,3330 Potter St. (fee),,True
+Philly,Philly,Philly,66,08/31/2026,2026-08-31,Wire,595,595,True,3330 Potter St. (fee),,True
+Philly,Philly,Philly,67,08/31/2026,2026-08-31,Wire,2020,2020,True,642 Clifton Ave,,True
+Philly,Philly,Philly,68,08/31/2026,2026-08-31,Wire,2179,2179,True,3330 Potter St. (commission),,True
+Philly,Philly,Philly,69,08/31/2026,2026-08-31,Wire,19600,19600,True,,,True
+DC,DC,DC,34, ,,,,,False,,,True
+TUR,TUR,TUR,22,2023-01-25 00:00:00,2023-01-25,64427,120,120,False,1791141,Stewart Title Company,True
+TUR,TUR,TUR,23,2023-05-03 00:00:00,2023-05-03,43756,544,544,False,23-121431,WPG National Title,True
+TUR,TUR,TUR,24,2023-06-16 00:00:00,2023-06-16,10458,250,250,False,Order # WL-7199,Partners Title Company,True
+TUR,TUR,TUR,25,2023-06-16 00:00:00,2023-06-16,518005123,644,644,False,? Couldn't locate,,True
+TUR,TUR,TUR,26,2023-07-26 00:00:00,2023-07-26,526070032,150,150,False,,Alamo Title Company,True
+TUR,TUR,TUR,27,2023-07-28 00:00:00,2023-07-28,393737,150,150,False,6110 Marble Hollow Ln,"LM - Believe this transaction got processed as TC, but we owed Renee Meals the payment",True
+TUR,TUR,TUR,28,2023-11-02 00:00:00,2023-11-02,43891,1000,1000,False,,Botts Title,True
+TUR,TUR,TUR,29,2023-12-20 00:00:00,2023-12-20,1130,60,60,False,19736 Dunbar Ave ,Dunbar Development LLC,True
+TUR,TUR,TUR,30,2024-02-21 00:00:00,2024-02-21,518006144,644,644,False,,Fidelity National Title Agency,True
+TUR,TUR,TUR,31,2024-02-23 00:00:00,2024-02-23,2269,729.5,729.5,False,Wynnewood at Wortham APTS,,True
+TUR,TUR,TUR,32,2024-03-19 00:00:00,2024-03-19,120455,1000,1000,False,,Exp Realty,True
+TUR,TUR,TUR,33,2024-04-06 00:00:00,2024-04-06,2027,250,250,False,,Harper Property Management,True
+TUR,TUR,TUR,34,2024-05-06 00:00:00,2024-05-06,1037,60,60,False,19736 Dunbar Ave ,Dunbar Development LLC,True
+TUR,TUR,TUR,35,2024-06-11 00:00:00,2024-06-11,518006434,644,644,False,,Fidelity National Title Agency,True
+TUR,TUR,TUR,36,2024-06-26 00:00:00,2024-06-26,518006479,644,644,False,,Fidelity National Title Agency,True
+TUR,TUR,TUR,37,2024-07-18 00:00:00,2024-07-18,23210,644,644,False,,Stratos Title,True
+TUR,TUR,TUR,38,2024-07-22 00:00:00,2024-07-22,23246,644,644,False,,Stratos Title,True
+TUR,TUR,TUR,39,2024-07-29 00:00:00,2024-07-29,125437,2819.94,2819.94,False,,DHI Title,True
+TUR,TUR,TUR,40,2024-08-02 00:00:00,2024-08-02,2085,500,500,False,Ranch at City Park Apts,Ranch at City Park Apts,True
+TUR,TUR,TUR,41,2024-08-14 00:00:00,2024-08-14,2599,1100,1100,False,3203 Ladera Creek Ct,,True
+TUR,TUR,TUR,42,2024-08-20 00:00:00,2024-08-20,779,1074.5,1074.5,False,Full check for $2149.00,,True
+TUR,TUR,TUR,43,2024-09-04 00:00:00,2024-09-04,132999,250,250,False,,Exp Realty,True
+TUR,TUR,TUR,44,2024-09-10 00:00:00,2024-09-10,575018277,250,250,False,File # 2757524-06317,Texas American Title Company,True
+TUR,TUR,TUR,45,2024-09-12 00:00:00,2024-09-12,33174,300,300,False,c. Drake 7026 Chershire Park,,True
+TUR,TUR,TUR,46,2024-09-16 00:00:00,2024-09-16,100014,644,644,False,7709 Independence St,,True
+TUR,TUR,TUR,47,2024-09-24 00:00:00,2024-09-24,6050,150,150,False,,StressFree Property Solutions,True
+TUR,TUR,TUR,48,2024-10-04 00:00:00,2024-10-04,140657,250,250,False,File No 241599Z1-KI-KLD,Riverway Title,True
+TUR,TUR,TUR,49,2024-10-17 00:00:00,2024-10-17,136236,639.98,639.98,False,,DHI Tlitle Agency,True
+TUR,TUR,TUR,50,2024-10-29 00:00:00,2024-10-29,5012,200,200,False,Shortage Correction,,True
+TUR,TUR,TUR,51,2024-11-05 00:00:00,2024-11-05,2565,469.5,469.5,False,Wynnewood at Wortham APTS,,True
+TUR,TUR,TUR,52,2024-11-13 00:00:00,2024-11-13,140,229,229,False,11822 Rowan Agent: Flor Gonzales,,True
+TUR,TUR,TUR,53,2024-12-06 00:00:00,2024-12-06,trn 12/6/24,176.25,176.25,False,,,True
+TUR,TUR,TUR,54,2024-12-18 00:00:00,2024-12-18,140502,165,165,False,,,True
+TUR,TUR,TUR,55,2025-02-07 00:00:00,2025-02-07,trn 2/7/2025,195,195,False,13217 Dalvay Beach Drive,,True
+TUR,TUR,TUR,56,2025-06-17 00:00:00,2025-06-17,7219531668,2175,2175,False,"AvidXchange, Inc",,True
+TUR,TUR,TUR,57,2025-08-04 00:00:00,2025-08-04,17626,420,420,False,1414 Antoine,,True
+TUR,TUR,TUR,58,2025-09-30 00:00:00,2025-09-30,799900,869.78,869.78,False,,,True
+TUR,TUR,TUR,59,2025-11-05 00:00:00,2025-11-05,6850404661,149,149,False,,,True
+TUR,TUR,TUR,60,2026-02-26 00:00:00,2026-02-26,217000,1397.5,1397.5,False,,Olympus/Nelson Property Mgmt,True
+TUR,TUR,TUR,61,2026-03-17 00:00:00,2026-03-17,1010,750,750,False,2413 Anita St,West Houston Property Management LLC,True
+TUR,TUR,TUR,62,2026-04-03 00:00:00,2026-04-03,154666,13189.8,13189.8,False,Commissions,"Inspired Title Services, LLC",True
+TUR,TUR,TUR,63,2026-04-29 00:00:00,2026-04-29,103233,445.5,445.5,False,2120 El Paseo St Unit 2106 Houston TX 77054,"Skyline Title, LLC",True
+TUR,TUR,TUR,64,2026-05-01 00:00:00,2026-05-01,921264804,1100,1100,False,Chase Check,,True
+TUR,TUR,TUR,65,06/02/2026,2026-06-02,9435127468,600,600,False,10432 Hammerly,Chase Money Order - Wyatt Bingham,True
+TUR,TUR,TUR,66,06/02/2026,2026-06-02,674363,600,600,False,10432 Hammerly,Amegy Bank Cashier's check - John Snyder,True
+TUR,TUR,TUR,67,06/17/2026,2026-06-17,233686,10236.2,10236.2,False,2523 Paloverde Canyon Court,CarefreeTitle Agency,True
+TUR,TUR,TUR,68,06/24/2026,2026-06-24,,600,600,False,Possibly 559 Bissonnet St,Money Order,True
+TUR,TUR,TUR,69,06/29/2026,2026-06-29,22922,1600,1600,False,,Latoya M Johnston - Navy Federal credit Union Cashier's Check,True
+TUR,TUR,TUR,70,08/11/2026,2026-08-11,1509,2950,2950,False,,L2 Uptown,True
+TUR,TUR,TUR,71,08/24/2026,2026-08-24,10421,855,855,False,,Acrisure Title,True
+TUR,TUR,TUR,72,08/24/2026,2026-08-24,2939,1075,1075,True,8415 Braesdale Lane,Kelly Simon Properties,True
+Leading Edge,Leading Edge,Regions 6744,23,2026-04-03 00:00:00,2026-04-03,,10050,10050,True,,,True
+Leading Edge,Leading Edge,Regions 6744,24,2026-06-05 00:00:00,2026-06-05,,150,150,False,,,True
+Leading Edge,Leading Edge,Regions 6744,25,2026-06-30 00:00:00,2026-06-30,,712.5,712.5,True,,,True
+Leading Edge,Leading Edge,Regions 6744,26,2026-06-30 00:00:00,2026-06-30,,4425,4425,True,,,True
+Leading Edge,Leading Edge,Regions 6744,27,2026-07-30 00:00:00,2026-07-30,unidentified deposit,100,100,False,,,True
+Leading Edge,Leading Edge,Regions 6744,28,2026-08-25 00:00:00,2026-08-25,,2670,2670,True,,,True
+Leading Edge,Leading Edge,Regions 6744,34, ,,,,,False,,,True
+Leading Edge,Leading Edge,Cadence 0264,23,2026-04-01 00:00:00,2026-04-01,,395,395,False,,,True
+Leading Edge,Leading Edge,Cadence 0264,24,2026-07-01 00:00:00,2026-07-01,,10325,10325,True,,,True
+Leading Edge,Leading Edge,Cadence 0264,34, ,,,,,False,,,True
+Gallery,Gallery,Gallery,22,2026-05-14 00:00:00,2026-05-14,2393,850,850,False,,,True
+Gallery,Gallery,Gallery,23,2026-06-29 00:00:00,2026-06-29,,350,350,False,,,True
+Gallery,Gallery,Gallery,24,2026-08-14 00:00:00,2026-08-14,ach,1951.11,1951.11,False,,,True
+Gallery,Gallery,Gallery,25,2026-08-14 00:00:00,2026-08-14,125399,850,850,False,,,True
