@@ -51,13 +51,13 @@ for r in rows:
 cur = list(csv.DictReader(open("current_month_unbooked.csv")))
 
 ENTITIES = [  # entity, state (assumption flag), note
-    ("Dallas", "TX", "Confirmed by user 10/6/2026: Texas. ICA names 'URE Dallas LLC dba United Real Estate'. State of formation not yet provided."),
-    ("Houston", "TX", "Confirmed by user 10/6/2026: Texas. ICA names 'URE Houston LLC d/b/a United Real Estate'. State of formation not yet provided."),
-    ("TUR", "TX", "Confirmed by user 10/6/2026: Texas. Sign-up docs name 'Quick-Close Properties, LLC dba Texas United Realty' (TREC 599460). State of formation not yet provided."),
-    ("Chicago", "IL", "Confirmed by user 10/6/2026: Illinois. ICA names 'URE Chicago LLC dba United Real Estate - Chicago'. State of formation not yet provided."),
-    ("Philly", "PA", "Confirmed by user 10/6/2026: Pennsylvania. PA ICA names only 'United Real Estate'; legal entity and state of formation not yet provided."),
-    ("Gallery", "FL", "Confirmed by user 10/6/2026: Florida. LLC; state of formation not yet provided."),
-    ("Leading Edge", "AL", "Confirmed by user 10/6/2026: Alabama. LLC; state of formation not yet provided."),
+    ("Dallas", "TX", "Confirmed by user 10/6/2026: Texas. ICA names 'URE Dallas LLC dba United Real Estate'. User believes the LLC was formed in Texas and is confirming; if so the office state governs unknown-agent items too."),
+    ("Houston", "TX", "Confirmed by user 10/6/2026: Texas. ICA names 'URE Houston LLC d/b/a United Real Estate'. User believes the LLC was formed in Texas and is confirming; if so the office state governs unknown-agent items too."),
+    ("TUR", "TX", "Confirmed by user 10/6/2026: Texas. Sign-up docs name 'Quick-Close Properties, LLC dba Texas United Realty' (TREC 599460). User believes the LLC was formed in Texas and is confirming; if so the office state governs unknown-agent items too."),
+    ("Chicago", "IL", "Confirmed by user 10/6/2026: Illinois. ICA names 'URE Chicago LLC dba United Real Estate - Chicago'. User believes the LLC was formed in Illinois and is confirming; if so the office state governs unknown-agent items too."),
+    ("Philly", "PA", "Confirmed by user 10/6/2026: Pennsylvania. PA ICA names only 'United Real Estate'; legal entity not yet provided. User believes the LLC was formed in Pennsylvania and is confirming."),
+    ("Gallery", "FL", "Confirmed by user 10/6/2026: Florida. User believes the LLC was formed in Florida and is confirming."),
+    ("Leading Edge", "AL", "Confirmed by user 10/6/2026: Alabama. User believes the LLC was formed in Alabama and is confirming. Leading Edge has its own fee schedule (Summary row 7)."),
     ("DC", "DC", "Tab exists in workbook with $0 accrued balance; user did not list DC. No DC rules researched."),
 ]
 STATE_ROWS = [
@@ -139,19 +139,23 @@ sm.merge_cells("A2:AB2"); sm.row_dimensions[2].height = 32
 put(sm, "A3", "As-of date", f_bold); put(sm, "B3", AS_OF, f_input, DATE, fill_in)
 sm["B3"].comment = Comment("Input. Change to re-age every item. 10/6/2026 = date the workbook was provided.", "Analysis")
 put(sm, "A4", "Fee check amounts - all entities (inputs)", f_bold)
-for j, v in enumerate([644, 1044, 69, 595, 995, 49, 110, None, None, None]):
+for j, v in enumerate([644, 1044, 69, 595, 995, 49, 110, 495, 895, 544, 944, 45, 75, 100, 125, 50]):
     put(sm, f"{L(3+j)}4", v, f_input, CUR, fill_in)
-sm["C4"].comment = Comment("Per user 10/6/2026: fee checks are typically $644, $1,044 or $69. From the ICA fee schedules (Dallas, Chicago, Philly; Houston references the same $49 E&O plus a schedule not provided): $595 / $995 transaction fee per side, $49 E&O, $110 enhanced E&O; $644 = 595+49, $1,044 = 995+49, $69 = $65 monthly dues + $4 card fee. Remove any amount you do not want treated as a fee. Blank cells are ignored.", "Analysis")
+sm["C4"].comment = Comment("Sources: user 10/6/2026 ($644, $1,044, $69); ICA Fee Structure Cheat Sheet (current: $595/$995 sale fee per side, $49 E&O, $110 enhanced E&O Philly, lease/referral minimums $75/$100/$125, Dallas after-cap fee $50); JV ICA Transaction Fee Summary (older schedule: $495/$895 sale fee, $45 E&O). $644 = 595+49, $1,044 = 995+49, $544 = 495+49, $944 = 895+49, $69 = $65 dues + $4. Remove any amount you do not want treated as a fee. Blank cells are ignored.", "Analysis")
 put(sm, "A5", "Additional fee amounts - Philly only (inputs)", f_bold)
-for j, v in enumerate([495, 295, None, None, None, None, None, None, None, None]):
+for j, v in enumerate([295] + [None]*15):
     put(sm, f"{L(3+j)}5", v, f_input, CUR, fill_in)
-sm["C5"].comment = Comment("Per user 10/6/2026: Philly fee amounts are $495, $595, $295, $995 and $49. $595/$995/$49 are already in the all-entities row; $495 and $295 are not in the 08.2023 PA ICA fee schedule provided, so they are listed here as Philly-only.", "Analysis")
+sm["C5"].comment = Comment("Per user 10/6/2026: Philly fee amounts are $495, $595, $295, $995 and $49. All but $295 are now in the all-entities row. $295 also appears as the DC referral/lease maximum in the JV fee summary.", "Analysis")
 put(sm, "A6", "Additional fee amounts - TUR only (inputs)", f_bold)
-for j, v in enumerate([150, 250, 350, 450, 60, 179, None, None, None, None]):
+for j, v in enumerate([150, 250, 350, 450, 60, 179] + [None]*10):
     put(sm, f"{L(3+j)}6", v, f_input, CUR, fill_in)
-sm["C6"].comment = Comment("From the TUR Commission Policy (Transaction Fee Plan): $150 / $250 / $350 / $450 transaction fee by commission size, $60 residential lease, $179 annual fee. Listed TUR-only because $250 etc. could be agent money at other offices. Remove if TUR fee checks do not arrive at these amounts.", "Analysis")
-put(sm, "A7", "Small-amount threshold", f_bold); put(sm, "B7", 250, f_input, CUR, fill_in)
-sm["B7"].comment = Comment("ASSUMPTION: user said fee checks are 'sometimes other small amounts' without a figure. Items at or below this threshold that are not an exact fee amount are classified 'Small amount - likely fee, review'. Change it to see the effect.", "Analysis")
+sm["C6"].comment = Comment("TUR legacy Transaction Fee Plan (sign-up docs and cheat sheet): $150 / $250 / $350 / $450 by commission size, $60 residential lease (cheat sheet says $100 or 10%), $179 annual fee. TUR agents on the United plan pay $595/$995 + $49, already in row 4.", "Analysis")
+put(sm, "A7", "Additional fee amounts - Leading Edge only (inputs)", f_bold)
+for j, v in enumerate([100, 395, 695, 995, 1295, 1595, 1895, 2195, 2495, 2795, 35, 150] + [None]*4):
+    put(sm, f"{L(3+j)}7", v, f_input, CUR, fill_in)
+sm["C7"].comment = Comment("Leading Edge fee schedule from the cheat sheet: sale fee by price band $100 / $395 / $695 / $995 / $1,295 / $1,595 / $1,895 / $2,195 / $2,495 / $2,795; E&O $0 (or $35 in holding company); fee after cap $150. All three aged Leading Edge items ($395, $150, $100) match this schedule exactly.", "Analysis")
+put(sm, "A8", "Small-amount threshold", f_bold); put(sm, "B8", 250, f_input, CUR, fill_in)
+sm["B8"].comment = Comment("ASSUMPTION: user said fee checks are 'sometimes other small amounts' without a figure. Items at or below this threshold that are not an exact fee amount are classified 'Small amount - likely fee, review'. Change it to see the effect.", "Analysis")
 
 labels = ["Entity", "State (confirm)", "Prior-month accrued (unbooked deposits)", "Current-month accrued (Sept/Oct 2026 deposits)", "Total accrued per workbook", "Items (count)",
           "0-1 yrs", "1-2 yrs", "2-3 yrs", "3-5 yrs", "5+ yrs",
@@ -162,9 +166,9 @@ labels = ["Entity", "State (confirm)", "Prior-month accrued (unbooked deposits)"
           "Dormant at next report cutoff - SHORT - likely-commission + memo-flagged", "Dormant at next report cutoff - LONG - likely-commission + memo-flagged",
           "Likely test given independent-contractor agents", "Dormant today - LIKELY test - likely-commission + memo-flagged", "Dormant at next report cutoff - LIKELY test - likely-commission + memo-flagged",
           "Oldest item", "Entity-state note"]
-hdr(sm, 9, labels, [14, 9, 16, 16, 16, 8, 13, 13, 13, 13, 11, 15, 15, 15, 16, 8, 8, 15, 15, 17, 17, 17, 17, 10, 17, 17, 12, 60])
-sm.row_dimensions[9].height = 70
-R0 = 10
+hdr(sm, 10, labels, [14, 9, 16, 16, 16, 8, 13, 13, 13, 13, 11, 15, 15, 15, 16, 8, 8, 15, 15, 17, 17, 17, 17, 10, 17, 17, 12, 60])
+sm.row_dimensions[10].height = 70
+R0 = 11
 for i, (ent, st, note) in enumerate(ENTITIES):
     r = R0 + i
     put(sm, f"A{r}", ent, f_bold)
@@ -199,12 +203,12 @@ for col in ["C","D","E","G","H","I","J","K","L","M","N","O","R","S","T","U","V",
     put(sm, f"{col}{RT}", f"=SUM({col}{R0}:{col}{RT-1})", f_bold, CUR)
 put(sm, f"F{RT}", f"=SUM(F{R0}:F{RT-1})", f_bold)
 for c in range(1, 29): sm.cell(RT, c).border = box; sm.cell(RT, c).fill = fill_sub
-sm.freeze_panes = "C10"
+sm.freeze_panes = "C11"
 
 n = RT + 2
 notes = [
     ("How to read this", f_bold),
-    ("Classification (Detail col N) uses the fee amounts in rows 4-6 and the threshold in B7: an exact fee amount = presumed company revenue (keep; book to revenue, not unclaimed property). At or under the threshold = likely fee, review. Memo-flagged = memo says not ours / unknown agent / duplicate / legal hold (owed back to the payer or needs resolution). Everything else = larger amount that likely includes an agent's commission split - this is the unclaimed-property population.", f_norm),
+    ("Classification (Detail col N) uses the fee amounts in rows 4-7 and the threshold in B8: an exact fee amount = presumed company revenue (keep; book to revenue, not unclaimed property). At or under the threshold = likely fee, review. Memo-flagged = memo says not ours / unknown agent / duplicate / legal hold (owed back to the payer or needs resolution). Everything else = larger amount that likely includes an agent's commission split - this is the unclaimed-property population.", f_norm),
     ("Columns R-S apply the dormancy tests to ALL unbooked items (upper bound). Columns T-W apply them only to the likely-commission and memo-flagged items. Even the T-W figures are upper bounds: within a larger check, only the agent's share (typically the check less the company's fee / split) is reportable; the company's share is revenue.", f_norm),
     ("SHORT test = the state's period for wages / compensation for personal services. LONG test = the general catch-all period. Column X picks the likely test per state now that agents are confirmed to be independent contractors (Texas and Florida: LONG; Illinois, Pennsylvania, Alabama: SHORT), and columns Y-Z apply it. See State Rules cols M-N for the reasoning; it is a legal judgment for counsel to confirm.", f_norm),
     ("Unknown agent = second priority rule. The user confirmed that many older checks cannot be tied to an agent. Those items do not become the company's; they are reportable to the state where the holding LLC was formed (still to be provided). If an LLC is formed in its office state, nothing changes; if formed elsewhere (e.g. Missouri or Delaware), that state's rules and report cycle apply to the unknown-owner items.", f_norm),
@@ -219,7 +223,7 @@ dt = wb.create_sheet("Detail", 1)
 put(dt, "A1", "Unbooked deposited checks - item detail (prior-month accrued commissions block of each entity tab)", f_title)
 put(dt, "A2", "Columns A-J are copied from the source workbook. K-S and Z-AA are formulas. T-Y (yellow) are for you to fill in from Paperless Pipeline / Sage: once the agent share is entered, column Z shows the dollar amount that is both dormant (long test) and owed to someone else. Column AA is the heuristic stand-in until then.", wrap=True)
 dt.merge_cells("A2:AA2"); dt.row_dimensions[2].height = 32
-put(dt, "A3", "Classification (col N) is driven by Summary rows 4-6 (fee amounts, with Philly-only and TUR-only lists) and Summary B7 (small-amount threshold). Col M flags memos that say not ours / unknown agent / duplicate / legal hold / '?'. Classifications are hints, not conclusions.", wrap=True)
+put(dt, "A3", "Classification (col N) is driven by Summary rows 4-7 (fee amounts, with Philly-only, TUR-only and Leading Edge-only lists) and Summary B8 (small-amount threshold). Col M flags memos that say not ours / unknown agent / duplicate / legal hold / '?'. Classifications are hints, not conclusions.", wrap=True)
 dt.merge_cells("A3:AA3"); dt.row_dimensions[3].height = 32
 put(dt, "A4", "As-of date (linked)"); put(dt, "B4", "=Summary!$B$3", f_link, DATE)
 labels = ["Entity", "State", "Bank / block", "Source row", "Deposit date", "Check #", "Payer / check writer", "Amount", "Memo (source)", "Booked in Sage?",
@@ -248,7 +252,7 @@ for i, r in enumerate(rows):
     put(dt, f"L{rr}", f'=IF(K{rr}="","no date",IF(K{rr}<1,"0-1 yrs",IF(K{rr}<2,"1-2 yrs",IF(K{rr}<3,"2-3 yrs",IF(K{rr}<5,"3-5 yrs","5+ yrs")))))')
     mf = memo_flag(r)
     put(dt, f"M{rr}", mf, fill=fill_warn if mf == "Yes" else None)
-    put(dt, f"N{rr}", f'=IF(M{rr}="Yes","Memo flag - not ours / unknown / hold: resolve",IF(OR(COUNTIF(Summary!$C$4:$L$4,H{rr})>0,AND(A{rr}="Philly",COUNTIF(Summary!$C$5:$L$5,H{rr})>0),AND(A{rr}="TUR",COUNTIF(Summary!$C$6:$L$6,H{rr})>0)),"Fee amount - presumed company revenue",IF(H{rr}<=Summary!$B$7,"Small amount - likely fee, review","Larger amount - likely includes agent commission")))', f_link)
+    put(dt, f"N{rr}", f'=IF(M{rr}="Yes","Memo flag - not ours / unknown / hold: resolve",IF(OR(COUNTIF(Summary!$C$4:$R$4,H{rr})>0,AND(A{rr}="Philly",COUNTIF(Summary!$C$5:$R$5,H{rr})>0),AND(A{rr}="TUR",COUNTIF(Summary!$C$6:$R$6,H{rr})>0),AND(A{rr}="Leading Edge",COUNTIF(Summary!$C$7:$R$7,H{rr})>0)),"Fee amount - presumed company revenue",IF(H{rr}<=Summary!$B$8,"Small amount - likely fee, review","Larger amount - likely includes agent commission")))', f_link)
     put(dt, f"O{rr}", f"=IFERROR(INDEX('State Rules'!$C${SR_FIRST}:$C${SR_LAST},MATCH($B{rr},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
     put(dt, f"P{rr}", f'=IF(OR(O{rr}="",E{rr}=""),"",EDATE(E{rr},12*O{rr}))', fmt=DATE)
     put(dt, f"Q{rr}", f"=IF(E{rr}=\"\",\"\",IFERROR(EDATE(E{rr},12*INDEX('State Rules'!$E${SR_FIRST}:$E${SR_LAST},MATCH($B{rr},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0))),\"\"))", fmt=DATE)
@@ -296,7 +300,8 @@ gaps = [
     ("ICA CLAUSES THAT REDUCE WHAT IS OWED TO AGENTS - legal question", "Every ICA lets the Broker hold or apply commissions against amounts the agent owes (dues, fees, E&O deductibles, indemnity) and conditions post-termination payouts on dues being paid in full. The Philly ICA goes further: an incomplete file 30 days past closing is paid 50/50 and 60 days past closing is 'forfeited'; a license not reactivated within 30 days means 'brokerage will keep 100% of commission'. TUR's agreement forfeits accrued commissions if the agent collects in their own name or breaches Section 5. A documented offset reduces the agent's share dollar for dollar. A contractual forfeiture is less certain: Alabama's act (and, per secondary sources, most states' acts) says a contractual limitation on the owner's right does not prevent property from being presumed abandoned. Whether Texas, Pennsylvania, Illinois or Florida would honor these clauses against an escheat claim is for counsel. Do not treat a forfeiture as the company's money until counsel says so AND the triggering facts (closing date, file status at day 60, termination date) are documented per item. See the ICA Terms tab.", "Counsel; Accounting to document per item."),
     ("WHEN THE AGENT'S SHARE BECOMES PAYABLE (dormancy trigger)", "Houston's TXR-2301 form is explicit: the associate's fee is payable when Broker receives Broker's fees (para. 16.C), so the deposit date is the trigger for Houston. Dallas, Chicago and Philly ICAs pay 'promptly after receipt and processing' but 'provided that Broker has received a complete File'. A condition that depends on the agent or the broker completing paperwork probably does not defer dormancy under anti-limitation provisions, but it is an argument counsel may want to assess. TUR agents are normally paid by the title company at closing; TUR's deposited checks are usually the broker's portion, lease or new-home commissions, so TUR's larger items need the Disbursement Authorization form to find the agent share.", "Counsel; Accounting."),
     ("DATA: the split exists on the file", "TUR's Disbursement Authorization form records TUR / Agent / Mentor amounts per transaction. Dallas, Chicago and Philly fees are on the Closing Disclosure. Pull these for each larger item to fill Detail cols V-X; that converts the upper-bound figures into the real reportable amount.", "Accounting / Paperless Pipeline."),
-    ("NOT PROVIDED: Houston fee schedule", "The Houston agreement incorporates an attached fee schedule that was not in the copy provided; the $49 E&O and $65 monthly are stated in the body. Houston's $644 items imply the same $595+$49 structure, but confirm.", "User."),
+    ("RESOLVED: fee schedules for every office", "The ICA Fee Structure Cheat Sheet (current) and JV ICA Transaction Fee Summary (older $495/$895 schedule) supplied 10/6/2026 cover Chicago, Dallas/Frisco, Houston/TUR, Philly, DC, TUR legacy and Leading Edge. All amounts are in Summary rows 4-7.", "Done."),
+    ("NOTE: Houston items at $495", "Two Houston items at exactly $495 (10/9/2024 Fidelity National Title 'Commissions'; 7/21/2026 Patten Title) are classified as fees because $495 was the sale transaction fee under the older schedule. If Houston had moved to $595 by those dates, treat them as commission instead.", "Accounting."),
     ("ACTION: work the oldest items first", "Houston has four items from 2022 and Dallas/TUR/Philly have 2023 items. Under the Texas 3-year test, every Texas item deposited before 3/1/2023 would already have been due on the July 1, 2026 report if it was owed to someone else; the Detail tab's 'Dormant date - LONG' column identifies them.", "Accounting."),
     ("ACTION: run due-diligence letters before any filing", "Every state in scope requires a written notice to the owner before remittance (TX: >$250, 60+ days before delivery; PA/IL/FL/AL/MO: $50 threshold per sources). A response from the owner stops the clock and lets you pay them directly instead of the state.", "Accounting; template letters."),
     ("ACTION: consider a Voluntary Disclosure Agreement for Texas", "Three Texas entities hold about 85% of the aged balance. Texas waives penalty and interest under a VDA but it must be requested before any Comptroller inquiry. Florida has a similar program. Confirm eligibility with the Comptroller or counsel.", "Counsel / Comptroller."),
@@ -338,6 +343,10 @@ ICA = [
  ("Philly", "", "same", "Para. 31 Fines and Penalties", "'3. Any incomplete file(s) 30 days past closing will be paid at a 50/50 split. 4. Any incomplete file(s) 60 days past closing will be forfeited and grounds for termination.'", "The most consequential clause for Philly's aged items: if a file was never completed, the ICA says the agent's share was forfeited at day 60 after closing. If counsel concludes Pennsylvania (or the agent's address state) honors this, those amounts are company revenue, not unclaimed property. Document the closing date and file status for each item before relying on it; anti-limitation provisions may override."),
  ("Philly", "", "same", "Para. 26 Contractor Information; Para. 28 Controlling Law; Para. 30 Paperless Pipeline", "Contractor must update mailing address. Controlling law: Pennsylvania. All documents must be uploaded to Paperless Pipeline within 72 hours.", "Last-known address should be on file. Paperless Pipeline should show whether each aged file was ever completed."),
 ]
+ICA += [
+ ("All", "n/a", "ICA Fee Structure Cheat Sheet (xlsx; the 'Fee Structure / ICA Breakdown' PDF is a scan of the same sheet)", "Current fee grid by office", "E&O $49 all offices (Chicago/Dallas: except referral; Philly: except personal sale). Residential sale fee $595 / $995 per side with price breaks at $650,000 (Chicago, Dallas, Houston/TUR) or $800,000 (Philly, DC). Commercial 12% min $595 (Chicago), 10% (Dallas, Houston/TUR, Philly), 5% (DC). Residential lease and referral 12% with minimums of $75 (Chicago, Dallas, max $995), $100 (Houston/TUR lease), $125 (Philly, DC); Houston/TUR and Philly referrals 10%. Caps 24 residential or $14,280 ($12,000 Houston/TUR); fee after cap $50 Dallas, $0 elsewhere. Philly enhanced E&O $110 on personal sales. Mentor 30%; Houston/TUR coaching 15%; broker leads 40% (Chicago, Dallas) or 25-50% (Philly). TUR legacy: 70% for 5 closings, 85% coaching, fee plan $150/$250/$350/$450 by commission, lease $100 or 10%, commercial 70/30 or 95/5. Leading Edge: E&O $0 ($35 in holding company); sale fee by price band $100 / $395 / $695 / $995 / $1,295 / $1,595 / $1,895 / $2,195 / $2,495 / $2,795; lease 10%; outside referral 10%; inside referral $0/$35; commercial 10%; cap $12,000 ($13,200 commercial-only); fee after cap $150; late fee $50 per billing period.", "Source for the all-entities and office-specific fee lists in Summary rows 4-7. Leading Edge's three aged items ($395, $150, $100) are exact schedule amounts."),
+ ("All", "n/a", "JV ICA Transaction Fee Summary (docx)", "Older fee schedule", "Residential sale fee $495 / $895 (Philly break $800,000; Chicago $650,001; Houston $650,000; DC $800,001; Dallas $650,000). E&O $49 (Houston originally $45, 'has been changed to $49'; DC $45). Philly leases/referrals lesser of 10% (min $100) or $495/$895. Chicago/Dallas other events 10% min $75 max $895; Houston max $495/$895; DC referral/lease 10% min $100 max $295 plus E&O. Dallas after-cap fee $50. Philly termination: 70/30 on executed contracts; license lapse not cured in 30 days, Broker keeps 100%. Dallas: transactions not closed before termination paid 70/30.", "Explains $495 / $895 / $544 / $944 / $45 / $295 as historical fee amounts; the oldest aged items (2022-2024) likely fall under this schedule. Restates the Philly and Dallas termination terms."),
+]
 for i, row in enumerate(ICA, 5):
     for j, v in enumerate(row, 1):
         c = ic.cell(i, j, v); c.font = f_bold if j == 1 else f_norm
@@ -357,7 +366,8 @@ lines = [
     "6. Ages are computed from the deposit date to the as-of date. Dormant dates = deposit date + the state period in months (EDATE).",
     "7. Classification hints are heuristics on amount and memo text only; they are not conclusions.",
     "8. State rules were researched by web search on 10/6/2026. Primary statute pages could not be opened from this session; see the State Rules tab 'Verification status' column for what is and is not confirmed.",
-    "9. Five independent contractor agreements were provided 10/6/2026 (Dallas/Frisco, Chicago, Houston TXR-2301, TUR legacy sign-up docs, Pennsylvania ICA). Fee amounts in Summary rows 4-6 come from the user and from those fee schedules; the ICA Terms tab cites each clause used.",
+    "9. Three fee documents were also provided 10/6/2026 (ICA Fee Structure Cheat Sheet xlsx, a scanned PDF of the same sheet, and the JV ICA Transaction Fee Summary docx with the older $495/$895 schedule); their amounts are in Summary rows 4-7.",
+    "10. Five independent contractor agreements were provided 10/6/2026 (Dallas/Frisco, Chicago, Houston TXR-2301, TUR legacy sign-up docs, Pennsylvania ICA). Fee amounts in Summary rows 4-6 come from the user and from those fee schedules; the ICA Terms tab cites each clause used.",
 ]
 for i, t in enumerate(lines, 3):
     put(mt, f"A{i}", t, wrap=True); mt.merge_cells(f"A{i}:J{i}"); mt.row_dimensions[i].height = 34

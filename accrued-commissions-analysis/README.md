@@ -39,20 +39,20 @@ All current-month items are September/October 2026 deposits.
 
 ## Classification of the prior-month items
 
-Fee amounts come from the user and from the fee schedules in the five independent contractor
-agreements (ICA Terms tab): all entities $644, $1,044, $69, $595, $995, $49, $110; Philly also
-$495 and $295; TUR also $150, $250, $350, $450, $60, $179. Small-amount threshold $250 (adjustable).
-Agents are independent contractors. Many older checks cannot be tied to an agent. Entity states:
-Dallas, Houston, TUR = TX; Chicago = IL; Philly = PA; Leading Edge = AL; Gallery = FL. All are
-LLCs (URE Dallas LLC, URE Houston LLC, URE Chicago LLC, Quick-Close Properties LLC dba Texas
-United Realty per the agreements); state of formation still to be provided.
+Fee amounts come from the user, the five independent contractor agreements, the ICA Fee Structure
+Cheat Sheet (current $595/$995 + $49 schedule, TUR legacy plan, Leading Edge price-band schedule)
+and the JV ICA Transaction Fee Summary (older $495/$895 + $45/$49 schedule). They are inputs on
+Summary rows 4-7 (all entities, Philly-only, TUR-only, Leading Edge-only). Small-amount threshold
+$250 (adjustable). Agents are independent contractors. Many older checks cannot be tied to an
+agent. Entity states: Dallas, Houston, TUR = TX; Chicago = IL; Philly = PA; Leading Edge = AL;
+Gallery = FL. The user believes each LLC was formed in its office state and is confirming.
 
 | Class (Detail col N) | Items | $ |
 |---|---:|---:|
-| Fee amount (exact match) - presumed company revenue | 39 | 18,346.00 |
-| Small amount (at or under $250) - likely fee, review | 20 | 2,608.33 |
+| Fee amount (exact match) - presumed company revenue | 48 | 20,825.00 |
+| Small amount (at or under $250) - likely fee, review | 15 | 2,058.33 |
 | Memo-flagged (not ours / unknown / duplicate / hold) - resolve with payer | 16 | 30,640.63 |
-| Larger amount - likely includes an agent commission split | 106 | 175,169.50 |
+| Larger amount - likely includes an agent commission split | 102 | 173,240.50 |
 
 ## Exposure (upper bounds, applied to the larger-amount and memo-flagged items only)
 
@@ -60,12 +60,12 @@ United Realty per the agreements); state of formation still to be provided.
 |---|---|---:|---:|
 | Dallas | TX general, 3 yrs | 6,707.80 | 8,042.30 |
 | Houston | TX general, 3 yrs | 5,636.60 | 6,011.60 |
-| TUR | TX general, 3 yrs | 1,188.00 | 2,917.50 |
+| TUR | TX general, 3 yrs | 644.00 | 2,373.50 |
 | Philly | PA wages/commissions, 2 yrs | 8,566.41 | 12,172.66 |
-| Leading Edge | AL compensation, 1 yr | 0.00 | 395.00 |
+| Leading Edge | AL compensation, 1 yr | 0.00 | 0.00 |
 | Gallery | FL general, 5 yrs | 0.00 | 0.00 |
 | Chicago | IL compensation, 1 yr | 0.00 | 0.00 |
-| **Total** | | **22,098.81** | **29,539.06** |
+| **Total** | | **21,554.81** | **28,600.06** |
 
 If Texas were instead held to its 1-year wage rule the Texas figure today would be far higher
 (see Summary cols T-U). The Texas 1-year rule is tied to a Labor Code definition of wages that
