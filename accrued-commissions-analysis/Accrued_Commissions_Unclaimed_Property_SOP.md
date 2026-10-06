@@ -4,37 +4,27 @@ As of October 6, 2026. Snapshot of the living Claude Doc; the doc is the editabl
 
 ## Purpose, scope and cadence
 
-Unapplied commission deposits are matched monthly, reviewed for unclaimed property quarterly, and reported to the states on each state's annual calendar. Quarterly is the right review cadence: dormancy periods run one to five years, so nothing turns reportable between quarters that a quarterly review would miss, and the filing cutoffs (March 1, June 30, December 31) each fall at a quarter boundary.
+Unapplied commission deposits are applied in the ordinary course of business, with no deadline, and are reviewed quarterly against each state's dormancy threshold. Items that have crossed the threshold, or will cross it before the next state report cutoff, are resolved and taken off the books: paid to the owner, refunded to the payer, remitted to the state, or retained with documented support. Quarterly is the right cadence: dormancy periods run one to five years, and the state cutoffs (March 1, June 30, December 31) each fall at a quarter boundary.
 
-This SOP covers the accrued commission balances on every entity tab of the United Cash Requirements workbook: Dallas, Houston, Texas United Realty (TUR), Chicago, Philly, Leading Edge, Gallery and DC. It applies to every check or wire deposited into an office operating account that has not been matched to a transaction and booked in Sage.
+This is a standing policy. It carries no balances or dates of its own; the current figures, the aged-item detail and each quarter's decisions live in the analysis workbook and the quarterly findings memo. It covers every check or wire deposited into an office operating account of Dallas, Houston, Texas United Realty (TUR), Chicago, Philly, Leading Edge, Gallery or DC that has not yet been matched to a transaction and booked in Sage.
 
 | Cadence | What happens | Owner | Output |
 | --- | --- | --- | --- |
-| Daily | Deposits logged on the entity tab; booked items marked with an x | Cash team | Cash Requirements workbook |
-| Monthly, by the 15th | Every deposit older than 30 days is matched, booked, refunded or escalated | Office accountant | Cleared items; escalation list |
-| Quarterly, within 30 days of quarter end | Aged items classified, agent share estimated, dormancy tested, due-diligence letters queued | Controller | Updated analysis workbook; quarterly memo |
-| Annually, per state | Reports filed and funds remitted for items past dormancy | Controller with counsel | State filings; remittance JEs |
+| Ongoing | Deposits logged on the entity tab and applied as transactions are identified; booked items marked with an x | Cash team, office accountants | Cash Requirements workbook |
+| Quarterly, within 30 days of quarter end | Aged items tested against the dormancy threshold; items past it or approaching the next cutoff are resolved; due-diligence letters queued | Controller | Updated analysis workbook; quarterly findings memo |
+| Annually, per state | Reports filed and funds remitted for items past dormancy that were not resolved | Controller with counsel | State filings; remittance JEs |
 
 This SOP is not legal advice. The state rules it relies on were compiled from statute summaries and state treasury guidance on 10/6/2026 and must be confirmed by counsel before the first filing.
 
-## Background and findings as of 10/6/2026
+## What the accrued commission balance is
 
 The accrued commission balance is unapplied cash, not a commission liability we have measured. Each entity tab keeps a "Previous Month's Accrued Commissions" block of deposited checks, mostly from title companies, landlords and other brokers. A check stays in the block until it is matched to a Paperless Pipeline transaction and booked in Sage. The accrued balance is simply the sum of the unmatched checks.
 
 Each check is one of three things: the company's own fee (the transaction fee and E&O paid through closing), a commission that includes an agent's share, or money that is not ours at all. Only the agent's share, and anything owed back to a payer, can ever be unclaimed property. Nothing has been written off or reported to any state before now.
 
-| Entity | Unbooked prior-month deposits | Items | Oldest | Of which likely includes agent commission |
-| --- | --: | --: | --- | --: |
-| Dallas | 59,991.62 | 50 | Mar 2023 | 29,646.91 |
-| Houston | 76,889.50 | 40 | Jan 2022 | 69,905.50 |
-| TUR | 55,528.45 | 50 | Jan 2023 | 46,822.20 |
-| Philly | 29,708.78 | 34 | Sep 2023 | 22,864.78 |
-| Gallery | 4,001.11 | 4 | May 2026 | 4,001.11 |
-| Leading Edge | 645.00 | 3 | Apr 2026 | 0.00 |
-| Chicago, DC | 0.00 | 0 |  | 0.00 |
-| Total | 226,764.46 | 181 |  | 173,240.50 |
+Deposits often sit in the block for a long time before they are applied, and that is acceptable. Late application is not the risk. The risk is an amount that belongs to an agent or a payer crossing its state's dormancy threshold and reaching a report cutoff without having been paid, refunded, or reported. This policy exists to catch those items each quarter and get them off the books.
 
-A further 144,542.00 of September and October 2026 deposits sits in the current-month blocks and is in normal matching. Of the 181 aged items, 48 are exact fee amounts (20,825.00), 15 are small amounts under $250 (2,058.33), 16 carry memos saying the check is not ours or the agent is unknown (30,640.63), and 102 are larger checks that likely include an agent's share (173,240.50). Under each entity's likely dormancy test, at most 13,407.75 is dormant today and at most 21,256.75 will be dormant at the next report cutoff, before the agent share is deducted for the company's fee. The supporting detail is in the analysis workbook, Accrued_Commissions_Unclaimed_Property_Analysis.xlsx.
+Current balances, aging, classification and exposure by entity are in Accrued_Commissions_Unclaimed_Property_Analysis.xlsx, rebuilt each quarter, and summarized in that quarter's findings memo. The first findings memo, dated 10/6/2026, also carries the plan for working the initial backlog.
 
 ## Legal framework
 
@@ -55,42 +45,35 @@ The Controller owns the process end to end; the office accountants own the match
 | Role | Responsibilities |
 | --- | --- |
 | Cash team | Log every deposit on the entity tab the day it posts, with date, check number, amount, payer and memo. Mark the x when the item is booked in Sage. |
-| Office accountant (per entity) | Match deposits to Paperless Pipeline within 30 days. Book fees to revenue, pay agents, refund payers. Escalate anything unmatched at 30 days. |
-| Controller | Run the quarterly review, maintain the analysis workbook, approve estimated splits, approve due-diligence letters, prepare state reports and remittance JEs, keep the filing calendar. |
+| Office accountant (per entity) | Apply deposits to transactions in the ordinary course. When an item is applied, book the fee to revenue, pay the agent, or refund the payer. Record the agent's name and address state whenever it becomes known. |
+| Controller | Run the quarterly threshold review, maintain the analysis workbook, approve estimated splits, approve due-diligence letters, prepare state reports and remittance JEs, write the quarterly findings memo, keep the filing calendar. |
 | Counsel or unclaimed property advisor | Confirm dormancy periods, the priority-rule application, treatment of forfeiture and offset clauses, VDA strategy, and sign off before each filing. |
-| CFO | Approve the one-time remediation plan, any VDA submission, and any decision to retain an amount under a forfeiture clause. |
+| CFO | Approve any VDA submission and any decision to retain an amount under a forfeiture clause. |
 
-## Monthly procedure: clear every deposit within 30 days
+## Ongoing application of deposits
 
-The goal of the monthly step is that no deposit reaches the quarterly review unexplained. By the 15th of each month, each office accountant works every deposit older than 30 days on their entity tab.
+Deposits are applied when the transaction is identified, with no deadline. Some commissions are applied long after deposit and that is normal. Three things are required of the ongoing process so that the quarterly review has what it needs.
 
-1. Pull the unbooked rows (no x) from the entity tab's deposited-checks and prior-month accrued blocks.
-2. Match each to a Paperless Pipeline transaction by check number, payer, property address or closing date. Ask the payer for the file reference if the memo is blank; a title company can identify a check from its number and date in minutes.
-3. Classify and act:
-    - Exact fee amount (see the fee lists in the workbook, Summary rows 4 to 7): book to transaction fee or E&O revenue. No further action.
-    - Commission check with an identifiable agent: book the company's fee to revenue, pay the agent's share, and record the agent's name and address state in the workbook.
-    - Check that is not ours (wrong office, duplicate, unknown property): refund the payer and document the refund.
-    - Legal hold or dispute: segregate, note the reason, and leave it in the block with a hold flag.
-4. Anything still unmatched at 30 days is escalated to the Controller with the research done so far and goes on the quarterly list.
-5. Record the agent's name, last-known address state and the fee or agent split in the analysis workbook's Detail tab for every item cleared or escalated. This is the record the priority rule depends on.
+1. Every deposit carries its date, check number, amount, payer and memo on the entity tab from the day it posts. The deposit date is the dormancy trigger, so it must be right.
+2. When an item is applied, it is classified and treated per the treatment rules: fee to revenue, agent paid, payer refunded, or hold flagged. The agent's name and last-known address state are recorded in the analysis workbook's Detail tab at that time.
+3. Anything learned about an unapplied item (a payer's file reference, a likely agent, a note that the check is not ours) is written in the memo column so it is there at the next quarterly review.
 
 An item is never written off to income because the owner cannot be found. It stays on the list until it is paid, refunded, escheated, or counsel confirms the company is entitled to it.
 
 ## Quarterly unclaimed property review
 
-Within 30 days of each quarter end, the Controller re-runs the analysis workbook, works the aged list, and documents the result in a short quarterly memo. The review takes the escalated items from the monthly step and answers three questions for each: whose money is it, how much of it, and when does it become reportable.
+Within 30 days of each quarter end, the Controller re-runs the analysis workbook and works only the items that matter for unclaimed property: those past their state's dormancy threshold today, and those that will be past it at the next state report cutoff. Everything younger is left to the ordinary application process. The result is documented in a short quarterly findings memo.
 
-1. **Refresh the data.** Re-extract the prior-month accrued blocks from the Cash Requirements workbook into the analysis workbook (the build script does this from the two CSV extracts) and set the as-of date to quarter end. Confirm every entity total ties to the tab's outstanding amount.
-2. **Update the fee lists** if any office changed its fee schedule during the quarter.
-3. **Classify.** Confirm the workbook's classification of each item: fee, small amount, memo-flagged, or larger commission check. Override any item the monthly research has resolved.
-4. **Identify owners.** For every larger item, record the agent's name and last-known address state from the Agent Information sheet or Paperless Pipeline. Where the agent is unknown, the item defaults to the entity's formation state.
-5. **Estimate the split.** Enter the documented fee and agent share where the Disbursement Authorization or Closing Disclosure exists. Where it does not, apply the estimation rule in the next section.
-6. **Test dormancy.** The workbook flags each item dormant today and dormant at the next state cutoff under the likely test for its governing state.
-7. **Queue due diligence.** Every item that will be dormant at the next cutoff and has an owner address goes on the due-diligence letter list for that state's window.
-8. **Decide and document.** For each dormant item: pay the agent, refund the payer, report and remit, or hold pending counsel. Items held under a forfeiture or offset argument are listed separately with the supporting facts.
-9. **Write the quarterly memo.** One page: balance by entity, aging, dormant amounts by state, letters sent, items resolved this quarter, items referred to counsel, and the next filing dates.
+1. **Refresh the data.** Re-extract the prior-month accrued blocks from the Cash Requirements workbook into the analysis workbook (the build script does this from the two CSV extracts) and set the as-of date to quarter end. Confirm every entity total ties to the tab's outstanding amount. Update the fee lists if an office changed its schedule.
+2. **Pull the threshold list.** Filter the Detail tab to items flagged dormant today or dormant at the next cutoff under the likely test for their governing state. This is the working list for the quarter.
+3. **Classify each item on the list.** Fee, small amount, memo-flagged, or larger commission check. Fee and confirmed small items are booked to revenue and removed. Memo-flagged items are refunded to the payer and removed.
+4. **Identify the owner of each remaining item.** Record the agent's name and last-known address state from the Agent Information sheet or Paperless Pipeline. Where the agent cannot be identified, the item defaults to the entity's formation state.
+5. **Set the agent share.** Enter the documented split where the Disbursement Authorization or Closing Disclosure exists; otherwise apply the estimation rule. Enter any documented offset.
+6. **Send due-diligence letters** to every owner with an address, within that state's window before the cutoff. A response lets the company pay the owner and close the item.
+7. **Resolve and take off the books.** For each item: pay the agent, refund the payer, remit to the state on the next report, or retain with a counsel memo. Items held for counsel are listed separately with the supporting facts.
+8. **Write the quarterly findings memo.** One page: threshold items by entity and state, how each was resolved, dollars remitted or scheduled for remittance, items referred to counsel, and the next filing dates.
 
-The quarterly memo and the updated workbook are saved to the Unclaimed Property Analysis folder and to the repository branch so the history of each item is preserved.
+The findings memo and the quarter's workbook are saved to the Unclaimed Property Analysis folder and to the repository branch so the history of each item is preserved for auditors.
 
 ## Treatment rules by item class
 
@@ -145,40 +128,34 @@ Keep every record that supports an item for ten years after the report that incl
 
 For each item, retain: the deposit record and check image, the Paperless Pipeline file or Disbursement Authorization, the Closing Disclosure, the agent's Independent Contractor Agreement and Agent Information sheet, the due-diligence letter and any response, the refund or payment record, the state report and remittance confirmation, and any counsel memo supporting an offset or retention. The quarterly memos and each quarter's workbook are kept for the same period.
 
-## One-time remediation of the existing backlog
+## Initial remediation
 
-The 181 aged items are worked once, oldest first, before the recurring cadence takes over. The sequence is designed so that the easy money leaves the list first and the legal questions reach counsel with facts attached.
+The first review under this policy works the backlog that accumulated before it existed. It follows the same quarterly steps, applied to every item already past a threshold or approaching the next cutoff, and it packages the open legal questions for counsel in one submission rather than piecemeal.
 
-1. **Book the fee checks.** 48 items, 20,825.00, are exact fee amounts. Book them to revenue now. Review the 15 small items (2,058.33) and book those confirmed as fees.
-2. **Refund the memo-flagged items.** 16 items, 30,640.63, carry memos saying the check is not ours or the agent is unknown. Contact each payer, confirm, and refund. Houston's 1,500.00 law-enforcement hold stays segregated.
-3. **Research the larger items, oldest first.** 102 items, 173,240.50. Start with Houston's four 2022 checks and every 2023 item. For each: identify the agent from Paperless Pipeline or the payer, record the address state, enter the documented or estimated split.
-4. **Pay the agents you find.** An agent paid is an item closed. Letters first where the agent has left.
-5. **Take the open questions to counsel in one package.** Confirm the Texas 3-year position for contractor commissions, the formation-state default for Chicago and Philly, treatment of the Philly 60-day forfeiture and the offset clauses, and whether a Texas VDA should be filed for the five Texas entities together.
-6. **File.** Report and remit the dormant remainder on each state's next cycle (Texas by July 1, 2027 for items dormant at March 1, 2027), through a VDA where counsel recommends it.
+1. Book the fee checks and confirmed small items to revenue.
+2. Refund the memo-flagged items to their payers; keep any legal-hold item segregated.
+3. Work the threshold items oldest first: identify the owner, set the split, send letters.
+4. Take the open questions to counsel in one package: the Texas period for contractor commissions, the formation-state default for the Chicago and Philly entities, the Philly forfeiture and offset clauses, and whether to file a Texas voluntary disclosure for the Texas entities together.
+5. Report and remit the dormant remainder on each state's next cycle, through a VDA where counsel recommends it.
 
-| Decision for CFO and counsel | Options | Effect |
-| --- | --- | --- |
-| Texas period for contractor commissions | 3-year general (likely) or 1-year wage | Texas dormant today: 13,407.75 at most under 3 years; far higher under 1 year |
-| Philly forfeiture clause | Apply with documentation, or disregard | Could move most of Philly's aged commission items from reportable to retained |
-| Texas VDA | File now for the Texas entities, or report on the normal cycle | VDA waives penalty and interest but must precede any Comptroller contact |
-| Estimation rule | Lower fee tier (conservative) or actual tier where known | Sets the agent share for every item without paperwork |
+The figures, the item list and the decisions put to the CFO and counsel for the initial remediation are in the findings memo dated 10/6/2026 and the analysis workbook, not here.
 
-Target: fee and refund items cleared within 30 days; research complete and counsel package delivered within 90 days; first filings on the 2027 cycle.
+Target: the counsel package delivered before the first state cutoff that follows adoption of this policy, and the first filings on that state's next cycle.
 
 ## Controls, KPIs and escalation
 
-The test of this process is that nothing ages past 90 days without a documented reason, and nothing reaches a state cutoff without a letter having been sent.
+The test of this policy is that no amount owed to an agent or payer reaches a state report cutoff without having been resolved or reported, and that nothing is retained by the company without documented support. Age alone is not a failure; a deposit may sit unapplied for a long time without breaching this policy.
 
 | Measure | Target | Reviewed |
 | --- | --- | --- |
-| Unbooked deposits older than 30 days, by entity | Zero without an escalation note | Monthly |
-| Unbooked deposits older than 90 days, by entity | Zero without a Controller-approved reason | Quarterly |
-| Items with no agent identified, older than 180 days | Trending to zero; each has a documented search | Quarterly |
-| Dollars dormant at the next state cutoff with no letter sent | Zero | Quarterly, before each letter window |
+| Items past their dormancy threshold with no resolution recorded | Zero at each quarter end | Quarterly |
+| Dollars that will be dormant at the next state cutoff with no due-diligence letter sent | Zero before each state's letter window closes | Quarterly |
 | Items retained under offset or forfeiture without a counsel memo | Zero | Quarterly |
+| Items with no agent identified that are past threshold | Each has a documented search and a governing state assigned | Quarterly |
 | Filings made by each state deadline | 100% | Annually |
+| Quarterly findings memo issued | Within 30 days of quarter end | Quarterly |
 
-Escalation: any single item over $5,000 unmatched at 60 days, or any entity with more than $25,000 unmatched over 90 days, is reported to the CFO in the quarterly memo. Any contact from a state administrator or audit firm about unclaimed property goes to the Controller and counsel the same day, because a VDA is no longer available once contact has been made.
+Escalation: any threshold item over $5,000 that cannot be resolved by the quarterly memo date goes to the CFO with the reason. Any contact from a state administrator or audit firm about unclaimed property goes to the Controller and counsel the same day, because a voluntary disclosure is no longer available once contact has been made.
 
 ## Appendix
 

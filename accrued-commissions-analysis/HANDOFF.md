@@ -14,7 +14,12 @@ documents, entity database) are NOT available in a new session; the facts taken 
 | `source-extract/accrued_rows.csv` | Every row of every entity's "Previous Month's Accrued Commissions" block, booked or not. |
 | `source-extract/current_month_unbooked.csv` | Current-month unbooked deposits (all Sept/Oct 2026). |
 | `README.md` | Memo-style summary with the current figures. Keep its numbers in sync with the workbook. |
-| `Accrued_Commissions_Unclaimed_Property_SOP.md` / `.docx` | Snapshots of the SOP. The editable master is the Claude Doc: https://claude.ai/code/artifact/047dd24f-815c-4fdd-8c8c-414c9201c552 |
+| `Accrued_Commissions_Unclaimed_Property_SOP.md` / `.docx` | Snapshots of the SOP. The editable master is the Claude Doc: https://claude.ai/code/artifact/047dd24f-815c-4fdd-8c8c-414c9201c552. The SOP is a STANDING POLICY with no figures in it (for the team and for auditors); it is not updated each quarter. Point-in-time figures and the backlog plan live in the README (which serves as the 10/6/2026 findings memo) and the workbook. |
+
+**How the user wants the process to work (stated 10/6/2026, after reviewing the SOP draft):**
+- Deposits are applied in the ordinary course with NO deadline. Accrued commissions often sit a long time and get applied much later; that is normal and not a control failure. Do not reintroduce 30-day or 90-day matching rules, aging KPIs, or "clear the backlog in a quarter" targets.
+- The quarterly review is about items that have hit the dormancy THRESHOLD (or will hit it before the next state cutoff) and getting those officially off the books: pay the agent, refund the payer, remit to the state, or retain with counsel support. Everything younger is left alone.
+- The SOP stays evergreen. Each quarter produces a short findings memo with that quarter's figures; the SOP itself is only changed when the policy changes (e.g. a verified statute citation in the appendix).
 
 The user also keeps copies at Desktop > Claude Code > Unclaimed Property Analysis. Nothing in a cloud session can write there; they download from GitHub or the chat file cards.
 
