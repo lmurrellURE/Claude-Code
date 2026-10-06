@@ -39,17 +39,20 @@ All current-month items are September/October 2026 deposits.
 
 ## Classification of the prior-month items
 
-Per the user (10/6/2026), checks for the company's own fees are typically $644, $1,044, $69 or
-other small amounts. Agents are independent contractors. Many older checks cannot be tied to an
-agent. Entity states confirmed: Dallas, Houston, TUR = TX; Chicago = IL; Philly = PA; Leading
-Edge = AL; Gallery = FL. All are LLCs; state of formation still to be provided.
+Fee amounts come from the user and from the fee schedules in the five independent contractor
+agreements (ICA Terms tab): all entities $644, $1,044, $69, $595, $995, $49, $110; Philly also
+$495 and $295; TUR also $150, $250, $350, $450, $60, $179. Small-amount threshold $250 (adjustable).
+Agents are independent contractors. Many older checks cannot be tied to an agent. Entity states:
+Dallas, Houston, TUR = TX; Chicago = IL; Philly = PA; Leading Edge = AL; Gallery = FL. All are
+LLCs (URE Dallas LLC, URE Houston LLC, URE Chicago LLC, Quick-Close Properties LLC dba Texas
+United Realty per the agreements); state of formation still to be provided.
 
 | Class (Detail col N) | Items | $ |
 |---|---:|---:|
-| Fee amount (exact match to $644 / $1,044 / $69) - presumed company revenue | 16 | 10,529.00 |
-| Small amount (at or under $250, an adjustable threshold) - likely fee, review | 33 | 4,575.33 |
+| Fee amount (exact match) - presumed company revenue | 39 | 18,346.00 |
+| Small amount (at or under $250) - likely fee, review | 20 | 2,608.33 |
 | Memo-flagged (not ours / unknown / duplicate / hold) - resolve with payer | 16 | 30,640.63 |
-| Larger amount - likely includes an agent commission split | 116 | 181,019.50 |
+| Larger amount - likely includes an agent commission split | 106 | 175,169.50 |
 
 ## Exposure (upper bounds, applied to the larger-amount and memo-flagged items only)
 
@@ -58,20 +61,23 @@ Edge = AL; Gallery = FL. All are LLCs; state of formation still to be provided.
 | Dallas | TX general, 3 yrs | 6,707.80 | 8,042.30 |
 | Houston | TX general, 3 yrs | 5,636.60 | 6,011.60 |
 | TUR | TX general, 3 yrs | 1,188.00 | 2,917.50 |
-| Philly | PA wages/commissions, 2 yrs | 10,651.41 | 15,347.66 |
+| Philly | PA wages/commissions, 2 yrs | 8,566.41 | 12,172.66 |
 | Leading Edge | AL compensation, 1 yr | 0.00 | 395.00 |
 | Gallery | FL general, 5 yrs | 0.00 | 0.00 |
 | Chicago | IL compensation, 1 yr | 0.00 | 0.00 |
-| **Total** | | **24,183.81** | **32,714.06** |
+| **Total** | | **22,098.81** | **29,539.06** |
 
-If Texas were instead held to its 1-year wage rule, the Texas figure today would be 80,411.74
-rather than 13,532.40. The Texas 1-year rule is tied to a Labor Code definition of wages that
+If Texas were instead held to its 1-year wage rule the Texas figure today would be far higher
+(see Summary cols T-U). The Texas 1-year rule is tied to a Labor Code definition of wages that
 excludes independent contractors, which is why the 3-year test is treated as likely; counsel
 should confirm.
 
-Even these are upper bounds: within a larger check only the agent's share is reportable, and
-the company's split is revenue. Unknown-agent items are reportable to the state where the
-holding LLC was formed (second priority rule), not to the office's state.
+Even these are upper bounds: within a larger check only the agent's share is reportable, the
+company's split is revenue, and every ICA gives the Broker offset rights for amounts the agent
+owes. The Philly ICA also forfeits the agent's share on files still incomplete 60 days after
+closing and retains 100% where a license is not reactivated within 30 days; whether an escheat
+claim honors such clauses is a legal question (anti-limitation provisions). Unknown-agent items
+are reportable to the state where the holding LLC was formed (second priority rule).
 
 ## Files
 
