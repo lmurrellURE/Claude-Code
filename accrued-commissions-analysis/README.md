@@ -86,6 +86,9 @@ claim honors such clauses is a legal question (anti-limitation provisions).
 
 ## Files
 
+- `HANDOFF.md` - everything a new session needs to continue (files, established facts, figures,
+  statute pages to verify). `NEXT_SESSION_PROMPT.md` - the prompt to paste into that session.
+
 - `Accrued_Commissions_Unclaimed_Property_SOP.md` / `.docx` - the SOP and memo (monthly matching, quarterly
   unclaimed property review, treatment rules, state calendar, accounting, remediation plan). Snapshot of the
   editable Claude Doc.
