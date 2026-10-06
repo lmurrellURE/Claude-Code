@@ -101,7 +101,7 @@ still reduce the agent's share.
   statute pages to verify). `NEXT_SESSION_PROMPT.md` - the prompt to paste into that session.
 
 - `Accrued_Commissions_Unclaimed_Property_SOP.md` / `.docx` - the standing SOP (ongoing application of
-  deposits, quarterly unclaimed property review, treatment rules, state calendar, accounting, initial
+  deposits, semi-annual unclaimed property review, treatment rules, state calendar, accounting, initial
   remediation, appendix with the verified citations). Snapshot of the editable Claude Doc.
 - `Accrued_Commissions_CFO_Controller_Briefing.docx` - one-page briefing for the CFO and Controller
   (10/6/2026): the decision requested, the balance, exposure under the verified rules with the Texas
@@ -152,12 +152,21 @@ Nothing here is legal advice.
 
 ## Decisions and process notes (10/6/2026)
 
-- Process owner: the quarterly threshold review and the annual state filings are owned by the Director
+- Process owner: the semi-annual threshold review and the annual state filings are owned by the Director
   of Financial Reporting and Analysis, with counsel. The CFO approves any VDA and any retention.
 - Revenue timing: fee checks and confirmed small items are company revenue, not unclaimed property,
   but they are not moved to revenue en masse. They stay in the accrued balance, are recognized when
   matched in the ordinary course, and are already captured by the year-end revenue true-up. At a
-  quarterly review only an item being written off at that time is booked to revenue.
+  review only an item being written off at that time is booked to revenue.
+- Review cadence: twice a year, in early December (as of November 30, ahead of the December 31
+  cutoffs for Pennsylvania, Illinois and Florida and the March 1 Texas cutoff) and early June (as of
+  May 31, ahead of Alabama's June 30 cutoff and the Texas July 1 remittance). The December review
+  must finish before Pennsylvania's letter window closes on February 14.
+- If a cutoff is missed: the item goes on the next report with its original dormancy date; the state
+  may charge interest and penalties (Texas 10% a year plus 5% to 10% of value; Pennsylvania 12% a year
+  plus up to $1,000 a day; Florida up to $500 a day plus 25% of unreported value if wilful; Alabama
+  $100 a business day), each waivable for a good-faith holder. Enforcement windows run from a filed
+  report and are tolled where nothing was reported. Section numbers are on the workbook's Gaps tab.
 - After remittance: good-faith delivery to a state relieves the holder of liability for the property
   (Tex. Prop. Code 74.304; 72 P.S. 1301.14; Fla. Stat. 717.1201; Ala. Code 35-12-79; 765 ILCS
   1026/15-604). If an agent later submits the file for a remitted commission, the transaction is still

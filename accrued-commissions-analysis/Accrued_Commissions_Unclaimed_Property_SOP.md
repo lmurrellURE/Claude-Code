@@ -4,14 +4,14 @@ As of October 6, 2026. Snapshot of the living Claude Doc; the doc is the editabl
 
 ## Purpose, scope and cadence
 
-Unapplied commission deposits are applied in the ordinary course of business, with no deadline, and are reviewed quarterly against each state's dormancy threshold. Items that have crossed the threshold, or will cross it before the next state report cutoff, are resolved and taken off the books: paid to the owner, refunded to the payer, remitted to the state, or retained with documented support. Quarterly is the right cadence: dormancy periods run one to five years, and the state cutoffs (March 1, June 30, December 31) each fall at a quarter boundary.
+Unapplied commission deposits are applied in the ordinary course of business, with no deadline, and are reviewed twice a year against each state's dormancy threshold. Items that have crossed the threshold, or will cross it before the next state report cutoff, are resolved and taken off the books: paid to the owner, refunded to the payer, remitted to the state, or retained with documented support. Twice a year is the right cadence: dormancy periods run one to three years, a review in early December feeds the December 31 cutoffs (Pennsylvania, Illinois, Florida) and the March 1 Texas cutoff, and a review in early June feeds the June 30 Alabama cutoff and the July 1 Texas remittance.
 
-This is a standing policy. It carries no balances or dates of its own; the current figures, the aged-item detail and each quarter's decisions live in the analysis workbook and the quarterly findings memo. It covers every check or wire deposited into an office operating account of Dallas, Houston, Texas United Realty (TUR), Chicago, Philly, Leading Edge, Gallery or DC that has not yet been matched to a transaction and booked in Sage.
+This is a standing policy. It carries no balances or dates of its own; the current figures, the aged-item detail and each review's decisions live in the analysis workbook and the semi-annual findings memo. It covers every check or wire deposited into an office operating account of Dallas, Houston, Texas United Realty (TUR), Chicago, Philly, Leading Edge, Gallery or DC that has not yet been matched to a transaction and booked in Sage.
 
 | Cadence | What happens | Owner | Output |
 | --- | --- | --- | --- |
 | Ongoing | Deposits logged on the entity tab and applied as transactions are identified; booked items marked with an x | Cash team, office accountants | Cash Requirements workbook |
-| Quarterly, within 30 days of quarter end | Aged items tested against the dormancy threshold; items past it or approaching the next cutoff are resolved; due-diligence letters queued | Director of Financial Reporting and Analysis | Updated analysis workbook; quarterly findings memo |
+| Twice a year: early December (as of November 30) and early June (as of May 31), ahead of the state cutoffs | Aged items tested against the dormancy threshold; items past it or approaching the next cutoff are resolved; due-diligence letters queued | Director of Financial Reporting and Analysis | Updated analysis workbook; semi-annual findings memo |
 | Annually, per state | Reports filed and funds remitted for items past dormancy that were not resolved | Director of Financial Reporting and Analysis with counsel | State filings; remittance JEs |
 
 This SOP is not legal advice. The state rules it relies on were verified from the statute text and state treasury pages on 10/6/2026 (appendix); counsel confirms the adopted positions before the first filing.
@@ -22,9 +22,9 @@ The accrued commission balance is unapplied cash, not a commission liability we 
 
 Each check is one of three things: the company's own fee (the transaction fee and E&O paid through closing), a commission that includes an agent's share, or money that is not ours at all. Only the agent's share, and anything owed back to a payer, can ever be unclaimed property. Nothing has been written off or reported to any state before now.
 
-Deposits often sit in the block for a long time before they are applied, and that is acceptable. Late application is not the risk. The risk is an amount that belongs to an agent or a payer crossing its state's dormancy threshold and reaching a report cutoff without having been paid, refunded, or reported. This policy exists to catch those items each quarter and get them off the books.
+Deposits often sit in the block for a long time before they are applied, and that is acceptable. Late application is not the risk. The risk is an amount that belongs to an agent or a payer crossing its state's dormancy threshold and reaching a report cutoff without having been paid, refunded, or reported. This policy exists to catch those items at each semi-annual review and get them off the books.
 
-Current balances, aging, classification and exposure by entity are in Accrued_Commissions_Unclaimed_Property_Analysis.xlsx, rebuilt each quarter, and summarized in that quarter's findings memo. The first findings memo, dated 10/6/2026, also carries the plan for working the initial backlog.
+Current balances, aging, classification and exposure by entity are in Accrued_Commissions_Unclaimed_Property_Analysis.xlsx, rebuilt at each semi-annual review, and summarized in that review's findings memo. The first findings memo, dated 10/6/2026, also carries the plan for working the initial backlog.
 
 ## Legal framework
 
@@ -46,34 +46,34 @@ The Director of Financial Reporting and Analysis owns the process end to end; th
 | --- | --- |
 | Cash team | Log every deposit on the entity tab the day it posts, with date, check number, amount, payer and memo. Mark the x when the item is booked in Sage. |
 | Office accountant (per entity) | Apply deposits to transactions in the ordinary course. When an item is applied, book the fee to revenue, pay the agent, or refund the payer. Record the agent's name and address state whenever it becomes known. |
-| Director of Financial Reporting and Analysis | Run the quarterly threshold review, maintain the analysis workbook, approve estimated splits, approve due-diligence letters, prepare state reports and remittance JEs, write the quarterly findings memo, keep the filing calendar. |
+| Director of Financial Reporting and Analysis | Run the semi-annual threshold review, maintain the analysis workbook, approve estimated splits, approve due-diligence letters, prepare state reports and remittance JEs, write the semi-annual findings memo, keep the filing calendar. |
 | Counsel or unclaimed property advisor | Confirm dormancy periods, the priority-rule application, treatment of forfeiture and offset clauses, VDA strategy, and sign off before each filing. |
 | CFO | Approve any VDA submission and any decision to retain an amount under a forfeiture clause. |
 
 ## Ongoing application of deposits
 
-Deposits are applied when the transaction is identified, with no deadline. Some commissions are applied long after deposit and that is normal. Three things are required of the ongoing process so that the quarterly review has what it needs.
+Deposits are applied when the transaction is identified, with no deadline. Some commissions are applied long after deposit and that is normal. Three things are required of the ongoing process so that the semi-annual review has what it needs.
 
 1. Every deposit carries its date, check number, amount, payer and memo on the entity tab from the day it posts. The deposit date is the dormancy trigger, so it must be right.
 2. When an item is applied, it is classified and treated per the treatment rules: fee to revenue, agent paid, payer refunded, or hold flagged. The agent's name and last-known address state are recorded in the analysis workbook's Detail tab at that time.
-3. Anything learned about an unapplied item (a payer's file reference, a likely agent, a note that the check is not ours) is written in the memo column so it is there at the next quarterly review.
+3. Anything learned about an unapplied item (a payer's file reference, a likely agent, a note that the check is not ours) is written in the memo column so it is there at the next semi-annual review.
 
 An item is never written off to income because the owner cannot be found. It stays on the list until it is paid, refunded, escheated, or counsel confirms the company is entitled to it.
 
-## Quarterly unclaimed property review
+## Semi-annual unclaimed property review
 
-Within 30 days of each quarter end, the Director of Financial Reporting and Analysis re-runs the analysis workbook and works only the items that matter for unclaimed property: those past their state's dormancy threshold today, and those that will be past it at the next state report cutoff. Everything younger is left to the ordinary application process. The result is documented in a short quarterly findings memo.
+In early December (as of November 30) and early June (as of May 31), ahead of the state cutoffs, the Director of Financial Reporting and Analysis re-runs the analysis workbook and works only the items that matter for unclaimed property: those past their state's dormancy threshold today, and those that will be past it at the next state report cutoff. Everything younger is left to the ordinary application process. The result is documented in a short semi-annual findings memo.
 
-1. **Refresh the data.** Re-extract the prior-month accrued blocks from the Cash Requirements workbook into the analysis workbook (the build script does this from the two CSV extracts) and set the as-of date to quarter end. Confirm every entity total ties to the tab's outstanding amount. Update the fee lists if an office changed its schedule.
-2. **Pull the threshold list.** Filter the Detail tab to items flagged dormant today or dormant at the next cutoff under the likely test for their governing state. This is the working list for the quarter.
+1. **Refresh the data.** Re-extract the prior-month accrued blocks from the Cash Requirements workbook into the analysis workbook (the build script does this from the two CSV extracts) and set the as-of date to the review date. Confirm every entity total ties to the tab's outstanding amount. Update the fee lists if an office changed its schedule.
+2. **Pull the threshold list.** Filter the Detail tab to items flagged dormant today or dormant at the next cutoff under the adopted test for their governing state. This is the working list for the review.
 3. **Classify each item on the list.** Fee, small amount, memo-flagged, or larger commission check. Fee and confirmed small items are confirmed as company fees and left to the ordinary matching process and the year-end revenue true-up; only an item being written off at this review is booked to revenue now. Memo-flagged items are refunded to the payer and removed.
 4. **Identify the owner of each remaining item.** Record the agent's name and last-known address state from the Agent Information sheet or Paperless Pipeline. Where the agent cannot be identified, the item defaults to the entity's formation state.
 5. **Set the agent share.** Enter the documented split where the Disbursement Authorization or Closing Disclosure exists; otherwise apply the estimation rule. Enter any documented offset.
 6. **Send due-diligence letters** to every owner with an address, within that state's window before the cutoff. A response lets the company pay the owner and close the item.
 7. **Resolve and take off the books.** For each item: pay the agent, refund the payer, remit to the state on the next report, or retain with a counsel memo. Items held for counsel are listed separately with the supporting facts.
-8. **Write the quarterly findings memo.** One page: threshold items by entity and state, how each was resolved, dollars remitted or scheduled for remittance, items referred to counsel, and the next filing dates.
+8. **Write the semi-annual findings memo.** One page: threshold items by entity and state, how each was resolved, dollars remitted or scheduled for remittance, items referred to counsel, and the next filing dates.
 
-The findings memo and the quarter's workbook are saved to the Unclaimed Property Analysis folder and to the repository branch so the history of each item is preserved for auditors.
+The findings memo and the review's workbook are saved to the Unclaimed Property Analysis folder and to the repository branch so the history of each item is preserved for auditors.
 
 ## Treatment rules by item class
 
@@ -81,7 +81,7 @@ Each class has one treatment. The Director of Financial Reporting and Analysis m
 
 | Class | How it is identified | Treatment |
 | --- | --- | --- |
-| Fee check | Amount matches an office fee amount exactly ($644, $1,044, $69, $595, $995, $49 and the office-specific lists) | Company revenue, not unclaimed property. Recognized when the item is matched in the ordinary course and captured by the year-end revenue true-up; fee checks are not moved to revenue en masse. At a quarterly review only a fee item being written off at that time is booked to revenue. |
+| Fee check | Amount matches an office fee amount exactly ($644, $1,044, $69, $595, $995, $49 and the office-specific lists) | Company revenue, not unclaimed property. Recognized when the item is matched in the ordinary course and captured by the year-end revenue true-up; fee checks are not moved to revenue en masse. At a semi-annual review only a fee item being written off at that time is booked to revenue. |
 | Small amount | At or under $250 and not an exact fee amount | Presumed fee; review the memo. Treated as a fee check once confirmed, otherwise as a commission check. |
 | Memo-flagged | Memo says not ours, unknown property or agent, duplicate, or hold | Owed back to the payer. Refund it. If the payer cannot be identified, the amount is reportable to the formation state with the payer as owner. |
 | Larger commission check | Everything else above $250 | Company fee is revenue; the remainder is the agent's and is reportable if unpaid past dormancy. |
@@ -105,7 +105,17 @@ A due-diligence letter goes to every owner with a usable address before any amou
 | Pennsylvania | December 31 | April 15 | Notice 60 to 120 days before the deadline for $50 or more | Philly items with a PA agent address |
 | Illinois | December 31 (business associations, 765 ILCS 1026/15-403(b)) | Before May 1 | Letter 60 days to one year before filing for $50 or more (15-501) | Chicago items with an IL agent address |
 
-For Texas, the practical sequence each year is: quarterly review at December 31 identifies items that will be dormant on March 1; letters go out in March; the report is filed and funds remitted by July 1. For Florida, Pennsylvania and Illinois the December 31 review feeds letters in January or February and filings in April and May. Alabama's June 30 cutoff is fed by the June quarterly review.
+For Texas, the practical sequence each year is: the December review identifies items that will be dormant on March 1; letters go out by May 2; the report is filed and funds remitted by July 1. For Florida, Pennsylvania and Illinois the December review feeds letters in January or February and filings in April and May; it must finish before Pennsylvania's letter window closes on February 14. Alabama's June 30 cutoff is fed by the June review, which also confirms the Texas July 1 remittance list.
+
+**If a cutoff is missed.** Nothing is forgiven and nothing is forfeited. The item becomes past-due property: it goes on the next report with its original dormancy date, and the state may charge interest and penalties for the delay. Good faith is the protection: a written policy, documented reviews and filed reports are what every state's waiver turns on, and property that is never reported keeps the enforcement window open indefinitely in Texas, Illinois and Alabama. Verified from the statutes on 10/6/2026:
+
+| State | Interest | Penalty | Waiver | Enforcement window |
+| --- | --- | --- | --- | --- |
+| Texas | 10% a year from the date the property should have been delivered (74.705) | 5% of the value, plus a further 5% if more than 30 days late (74.706); wilful violation is a criminal offense (74.710) | Comptroller may waive for a good-faith effort to comply (74.707) | Examination must begin within 7 years of a filed report (74.7021); no clock runs on property never reported |
+| Pennsylvania | 12% a year from when the report was due (1301.24(b)) | Up to $1,000 a day until a proper report is filed (1301.24(c)); fines up to $10,000 (1301.25) | Treasurer may waive for good cause and must waive penalties for a good-faith, non-negligent holder (1301.25(c)) | 15 years from a filed report (1301.16) |
+| Illinois | Interest and penalties under the Act; the Treasurer's VDA forgoes both | Not read in detail | Through the VDA | 10 years from the report that identified the property; tolled if never reported (15-610(b)) |
+| Florida | None stated for late property | Late report $10 a day up to $500 (717.117(5)); wilful failure to report $500 a day up to $5,000 plus 25% of the unreported value (717.134) | Must waive where the holder acted in good faith and without negligence (717.134) | 10 years after the duty arose (717.129(2)) |
+| Alabama | None stated | $100 per business day up to $5,000; $500 a day up to $25,000 if wilful (35-12-92) | Must waive penalties where the holder acted in good faith (35-12-92(d)) | 10 years from the report; tolled if never reported (35-12-88(b)) |
 
 ## Accounting treatment
 
@@ -114,7 +124,7 @@ The accrued commission balance should be carried as a liability until each item 
 | Event | Debit | Credit | Note |
 | --- | --- | --- | --- |
 | Deposit received, unmatched | Cash | Accrued commissions (260000) | Already how the cash tabs work |
-| Fee check matched | Accrued commissions | Transaction fee revenue / E&O revenue | Company's money; booked when matched in the ordinary course, at the year-end true-up, or when written off at a quarterly review |
+| Fee check matched | Accrued commissions | Transaction fee revenue / E&O revenue | Company's money; booked when matched in the ordinary course, at the year-end true-up, or when written off at a semi-annual review |
 | Commission check matched, agent paid | Accrued commissions | Revenue (company fee) and Commissions payable (221000), then Cash when paid | Split per the file or the estimation rule |
 | Refund to payer | Accrued commissions | Cash | Attach the refund support |
 | Remittance to a state | Commissions payable (or accrued commissions) | Cash | One entry per state report; attach the report |
@@ -128,11 +138,11 @@ Two things never happen: an aged item is not written off to revenue because the 
 
 Keep every record that supports an item for ten years after the report that includes it, or ten years after resolution if it was never reported. That is longer than TUR's four-year policy and longer than the normal transaction file retention, because unclaimed property audits reach back ten years or more and an undocumented item is treated as reportable in full.
 
-For each item, retain: the deposit record and check image, the Paperless Pipeline file or Disbursement Authorization, the Closing Disclosure, the agent's Independent Contractor Agreement and Agent Information sheet, the due-diligence letter and any response, the refund or payment record, the state report and remittance confirmation, and any counsel memo supporting an offset or retention. The quarterly memos and each quarter's workbook are kept for the same period.
+For each item, retain: the deposit record and check image, the Paperless Pipeline file or Disbursement Authorization, the Closing Disclosure, the agent's Independent Contractor Agreement and Agent Information sheet, the due-diligence letter and any response, the refund or payment record, the state report and remittance confirmation, and any counsel memo supporting an offset or retention. The semi-annual memos and each review's workbook are kept for the same period.
 
 ## Initial remediation
 
-The first review under this policy works the backlog that accumulated before it existed. It follows the same quarterly steps, applied to every item already past a threshold or approaching the next cutoff, and it packages the open legal questions for counsel in one submission rather than piecemeal.
+The first review under this policy works the backlog that accumulated before it existed. It follows the same semi-annual review steps, applied to every item already past a threshold or approaching the next cutoff, and it packages the open legal questions for counsel in one submission rather than piecemeal.
 
 1. Confirm the fee checks and small items as company fees; they stay in the ordinary matching process and the year-end revenue true-up, and only an item being written off at this review is booked to revenue now.
 2. Refund the memo-flagged items to their payers; keep any legal-hold item segregated.
@@ -150,14 +160,14 @@ The test of this policy is that no amount owed to an agent or payer reaches a st
 
 | Measure | Target | Reviewed |
 | --- | --- | --- |
-| Items past their dormancy threshold with no resolution recorded | Zero at each quarter end | Quarterly |
-| Dollars that will be dormant at the next state cutoff with no due-diligence letter sent | Zero before each state's letter window closes | Quarterly |
-| Items retained under offset or forfeiture without a counsel memo | Zero | Quarterly |
-| Items with no agent identified that are past threshold | Each has a documented search and a governing state assigned | Quarterly |
+| Items past their dormancy threshold with no resolution recorded | Zero at each review date | Semi-annually |
+| Dollars that will be dormant at the next state cutoff with no due-diligence letter sent | Zero before each state's letter window closes | Semi-annually |
+| Items retained under offset or forfeiture without a counsel memo | Zero | Semi-annually |
+| Items with no agent identified that are past threshold | Each has a documented search and a governing state assigned | Semi-annually |
 | Filings made by each state deadline | 100% | Annually |
-| Quarterly findings memo issued | Within 30 days of quarter end | Quarterly |
+| Semi-annual findings memo issued | Within 30 days of each review date | Semi-annually |
 
-Escalation: any threshold item over $5,000 that cannot be resolved by the quarterly memo date goes to the CFO with the reason. Any contact from a state administrator or audit firm about unclaimed property goes to the Director of Financial Reporting and Analysis and counsel the same day, because a voluntary disclosure is no longer available once contact has been made.
+Escalation: any threshold item over $5,000 that cannot be resolved by the findings memo date goes to the CFO with the reason. Any contact from a state administrator or audit firm about unclaimed property goes to the Director of Financial Reporting and Analysis and counsel the same day, because a voluntary disclosure is no longer available once contact has been made.
 
 ## Appendix
 
