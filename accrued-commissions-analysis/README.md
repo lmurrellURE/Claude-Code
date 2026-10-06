@@ -44,8 +44,12 @@ Cheat Sheet (current $595/$995 + $49 schedule, TUR legacy plan, Leading Edge pri
 and the JV ICA Transaction Fee Summary (older $495/$895 + $45/$49 schedule). They are inputs on
 Summary rows 4-7 (all entities, Philly-only, TUR-only, Leading Edge-only). Small-amount threshold
 $250 (adjustable). Agents are independent contractors. Many older checks cannot be tied to an
-agent. Entity states: Dallas, Houston, TUR = TX; Chicago = IL; Philly = PA; Leading Edge = AL;
-Gallery = FL. The user believes each LLC was formed in its office state and is confirming.
+agent. Office states: Dallas, Houston, TUR = TX; Chicago = IL; Philly = PA; Leading Edge = AL;
+Gallery = FL. Per the Entity Management Database, URE Dallas, URE Houston, Quick Close Properties
+(TUR), URE Chicago and URE Philadelphia are all TEXAS LLCs (Chicago and Philadelphia are only
+registered as foreign LLCs in IL and PA); RaySon Partners d/b/a URE Gallery is Florida; Leading
+Edge Realty is Alabama. The formation state is each entity's default governing state under the
+second priority rule; an item switches to the agent's address state once that is entered.
 
 | Class (Detail col N) | Items | $ |
 |---|---:|---:|
@@ -54,30 +58,31 @@ Gallery = FL. The user believes each LLC was formed in its office state and is c
 | Memo-flagged (not ours / unknown / duplicate / hold) - resolve with payer | 16 | 30,640.63 |
 | Larger amount - likely includes an agent commission split | 102 | 173,240.50 |
 
-## Exposure (upper bounds, applied to the larger-amount and memo-flagged items only)
+## Exposure (upper bounds, larger-amount and memo-flagged items, governing state = formation state until an agent address is entered)
 
-| Entity | Likely test (IC agents) | Dormant today | Dormant at next report cutoff |
+| Entity | Default governing state / likely test | Dormant today | Dormant at next report cutoff |
 |---|---|---:|---:|
 | Dallas | TX general, 3 yrs | 6,707.80 | 8,042.30 |
 | Houston | TX general, 3 yrs | 5,636.60 | 6,011.60 |
 | TUR | TX general, 3 yrs | 644.00 | 2,373.50 |
-| Philly | PA wages/commissions, 2 yrs | 8,566.41 | 12,172.66 |
-| Leading Edge | AL compensation, 1 yr | 0.00 | 0.00 |
+| Philly | TX general, 3 yrs (PA 2 yrs only for items with a PA agent address) | 419.35 | 4,829.35 |
+| Chicago | TX general, 3 yrs (IL 1 yr only for items with an IL agent address) | 0.00 | 0.00 |
 | Gallery | FL general, 5 yrs | 0.00 | 0.00 |
-| Chicago | IL compensation, 1 yr | 0.00 | 0.00 |
-| **Total** | | **21,554.81** | **28,600.06** |
+| Leading Edge | AL compensation, 1 yr | 0.00 | 0.00 |
+| **Total** | | **13,407.75** | **21,256.75** |
 
-If Texas were instead held to its 1-year wage rule the Texas figure today would be far higher
-(see Summary cols T-U). The Texas 1-year rule is tied to a Labor Code definition of wages that
-excludes independent contractors, which is why the 3-year test is treated as likely; counsel
-should confirm.
+If Texas were instead held to its 1-year wage rule the figures would be far higher (Summary
+cols T-U). The Texas 1-year rule is tied to a Labor Code definition of wages that excludes
+independent contractors, which is why the 3-year test is treated as likely; counsel should confirm.
+Philly's figure falls from 8,566.41 to 419.35 because its unknown-agent items are now tested under
+Texas's 3-year period rather than Pennsylvania's 2-year period; entering a PA address for an item
+restores the 2-year test for that item.
 
 Even these are upper bounds: within a larger check only the agent's share is reportable, the
 company's split is revenue, and every ICA gives the Broker offset rights for amounts the agent
 owes. The Philly ICA also forfeits the agent's share on files still incomplete 60 days after
 closing and retains 100% where a license is not reactivated within 30 days; whether an escheat
-claim honors such clauses is a legal question (anti-limitation provisions). Unknown-agent items
-are reportable to the state where the holding LLC was formed (second priority rule).
+claim honors such clauses is a legal question (anti-limitation provisions).
 
 ## Files
 

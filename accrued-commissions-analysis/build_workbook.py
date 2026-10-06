@@ -50,15 +50,15 @@ for r in rows:
     r["d"] = datetime.date.fromisoformat(r["date"]) if r["date"] else None
 cur = list(csv.DictReader(open("current_month_unbooked.csv")))
 
-ENTITIES = [  # entity, state (assumption flag), note
-    ("Dallas", "TX", "Confirmed by user 10/6/2026: Texas. ICA names 'URE Dallas LLC dba United Real Estate'. User believes the LLC was formed in Texas and is confirming; if so the office state governs unknown-agent items too."),
-    ("Houston", "TX", "Confirmed by user 10/6/2026: Texas. ICA names 'URE Houston LLC d/b/a United Real Estate'. User believes the LLC was formed in Texas and is confirming; if so the office state governs unknown-agent items too."),
-    ("TUR", "TX", "Confirmed by user 10/6/2026: Texas. Sign-up docs name 'Quick-Close Properties, LLC dba Texas United Realty' (TREC 599460). User believes the LLC was formed in Texas and is confirming; if so the office state governs unknown-agent items too."),
-    ("Chicago", "IL", "Confirmed by user 10/6/2026: Illinois. ICA names 'URE Chicago LLC dba United Real Estate - Chicago'. User believes the LLC was formed in Illinois and is confirming; if so the office state governs unknown-agent items too."),
-    ("Philly", "PA", "Confirmed by user 10/6/2026: Pennsylvania. PA ICA names only 'United Real Estate'; legal entity not yet provided. User believes the LLC was formed in Pennsylvania and is confirming."),
-    ("Gallery", "FL", "Confirmed by user 10/6/2026: Florida. User believes the LLC was formed in Florida and is confirming."),
-    ("Leading Edge", "AL", "Confirmed by user 10/6/2026: Alabama. User believes the LLC was formed in Alabama and is confirming. Leading Edge has its own fee schedule (Summary row 7)."),
-    ("DC", "DC", "Tab exists in workbook with $0 accrued balance; user did not list DC. No DC rules researched."),
+ENTITIES = [  # entity, formation state (default governing state), office state, note
+    ("Dallas", "TX", "TX", "URE Dallas, L.L.C. - Texas LLC (TX file 32043204570, formed 12/15/2010) per Entity Management Database. Office: Texas."),
+    ("Houston", "TX", "TX", "URE Houston, L.L.C. - Texas LLC (TX 0801434954, formed 6/3/2011) per Entity Management Database. Office: Texas."),
+    ("TUR", "TX", "TX", "Quick Close Properties, LLC dba Texas United Realty - Texas LLC (TX 0800329212) per Entity Management Database. Office: Texas."),
+    ("Chicago", "TX", "IL", "URE Chicago, L.L.C. - TEXAS LLC (TX 0801464335, formed 8/10/2011), registered as a foreign LLC in Illinois (3661385) per Entity Management Database. Office: Illinois. Unknown-owner items therefore default to TEXAS under the second priority rule; items with an Illinois agent address go to Illinois."),
+    ("Philly", "TX", "PA", "URE Philadelphia, L.L.C. - TEXAS LLC (TX 0801490897, formed 10/6/2011), registered in PA, MD and NJ per Entity Management Database. Office: Pennsylvania. Unknown-owner items therefore default to TEXAS under the second priority rule; items with a Pennsylvania agent address go to Pennsylvania."),
+    ("Gallery", "FL", "FL", "RaySon Partners, LLC d/b/a URE Gallery - Florida LLC (FL L22000422171) per Entity Management Database. Office: Florida."),
+    ("Leading Edge", "AL", "AL", "Leading Edge Realty - Alabama (AL 000-273-581) per Entity Management Database (55% JV). Office: Alabama."),
+    ("DC", "TX", "DC", "URE Washington DC, L.L.C. - Texas LLC (TX 801575176, formed 3/30/2012) per Entity Management Database. $0 accrued balance; DC rules not researched."),
 ]
 STATE_ROWS = [
     # state, name, short_period_years, short_basis, long_period_years, long_basis, report_due, cutoff, next_cutoff, due_diligence, vda, verification, sources
@@ -126,7 +126,7 @@ for i, s in enumerate(STATE_ROWS, 5):
         if j == 9 and v: c.number_format = DATE
     sr.row_dimensions[i].height = 150
 SR_FIRST, SR_LAST = 5, 4 + len(STATE_ROWS)
-put(sr, f"A{SR_LAST+2}", "Priority rules (Texas v. New Jersey, 379 U.S. 674 (1965)): (1) the state of the owner's last-known address on the holder's books; (2) if no address, the holder's state of incorporation/formation. The user confirmed that for many older checks the agent is unknown: those items fall under rule (2) and go to the STATE WHERE EACH LLC WAS FORMED (still to be provided), not to the office's state and not to Kansas City. Private retention of amounts owed to others ('private escheat') is not permitted by any state; an unknown owner does not make the money the company's.", wrap=True)
+put(sr, f"A{SR_LAST+2}", "Priority rules (Texas v. New Jersey, 379 U.S. 674 (1965)): (1) the state of the owner's last-known address on the holder's books; (2) if no address, the holder's state of incorporation/formation. The user confirmed that for many older checks the agent is unknown: those items fall under rule (2) and go to the state where each LLC was formed. Per the Entity Management Database that is TEXAS for URE Dallas, URE Houston, Quick Close Properties (TUR), URE Chicago and URE Philadelphia (the last two are Texas LLCs registered as foreign entities in IL and PA), FLORIDA for RaySon Partners d/b/a URE Gallery and ALABAMA for Leading Edge Realty. Not the office's state, and not Kansas City. Private retention of amounts owed to others ('private escheat') is not permitted by any state; an unknown owner does not make the money the company's.", wrap=True)
 sr.merge_cells(f"A{SR_LAST+2}:O{SR_LAST+2}"); sr.row_dimensions[SR_LAST+2].height = 45
 put(sr, f"A{SR_LAST+3}", "Blue = hardcoded inputs you can change. All dormancy periods are expressed in years and are applied from the DEPOSIT DATE in the cash-requirements workbook as a proxy for the date the amount became payable - the true trigger is when the agent's share became payable, which may be earlier (closing date) or later.", wrap=True)
 sr.merge_cells(f"A{SR_LAST+3}:O{SR_LAST+3}"); sr.row_dimensions[SR_LAST+3].height = 40
@@ -135,7 +135,7 @@ sr.merge_cells(f"A{SR_LAST+3}:O{SR_LAST+3}"); sr.row_dimensions[SR_LAST+3].heigh
 sm = wb.create_sheet("Summary", 0)
 put(sm, "A1", "Accrued Commissions - Unclaimed Property Exposure by Entity", f_title)
 put(sm, "A2", "Source: United_Cash_Requirements.xlsx, each entity tab, 'Previous Month's Accrued Commissions' block (deposited checks not yet booked in Sage) plus the current-month 'Deposited checks' block. Extracted 10/6/2026; every entity total ties to the tab's 'outstanding amount' cell. Legend: blue = input, black = formula, green = link to another sheet, yellow fill = confirm or fill in.", wrap=True)
-sm.merge_cells("A2:AB2"); sm.row_dimensions[2].height = 32
+sm.merge_cells("A2:AC2"); sm.row_dimensions[2].height = 32
 put(sm, "A3", "As-of date", f_bold); put(sm, "B3", AS_OF, f_input, DATE, fill_in)
 sm["B3"].comment = Comment("Input. Change to re-age every item. 10/6/2026 = date the workbook was provided.", "Analysis")
 put(sm, "A4", "Fee check amounts - all entities (inputs)", f_bold)
@@ -157,7 +157,7 @@ sm["C7"].comment = Comment("Leading Edge fee schedule from the cheat sheet: sale
 put(sm, "A8", "Small-amount threshold", f_bold); put(sm, "B8", 250, f_input, CUR, fill_in)
 sm["B8"].comment = Comment("ASSUMPTION: user said fee checks are 'sometimes other small amounts' without a figure. Items at or below this threshold that are not an exact fee amount are classified 'Small amount - likely fee, review'. Change it to see the effect.", "Analysis")
 
-labels = ["Entity", "State (confirm)", "Prior-month accrued (unbooked deposits)", "Current-month accrued (Sept/Oct 2026 deposits)", "Total accrued per workbook", "Items (count)",
+labels = ["Entity", "Default governing state = LLC formation state (owner-address state overrides per item in Detail col U)", "Prior-month accrued (unbooked deposits)", "Current-month accrued (Sept/Oct 2026 deposits)", "Total accrued per workbook", "Items (count)",
           "0-1 yrs", "1-2 yrs", "2-3 yrs", "3-5 yrs", "5+ yrs",
           "$ at fee amounts (presumed company revenue)", "$ small amounts (likely fee, review)", "$ memo-flagged (not ours / unknown / hold)", "$ larger amounts (likely includes agent commission)",
           "Short period (yrs)", "Long period (yrs)",
@@ -165,14 +165,15 @@ labels = ["Entity", "State (confirm)", "Prior-month accrued (unbooked deposits)"
           "Dormant today - SHORT test - likely-commission + memo-flagged only", "Dormant today - LONG test - likely-commission + memo-flagged only",
           "Dormant at next report cutoff - SHORT - likely-commission + memo-flagged", "Dormant at next report cutoff - LONG - likely-commission + memo-flagged",
           "Likely test given independent-contractor agents", "Dormant today - LIKELY test - likely-commission + memo-flagged", "Dormant at next report cutoff - LIKELY test - likely-commission + memo-flagged",
-          "Oldest item", "Entity-state note"]
-hdr(sm, 10, labels, [14, 9, 16, 16, 16, 8, 13, 13, 13, 13, 11, 15, 15, 15, 16, 8, 8, 15, 15, 17, 17, 17, 17, 10, 17, 17, 12, 60])
+          "Oldest item", "Office state", "Entity note (legal entity, formation, office)"]
+hdr(sm, 10, labels, [14, 13, 16, 16, 16, 8, 13, 13, 13, 13, 11, 15, 15, 15, 16, 8, 8, 15, 15, 17, 17, 17, 17, 10, 17, 17, 12, 8, 70])
 sm.row_dimensions[10].height = 70
 R0 = 11
-for i, (ent, st, note) in enumerate(ENTITIES):
+for i, (ent, st, office, note) in enumerate(ENTITIES):
     r = R0 + i
     put(sm, f"A{r}", ent, f_bold)
     put(sm, f"B{r}", st, f_input, fill=fill_in)
+    put(sm, f"AB{r}", office, f_input)
     put(sm, f"C{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r})', f_link, CUR)
     put(sm, f"D{r}", f"=SUMIFS('Current Month'!$F:$F,'Current Month'!$A:$A,$A{r})", f_link, CUR)
     put(sm, f"E{r}", f"=C{r}+D{r}", fmt=CUR)
@@ -192,17 +193,17 @@ for i, (ent, st, note) in enumerate(ENTITIES):
     put(sm, f"V{r}", f'=SUMIFS(Detail!$AA:$AA,Detail!$A:$A,$A{r},Detail!$R:$R,"Yes")', f_link, CUR)
     put(sm, f"W{r}", f'=SUMIFS(Detail!$AA:$AA,Detail!$A:$A,$A{r},Detail!$S:$S,"Yes")', f_link, CUR)
     put(sm, f"X{r}", f"=IFERROR(INDEX('State Rules'!$M${SR_FIRST}:$M${SR_LAST},MATCH($B{r},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
-    put(sm, f"Y{r}", f'=IF(X{r}="SHORT",T{r},IF(X{r}="LONG",U{r},0))', fmt=CUR)
-    put(sm, f"Z{r}", f'=IF(X{r}="SHORT",V{r},IF(X{r}="LONG",W{r},0))', fmt=CUR)
+    put(sm, f"Y{r}", f'=SUMIFS(Detail!$AA:$AA,Detail!$A:$A,$A{r},Detail!$AC:$AC,"<="&$B$3)', f_link, CUR)
+    put(sm, f"Z{r}", f'=SUMIFS(Detail!$AA:$AA,Detail!$A:$A,$A{r},Detail!$AD:$AD,"Yes")', f_link, CUR)
     put(sm, f"AA{r}", f'=IF(F{r}=0,"",_xlfn.MINIFS(Detail!$E$7:$E$400,Detail!$A$7:$A$400,$A{r}))', f_link, DATE)
-    put(sm, f"AB{r}", note, wrap=True)
-    for c in range(1, 29): sm.cell(r, c).border = box
+    put(sm, f"AC{r}", note, wrap=True)
+    for c in range(1, 30): sm.cell(r, c).border = box
 RT = R0 + len(ENTITIES)
 put(sm, f"A{RT}", "TOTAL", f_bold)
 for col in ["C","D","E","G","H","I","J","K","L","M","N","O","R","S","T","U","V","W","Y","Z"]:
     put(sm, f"{col}{RT}", f"=SUM({col}{R0}:{col}{RT-1})", f_bold, CUR)
 put(sm, f"F{RT}", f"=SUM(F{R0}:F{RT-1})", f_bold)
-for c in range(1, 29): sm.cell(RT, c).border = box; sm.cell(RT, c).fill = fill_sub
+for c in range(1, 30): sm.cell(RT, c).border = box; sm.cell(RT, c).fill = fill_sub
 sm.freeze_panes = "C11"
 
 n = RT + 2
@@ -210,8 +211,8 @@ notes = [
     ("How to read this", f_bold),
     ("Classification (Detail col N) uses the fee amounts in rows 4-7 and the threshold in B8: an exact fee amount = presumed company revenue (keep; book to revenue, not unclaimed property). At or under the threshold = likely fee, review. Memo-flagged = memo says not ours / unknown agent / duplicate / legal hold (owed back to the payer or needs resolution). Everything else = larger amount that likely includes an agent's commission split - this is the unclaimed-property population.", f_norm),
     ("Columns R-S apply the dormancy tests to ALL unbooked items (upper bound). Columns T-W apply them only to the likely-commission and memo-flagged items. Even the T-W figures are upper bounds: within a larger check, only the agent's share (typically the check less the company's fee / split) is reportable; the company's share is revenue.", f_norm),
-    ("SHORT test = the state's period for wages / compensation for personal services. LONG test = the general catch-all period. Column X picks the likely test per state now that agents are confirmed to be independent contractors (Texas and Florida: LONG; Illinois, Pennsylvania, Alabama: SHORT), and columns Y-Z apply it. See State Rules cols M-N for the reasoning; it is a legal judgment for counsel to confirm.", f_norm),
-    ("Unknown agent = second priority rule. The user confirmed that many older checks cannot be tied to an agent. Those items do not become the company's; they are reportable to the state where the holding LLC was formed (still to be provided). If an LLC is formed in its office state, nothing changes; if formed elsewhere (e.g. Missouri or Delaware), that state's rules and report cycle apply to the unknown-owner items.", f_norm),
+    ("SHORT test = the state's period for wages / compensation for personal services. LONG test = the general catch-all period. Column X picks the likely test for each entity's default governing state now that agents are confirmed to be independent contractors (Texas and Florida: LONG; Illinois, Pennsylvania, Alabama: SHORT), and columns Y-Z apply it item by item, so an item whose owner state has been filled in uses its own state's test. See State Rules cols M-N for the reasoning; it is a legal judgment for counsel to confirm.", f_norm),
+    ("Unknown agent = second priority rule. Per the Entity Management Database, URE Dallas, URE Houston, Quick Close Properties (TUR), URE Chicago and URE Philadelphia are all TEXAS LLCs; Gallery (RaySon Partners) is Florida; Leading Edge Realty is Alabama. Column B holds that formation state as each entity's DEFAULT governing state, so unknown-agent items at Chicago and Philly are tested under TEXAS rules (3-year general period for contractor commissions), not Illinois or Pennsylvania. When an agent's last-known address state is entered in Detail col U, that item switches to the address state's rules (first priority rule). Office state is shown in col AB for reference.", f_norm),
     ("Current-month accrued (column D) is all September/October 2026 deposits in normal matching workflow. It is included so the total ties to the cash-requirements Summary, but none of it is near any dormancy period.", f_norm),
     ("Nothing here is legal advice. Dormancy periods, report dates and due-diligence rules on the State Rules tab were sourced from statute summaries and state guidance found by web search; the statute pages themselves could not be opened from this session. Have counsel or your unclaimed-property advisor confirm before filing.", f_norm),
 ]
@@ -222,16 +223,17 @@ for i, (t, f) in enumerate(notes):
 dt = wb.create_sheet("Detail", 1)
 put(dt, "A1", "Unbooked deposited checks - item detail (prior-month accrued commissions block of each entity tab)", f_title)
 put(dt, "A2", "Columns A-J are copied from the source workbook. K-S and Z-AA are formulas. T-Y (yellow) are for you to fill in from Paperless Pipeline / Sage: once the agent share is entered, column Z shows the dollar amount that is both dormant (long test) and owed to someone else. Column AA is the heuristic stand-in until then.", wrap=True)
-dt.merge_cells("A2:AA2"); dt.row_dimensions[2].height = 32
+dt.merge_cells("A2:AD2"); dt.row_dimensions[2].height = 32
 put(dt, "A3", "Classification (col N) is driven by Summary rows 4-7 (fee amounts, with Philly-only, TUR-only and Leading Edge-only lists) and Summary B8 (small-amount threshold). Col M flags memos that say not ours / unknown agent / duplicate / legal hold / '?'. Classifications are hints, not conclusions.", wrap=True)
-dt.merge_cells("A3:AA3"); dt.row_dimensions[3].height = 32
+dt.merge_cells("A3:AD3"); dt.row_dimensions[3].height = 32
 put(dt, "A4", "As-of date (linked)"); put(dt, "B4", "=Summary!$B$3", f_link, DATE)
-labels = ["Entity", "State", "Bank / block", "Source row", "Deposit date", "Check #", "Payer / check writer", "Amount", "Memo (source)", "Booked in Sage?",
+labels = ["Entity", "Governing state (owner state if filled in col U, else LLC formation state)", "Bank / block", "Source row", "Deposit date", "Check #", "Payer / check writer", "Amount", "Memo (source)", "Booked in Sage?",
           "Age (yrs)", "Age bucket", "Memo flag?", "Classification",
           "Short period (yrs)", "Dormant date - SHORT", "Dormant date - LONG", "Dormant at next cutoff - SHORT?", "Dormant at next cutoff - LONG?",
           "Agent / owner name (fill in)", "Owner last-known state (fill in)", "Brokerage fee / E&O share $ (fill in)", "Agent share $ (fill in)", "Refund to payer $ (fill in)", "Resolution / status (fill in)",
-          "Reportable if dormant (LONG test) = agent + refund share (from fill-in)", "Heuristic reportable population $ (larger-amount + memo-flagged items)"]
-hdr(dt, 6, labels, [13, 7, 13, 8, 11, 14, 32, 12, 55, 8, 8, 9, 8, 38, 8, 12, 12, 11, 11, 22, 10, 13, 13, 13, 28, 16, 16])
+          "Reportable if dormant (LONG test) = agent + refund share (from fill-in)", "Heuristic reportable population $ (larger-amount + memo-flagged items)",
+          "Likely test for this item's governing state", "Dormant date - LIKELY test", "Dormant at next cutoff - LIKELY test?"]
+hdr(dt, 6, labels, [13, 11, 13, 8, 11, 14, 32, 12, 55, 8, 8, 9, 8, 38, 8, 12, 12, 11, 11, 22, 10, 13, 13, 13, 28, 16, 16, 10, 12, 11])
 dt.row_dimensions[6].height = 56
 FLAGS = ["not for this", "not in pp", "not sure", "unsure", "duplicate", "couldn't locate", "cant locate", "can't locate", "fraud", "on hold", "law enforcement", "unidentified", "possibly", "believe this transaction", "shortage", "supposed to be", "review check stub", "no memo", "?"]
 def memo_flag(r):
@@ -243,7 +245,7 @@ D0 = 7
 for i, r in enumerate(rows):
     rr = D0 + i
     put(dt, f"A{rr}", r["entity"])
-    put(dt, f"B{rr}", f"=IFERROR(INDEX(Summary!$B${R0}:$B${RT-1},MATCH($A{rr},Summary!$A${R0}:$A${RT-1},0)),\"\")", f_link)
+    put(dt, f"B{rr}", f"=IF(U{rr}<>\"\",U{rr},IFERROR(INDEX(Summary!$B${R0}:$B${RT-1},MATCH($A{rr},Summary!$A${R0}:$A${RT-1},0)),\"\"))", f_link)
     put(dt, f"C{rr}", r["bank"]); put(dt, f"D{rr}", int(r["row"]))
     put(dt, f"E{rr}", r["d"], fmt=DATE); put(dt, f"F{rr}", r["check"])
     put(dt, f"G{rr}", r["payer"]); put(dt, f"H{rr}", r["amt"], fmt=CUR)
@@ -263,13 +265,16 @@ for i, r in enumerate(rows):
     for col in "VWX": dt[f"{col}{rr}"].number_format = CUR
     put(dt, f"Z{rr}", f'=IF(Q{rr}="","",IF(Q{rr}<=$B$4,N(W{rr})+N(X{rr}),0))', fmt=CUR)
     put(dt, f"AA{rr}", f'=IF(OR(LEFT(N{rr},6)="Larger",LEFT(N{rr},4)="Memo"),H{rr},0)', fmt=CUR)
-    for c in range(1, 28): dt.cell(rr, c).border = box
+    put(dt, f"AB{rr}", f"=IFERROR(INDEX('State Rules'!$M${SR_FIRST}:$M${SR_LAST},MATCH($B{rr},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
+    put(dt, f"AC{rr}", f'=IF(AB{rr}="SHORT",P{rr},IF(AB{rr}="LONG",Q{rr},""))', fmt=DATE)
+    put(dt, f"AD{rr}", f'=IF(AB{rr}="SHORT",R{rr},IF(AB{rr}="LONG",S{rr},""))')
+    for c in range(1, 31): dt.cell(rr, c).border = box
 DT_LAST = D0 + len(rows) - 1
 put(dt, f"A{DT_LAST+1}", "TOTAL", f_bold)
 put(dt, f"H{DT_LAST+1}", f"=SUM(H{D0}:H{DT_LAST})", f_bold, CUR)
 for col in ["V","W","X","Z","AA"]: put(dt, f"{col}{DT_LAST+1}", f"=SUM({col}{D0}:{col}{DT_LAST})", f_bold, CUR)
 dt.freeze_panes = "E7"
-dt.auto_filter.ref = f"A6:AA{DT_LAST}"
+dt.auto_filter.ref = f"A6:AD{DT_LAST}"
 
 # ================================================================ Current Month
 cm = wb.create_sheet("Current Month", 2)
@@ -292,8 +297,9 @@ hdr(gp, 3, ["#", "Item", "Why it matters", "Who / where"], [4, 55, 80, 30])
 gaps = [
     ("DATA GAP: the fee vs. agent split of every check is unknown", "The source workbook has E&O / FEE / Commission columns but they are empty for all 181 items. Per the user, fee checks are typically $644, $1,044, $69 or other small amounts, so items at those amounts are presumed company revenue and items at or under the small-amount threshold are treated as likely fees. Larger checks likely include an agent's commission split, but how much of each is the agent's is still unknown; only that share (plus anything owed back to a payer) can ever be unclaimed property. Until the split is known, every dollar figure on the Summary is an upper bound, not an amount to remit.", "Match each check to its Paperless Pipeline transaction; fill Detail cols U-W."),
     ("DATA GAP: owner identity and last-known address", "The first priority rule sends property to the state of the owner's last-known address. User confirmed that for many older checks the agent is not known. Where the agent can be identified, record the name and state in Detail cols T-U. Where it cannot, the item falls to the second priority rule (state of formation of the LLC).", "Agent master file / Paperless Pipeline; fill Detail cols T-U."),
-    ("DATA GAP: state of formation for each LLC", "User confirmed each office is an LLC but not where each was formed. This decides where every unknown-agent item is reported and which state's voluntary disclosure program to approach. 'Corporate HQ in Kansas City' is not the test.", "Legal / entity org chart."),
-    ("RESOLVED: entity-to-state mapping", "User confirmed 10/6/2026: Dallas, Houston, TUR = Texas; Chicago = Illinois; Philly = Pennsylvania; Leading Edge = Alabama; Gallery = Florida.", "Done."),
+    ("RESOLVED, with a twist: state of formation", "Entity Management Database (10/6/2026): URE Dallas, URE Houston, Quick Close Properties/TUR, URE Chicago and URE Philadelphia are all Texas LLCs; URE Chicago and URE Philadelphia are merely registered as foreign LLCs in Illinois and Pennsylvania. Gallery (RaySon Partners) is Florida; Leading Edge Realty is Alabama. Consequence: every unknown-agent item at Chicago and Philly is reportable to TEXAS, under Texas's 3-year general period for contractor commissions, not to Illinois (1 year) or Pennsylvania (2 years). Only items where the company's records show an agent address in IL or PA go to those states. The workbook now defaults each entity to its formation state and switches an item to the owner's state once Detail col U is filled in.", "Done; counsel to confirm the priority-rule application."),
+    ("PRACTICAL EFFECT: one Texas filing could cover most of it", "With Texas as the default state for five of the seven entities, a single Texas voluntary disclosure (one per holder entity, or coordinated) would address the bulk of the aged population. Pennsylvania and Illinois filings would be limited to items with known PA/IL agent addresses.", "Counsel / Comptroller."),
+    ("RESOLVED: office-to-state mapping", "User confirmed 10/6/2026: Dallas, Houston, TUR = Texas; Chicago = Illinois; Philly = Pennsylvania; Leading Edge = Alabama; Gallery = Florida. Office state is shown on Summary col AB; it is NOT the governing state for unknown-owner items (see the formation-state row).", "Done."),
     ("CONFIRM: payable date vs. deposit date", "Dormancy runs from when the amount became payable to the owner, not from when the check was deposited. Deposit date is used as a proxy throughout. If agents are paid on closing, the closing date is the better trigger and could be earlier.", "Paperless Pipeline closing dates."),
     ("RESOLVED: agents are independent contractors", "User confirmed 10/6/2026. Texas' 1-year rule applies to 'wages' as defined in Labor Code 61.001, which excludes independent contractors, so the 3-year general rule is the likely Texas test. Illinois and Alabama reach 'other compensation for personal services' and Pennsylvania lists commissions, so their shorter periods likely apply. Florida's wage rule is not shown to reach contractors, so 5 years is likely. Counsel should confirm each.", "Confirm with counsel."),
     ("RESOLVED: no prior write-offs", "User confirmed nothing has been done with the unapplied deposits so far, so the population in this workbook is the full population and there is no prior 'private escheat' to unwind.", "Done."),
@@ -367,7 +373,8 @@ lines = [
     "7. Classification hints are heuristics on amount and memo text only; they are not conclusions.",
     "8. State rules were researched by web search on 10/6/2026. Primary statute pages could not be opened from this session; see the State Rules tab 'Verification status' column for what is and is not confirmed.",
     "9. Three fee documents were also provided 10/6/2026 (ICA Fee Structure Cheat Sheet xlsx, a scanned PDF of the same sheet, and the JV ICA Transaction Fee Summary docx with the older $495/$895 schedule); their amounts are in Summary rows 4-7.",
-    "10. Five independent contractor agreements were provided 10/6/2026 (Dallas/Frisco, Chicago, Houston TXR-2301, TUR legacy sign-up docs, Pennsylvania ICA). Fee amounts in Summary rows 4-6 come from the user and from those fee schedules; the ICA Terms tab cites each clause used.",
+    "10. Entity Management Database (xlsx) provided 10/6/2026 supplies each holder's legal name and domicile; the domicile is used as the default governing state under the second priority rule.",
+    "11. Five independent contractor agreements were provided 10/6/2026 (Dallas/Frisco, Chicago, Houston TXR-2301, TUR legacy sign-up docs, Pennsylvania ICA). Fee amounts in Summary rows 4-6 come from the user and from those fee schedules; the ICA Terms tab cites each clause used.",
 ]
 for i, t in enumerate(lines, 3):
     put(mt, f"A{i}", t, wrap=True); mt.merge_cells(f"A{i}:J{i}"); mt.row_dimensions[i].height = 34
