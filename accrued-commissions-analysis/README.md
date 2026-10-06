@@ -104,8 +104,7 @@ still reduce the agent's share.
   deposits, annual unclaimed property review, treatment rules, state calendar, accounting, initial
   remediation, appendix with the verified citations). Snapshot of the editable Claude Doc.
 - `Accrued_Commissions_CFO_Controller_Briefing.docx` - one-page briefing for the CFO and Controller
-  (10/6/2026): the decision requested, the balance, exposure under the verified rules with the Texas
-  1-year sensitivity, cash and P&L impact, the four sign-offs, the timeline to the 2027 filings, and
+  (10/6/2026): the decision requested, the balance, exposure under the verified rules, cash and P&L impact, the four sign-offs, the timeline to the 2027 filings, and
   what is still unverified. Snapshot of the editable Claude Doc, whose second tab holds the one-paragraph
   rollout note that accompanies the one-pager.
 
