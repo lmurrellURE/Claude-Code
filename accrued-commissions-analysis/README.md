@@ -113,7 +113,17 @@ still reduce the agent's share.
   state and the fee/agent/refund split), Current Month, State Rules (with the adopted test per state
   for independent-contractor commissions), Gaps & Next Steps, Method. Formulas re-age and reclassify
   when the as-of date, fee amounts, threshold or a state period changes.
-- `build_workbook.py` - rebuilds the workbook from the two CSV extracts.
+- `office-workbooks/<Office>_Unapplied_Deposits_Review.xlsx` - one fill-in workbook per office (Dallas,
+  Houston, TUR, Chicago, Philly, Gallery, Leading Edge), built by `build_office_workbooks.py` from the
+  same extract. Each holds only that office's unapplied prior-month deposits, the dormancy period and next
+  cutoff for its governing state (Settings tab), a priority flag per item (1 = past threshold today,
+  2 = reaches it by the next cutoff, 3 = not yet), yellow columns for the office to complete (Paperless
+  Pipeline file, property, closing date, agent name and last-known address, company fee / E&O / agent
+  share / refund split with a zero check, supporting document, status, notes) and an Instructions tab with
+  the plain-terms explanation, why it matters and what to do. Entity totals tie to the analysis workbook.
+  Chicago's is an empty template (no aged items). The Director sets the return-by date on the Settings tab
+  before sending.
+- `build_workbook.py` - rebuilds the analysis workbook from the two CSV extracts.
 - `source-extract/` - the rows extracted from the cash-requirements workbook.
 
 ## Verification of the state rules (10/6/2026)

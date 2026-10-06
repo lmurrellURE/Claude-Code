@@ -36,6 +36,7 @@ applies). The briefing doc has a second tab with the one-paragraph rollout note 
 | File | What it is |
 | --- | --- |
 | `Accrued_Commissions_Unclaimed_Property_Analysis.xlsx` | The deliverable. Tabs: Summary, Detail (181 items), Current Month, Gaps & Next Steps, ICA Terms, Method, State Rules. All formulas; recalculated with LibreOffice; zero errors. |
+| `office-workbooks/*.xlsx` + `build_office_workbooks.py` | One fill-in workbook per office for the offices to complete (added 10/6/2026 at the user's request): Instructions, Items (that office's unapplied deposits with a priority flag and yellow fill-in columns, dropdowns for document and status), Settings (period, cutoff, as-of, return-by date). Rebuild with `python3 build_office_workbooks.py office-workbooks` from this folder, then recalc each file. |
 | `build_workbook.py` | Rebuilds the workbook from the two CSVs. Edit this, not the xlsx. Run `python3 build_workbook.py <out.xlsx>` from the folder containing the CSVs, then recalc with the xlsx skill's `recalc.py`. |
 | `source-extract/accrued_rows.csv` | Every row of every entity's "Previous Month's Accrued Commissions" block, booked or not. |
 | `source-extract/current_month_unbooked.csv` | Current-month unbooked deposits (all Sept/Oct 2026). |
