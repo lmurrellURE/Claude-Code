@@ -51,13 +51,13 @@ for r in rows:
 cur = list(csv.DictReader(open("current_month_unbooked.csv")))
 
 ENTITIES = [  # entity, state (assumption flag), note
-    ("Dallas", "TX", "Per user: Texas office."),
-    ("Houston", "TX", "Per user: Texas office."),
-    ("TUR", "TX", "Texas United Realty - per user: Texas office."),
-    ("Chicago", "IL", "Per user: Illinois office."),
-    ("Philly", "PA", "Per user: Philadelphia office."),
-    ("Gallery", "FL", "ASSUMPTION - user listed Florida and Alabama offices without naming tabs; Gallery banks at SouthState (a Florida-based bank). CONFIRM."),
-    ("Leading Edge", "AL", "ASSUMPTION - user listed Florida and Alabama offices without naming tabs; Leading Edge banks at Regions/Cadence (Alabama-based banks). CONFIRM."),
+    ("Dallas", "TX", "Confirmed by user 10/6/2026: Texas. LLC; state of formation not yet provided."),
+    ("Houston", "TX", "Confirmed by user 10/6/2026: Texas. LLC; state of formation not yet provided."),
+    ("TUR", "TX", "Texas United Realty. Confirmed by user 10/6/2026: Texas. LLC; state of formation not yet provided."),
+    ("Chicago", "IL", "Confirmed by user 10/6/2026: Illinois. LLC; state of formation not yet provided."),
+    ("Philly", "PA", "Confirmed by user 10/6/2026: Pennsylvania. LLC; state of formation not yet provided."),
+    ("Gallery", "FL", "Confirmed by user 10/6/2026: Florida. LLC; state of formation not yet provided."),
+    ("Leading Edge", "AL", "Confirmed by user 10/6/2026: Alabama. LLC; state of formation not yet provided."),
     ("DC", "DC", "Tab exists in workbook with $0 accrued balance; user did not list DC. No DC rules researched."),
 ]
 STATE_ROWS = [
@@ -114,37 +114,48 @@ sr = wb.active; sr.title = "State Rules"
 put(sr, "A1", "Unclaimed property rules by state - dormancy periods applied in this analysis", f_title)
 put(sr, "A2", "Short period = the period for wages / compensation for personal services. Long period = the general catch-all period. Which one applies to independent-contractor agent commissions is a legal question that differs by state (see basis columns). Verification column says what could and could not be confirmed from primary sources in this session.", wrap=True)
 sr.merge_cells("A2:N2"); sr.row_dimensions[2].height = 45
-labels = ["State", "Name", "Short period (yrs)", "Short period basis", "Long period (yrs)", "Long period basis", "Report due", "Report cutoff ('as of')", "Next cutoff date", "Due diligence to owner", "Voluntary disclosure / penalties", "Verification status", "Sources"]
-hdr(sr, 4, labels, [7, 18, 9, 55, 9, 45, 28, 28, 12, 40, 45, 45, 70])
+labels = ["State", "Name", "Short period (yrs)", "Short period basis", "Long period (yrs)", "Long period basis", "Report due", "Report cutoff ('as of')", "Next cutoff date", "Due diligence to owner", "Voluntary disclosure / penalties", "Verification status", "Likely test for independent-contractor commissions (SHORT/LONG)", "Why", "Sources"]
+hdr(sr, 4, labels, [7, 18, 9, 55, 9, 45, 28, 28, 12, 40, 45, 45, 12, 55, 70])
+LIKELY = {'TX': ('LONG', "Agents are independent contractors (confirmed by user). Texas' 1-year rule covers 'wages' as defined in Labor Code 61.001, which is limited to employer-to-employee compensation and expressly excludes independent contractors. The 3-year general rule is therefore the likely test. Confirm with counsel; some advisors report commissions under NAUPA code MS02 conservatively on the shorter period."), 'IL': ('SHORT', "Illinois' 1-year rule reaches 'other compensation for personal services', not only employee wages, so independent-contractor commissions plausibly fall under it. 3-year general rule is the fallback."), 'PA': ('SHORT', "PA Treasury's dormancy matrix lists wages/commissions at 2 years without an employee limitation in the sources found. 3-year general rule is the fallback. Not verified from statute text."), 'FL': ('LONG', "Fla. Stat. 717.115 covers 'unpaid wages'. Nothing found extends it to independent-contractor commissions, so the 5-year general rule is the likely test. Confirm with counsel."), 'AL': ('SHORT', "Ala. Code 35-12-72 covers 'wages or other compensation for personal services', so independent-contractor commissions plausibly fall under the 1-year rule. 3-year general rule is the fallback."), 'MO': ('LONG', "Missouri's 3-year rule is for payroll checks; commissions to non-employees would fall under the 5-year general rule. Applies only if an LLC is formed in Missouri and the owner's address is unknown."), 'DC': ('', 'Not researched.')}
 for i, s in enumerate(STATE_ROWS, 5):
     vals = list(s)
+    vals = vals[:12] + [LIKELY[vals[0]][0], LIKELY[vals[0]][1]] + vals[12:]
     for j, v in enumerate(vals, 1):
-        c = sr.cell(i, j, v); c.font = f_input if j in (3, 5, 9) else f_norm
+        c = sr.cell(i, j, v); c.font = f_input if j in (3, 5, 9, 13) else f_norm
         c.alignment = Alignment(wrap_text=True, vertical="top"); c.border = box
         if j == 9 and v: c.number_format = DATE
     sr.row_dimensions[i].height = 150
 SR_FIRST, SR_LAST = 5, 4 + len(STATE_ROWS)
-put(sr, f"A{SR_LAST+2}", "Priority rules (Texas v. New Jersey, 379 U.S. 674 (1965)): (1) the state of the owner's last-known address on the holder's books; (2) if no address, the holder's state of incorporation/formation. Private retention of amounts owed to others ('private escheat') is not permitted by any state; an unknown owner does not make the money the company's.", wrap=True)
-sr.merge_cells(f"A{SR_LAST+2}:N{SR_LAST+2}"); sr.row_dimensions[SR_LAST+2].height = 45
+put(sr, f"A{SR_LAST+2}", "Priority rules (Texas v. New Jersey, 379 U.S. 674 (1965)): (1) the state of the owner's last-known address on the holder's books; (2) if no address, the holder's state of incorporation/formation. The user confirmed that for many older checks the agent is unknown: those items fall under rule (2) and go to the STATE WHERE EACH LLC WAS FORMED (still to be provided), not to the office's state and not to Kansas City. Private retention of amounts owed to others ('private escheat') is not permitted by any state; an unknown owner does not make the money the company's.", wrap=True)
+sr.merge_cells(f"A{SR_LAST+2}:O{SR_LAST+2}"); sr.row_dimensions[SR_LAST+2].height = 45
 put(sr, f"A{SR_LAST+3}", "Blue = hardcoded inputs you can change. All dormancy periods are expressed in years and are applied from the DEPOSIT DATE in the cash-requirements workbook as a proxy for the date the amount became payable - the true trigger is when the agent's share became payable, which may be earlier (closing date) or later.", wrap=True)
-sr.merge_cells(f"A{SR_LAST+3}:N{SR_LAST+3}"); sr.row_dimensions[SR_LAST+3].height = 40
+sr.merge_cells(f"A{SR_LAST+3}:O{SR_LAST+3}"); sr.row_dimensions[SR_LAST+3].height = 40
 
 # ================================================================ Summary
 sm = wb.create_sheet("Summary", 0)
 put(sm, "A1", "Accrued Commissions - Unclaimed Property Exposure by Entity", f_title)
-put(sm, "A2", "Source: United_Cash_Requirements.xlsx, each entity tab, 'Previous Month's Accrued Commissions' block (deposited checks not yet booked in Sage) plus the current-month 'Deposited checks' block. Extracted 10/6/2026; every entity total ties to the tab's 'outstanding amount' cell.", wrap=True)
-sm.merge_cells("A2:P2"); sm.row_dimensions[2].height = 32
-put(sm, "A3", "As-of date"); put(sm, "B3", AS_OF, f_input, DATE, fill_in)
-sm["B3"].comment = Comment("Input. Change to re-age every item. 10/6/2026 = date the workbook was provided (Summary!A19 of the source file is =TODAY()).", "Analysis")
-put(sm, "A4", "Legend: blue = input, black = formula, green = link to another sheet, yellow fill = cells for you to confirm or fill in.", wrap=False)
+put(sm, "A2", "Source: United_Cash_Requirements.xlsx, each entity tab, 'Previous Month's Accrued Commissions' block (deposited checks not yet booked in Sage) plus the current-month 'Deposited checks' block. Extracted 10/6/2026; every entity total ties to the tab's 'outstanding amount' cell. Legend: blue = input, black = formula, green = link to another sheet, yellow fill = confirm or fill in.", wrap=True)
+sm.merge_cells("A2:AB2"); sm.row_dimensions[2].height = 32
+put(sm, "A3", "As-of date", f_bold); put(sm, "B3", AS_OF, f_input, DATE, fill_in)
+sm["B3"].comment = Comment("Input. Change to re-age every item. 10/6/2026 = date the workbook was provided.", "Analysis")
+put(sm, "A4", "Fee check amounts (inputs)", f_bold)
+for j, v in enumerate([644, 1044, 69, None, None, None, None, None]):
+    put(sm, f"{L(3+j)}4", v, f_input, CUR, fill_in)
+sm["C4"].comment = Comment("Per user 10/6/2026: checks received for the company's fees are typically $644, $1,044 or $69. Add other fee amounts in the blank yellow cells (e.g. $595 / $495 if those are Philly's fee amounts). Any item whose amount exactly matches a value here is classified 'Fee amount - presumed company revenue'.", "Analysis")
+put(sm, "A5", "Small-amount threshold", f_bold); put(sm, "B5", 250, f_input, CUR, fill_in)
+sm["B5"].comment = Comment("ASSUMPTION: user said fee checks are 'sometimes other small amounts' without a figure. Items at or below this threshold that are not an exact fee amount are classified 'Small amount - likely fee, review'. Change it to see the effect.", "Analysis")
 
 labels = ["Entity", "State (confirm)", "Prior-month accrued (unbooked deposits)", "Current-month accrued (Sept/Oct 2026 deposits)", "Total accrued per workbook", "Items (count)",
           "0-1 yrs", "1-2 yrs", "2-3 yrs", "3-5 yrs", "5+ yrs",
+          "$ at fee amounts (presumed company revenue)", "$ small amounts (likely fee, review)", "$ memo-flagged (not ours / unknown / hold)", "$ larger amounts (likely includes agent commission)",
           "Short period (yrs)", "Long period (yrs)",
-          "Dormant today - SHORT period test", "Dormant today - LONG period test",
-          "Dormant at next report cutoff - SHORT", "Dormant at next report cutoff - LONG",
-          "Oldest item", "Items with memo flag (not ours / unknown / hold)", "$ with memo flag", "Items at recurring flat amounts (possible brokerage fee)", "$ at recurring flat amounts", "Entity-state note"]
-hdr(sm, 6, labels, [14, 9, 16, 16, 16, 8, 13, 13, 13, 13, 13, 9, 9, 16, 16, 16, 16, 12, 12, 14, 14, 14, 60])
+          "Dormant today - SHORT test - ALL items", "Dormant today - LONG test - ALL items",
+          "Dormant today - SHORT test - likely-commission + memo-flagged only", "Dormant today - LONG test - likely-commission + memo-flagged only",
+          "Dormant at next report cutoff - SHORT - likely-commission + memo-flagged", "Dormant at next report cutoff - LONG - likely-commission + memo-flagged",
+          "Likely test given independent-contractor agents", "Dormant today - LIKELY test - likely-commission + memo-flagged", "Dormant at next report cutoff - LIKELY test - likely-commission + memo-flagged",
+          "Oldest item", "Entity-state note"]
+hdr(sm, 6, labels, [14, 9, 16, 16, 16, 8, 13, 13, 13, 13, 11, 15, 15, 15, 16, 8, 8, 15, 15, 17, 17, 17, 17, 10, 17, 17, 12, 60])
+sm.row_dimensions[6].height = 70
 R0 = 7
 for i, (ent, st, note) in enumerate(ENTITIES):
     r = R0 + i
@@ -154,63 +165,66 @@ for i, (ent, st, note) in enumerate(ENTITIES):
     put(sm, f"D{r}", f"=SUMIFS('Current Month'!$F:$F,'Current Month'!$A:$A,$A{r})", f_link, CUR)
     put(sm, f"E{r}", f"=C{r}+D{r}", fmt=CUR)
     put(sm, f"F{r}", f'=COUNTIFS(Detail!$A:$A,$A{r},Detail!$H:$H,"<>")')
-    for j, b in enumerate(["0-1 yrs", "1-2 yrs", "2-3 yrs", "3-5 yrs", "5+ yrs"]):
-        put(sm, f"{L(7+j)}{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$L:$L,"{b}")', f_link, CUR)
-    put(sm, f"L{r}", f"=IFERROR(INDEX('State Rules'!$C${SR_FIRST}:$C${SR_LAST},MATCH($B{r},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
-    put(sm, f"M{r}", f"=IFERROR(INDEX('State Rules'!$E${SR_FIRST}:$E${SR_LAST},MATCH($B{r},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
-    put(sm, f"N{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$O:$O,"<="&$B$3)', f_link, CUR)
-    put(sm, f"O{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$P:$P,"<="&$B$3)', f_link, CUR)
-    put(sm, f"P{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$Q:$Q,"Yes")', f_link, CUR)
-    put(sm, f"Q{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$R:$R,"Yes")', f_link, CUR)
-    put(sm, f"R{r}", f'=IF(F{r}=0,"",_xlfn.MINIFS(Detail!$E$7:$E$400,Detail!$A$7:$A$400,$A{r}))', f_link, DATE)
-    put(sm, f"S{r}", f'=COUNTIFS(Detail!$A:$A,$A{r},Detail!$M:$M,"Memo flag*")')
-    put(sm, f"T{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$M:$M,"Memo flag*")', f_link, CUR)
-    put(sm, f"U{r}", f'=COUNTIFS(Detail!$A:$A,$A{r},Detail!$M:$M,"Recurring flat*")')
-    put(sm, f"V{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$M:$M,"Recurring flat*")', f_link, CUR)
-    put(sm, f"W{r}", note, wrap=True)
-    for c in range(1, 24): sm.cell(r, c).border = box
+    for j, bk in enumerate(["0-1 yrs", "1-2 yrs", "2-3 yrs", "3-5 yrs", "5+ yrs"]):
+        put(sm, f"{L(7+j)}{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$L:$L,"{bk}")', f_link, CUR)
+    put(sm, f"L{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$N:$N,"Fee amount*")', f_link, CUR)
+    put(sm, f"M{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$N:$N,"Small amount*")', f_link, CUR)
+    put(sm, f"N{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$N:$N,"Memo flag*")', f_link, CUR)
+    put(sm, f"O{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$N:$N,"Larger amount*")', f_link, CUR)
+    put(sm, f"P{r}", f"=IFERROR(INDEX('State Rules'!$C${SR_FIRST}:$C${SR_LAST},MATCH($B{r},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
+    put(sm, f"Q{r}", f"=IFERROR(INDEX('State Rules'!$E${SR_FIRST}:$E${SR_LAST},MATCH($B{r},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
+    put(sm, f"R{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$P:$P,"<="&$B$3)', f_link, CUR)
+    put(sm, f"S{r}", f'=SUMIFS(Detail!$H:$H,Detail!$A:$A,$A{r},Detail!$Q:$Q,"<="&$B$3)', f_link, CUR)
+    put(sm, f"T{r}", f'=SUMIFS(Detail!$AA:$AA,Detail!$A:$A,$A{r},Detail!$P:$P,"<="&$B$3)', f_link, CUR)
+    put(sm, f"U{r}", f'=SUMIFS(Detail!$AA:$AA,Detail!$A:$A,$A{r},Detail!$Q:$Q,"<="&$B$3)', f_link, CUR)
+    put(sm, f"V{r}", f'=SUMIFS(Detail!$AA:$AA,Detail!$A:$A,$A{r},Detail!$R:$R,"Yes")', f_link, CUR)
+    put(sm, f"W{r}", f'=SUMIFS(Detail!$AA:$AA,Detail!$A:$A,$A{r},Detail!$S:$S,"Yes")', f_link, CUR)
+    put(sm, f"X{r}", f"=IFERROR(INDEX('State Rules'!$M${SR_FIRST}:$M${SR_LAST},MATCH($B{r},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
+    put(sm, f"Y{r}", f'=IF(X{r}="SHORT",T{r},IF(X{r}="LONG",U{r},0))', fmt=CUR)
+    put(sm, f"Z{r}", f'=IF(X{r}="SHORT",V{r},IF(X{r}="LONG",W{r},0))', fmt=CUR)
+    put(sm, f"AA{r}", f'=IF(F{r}=0,"",_xlfn.MINIFS(Detail!$E$7:$E$400,Detail!$A$7:$A$400,$A{r}))', f_link, DATE)
+    put(sm, f"AB{r}", note, wrap=True)
+    for c in range(1, 29): sm.cell(r, c).border = box
 RT = R0 + len(ENTITIES)
 put(sm, f"A{RT}", "TOTAL", f_bold)
-for col in "CDEFGHIJKNOPQTV":
-    put(sm, f"{col}{RT}", f"=SUM({col}{R0}:{col}{RT-1})", f_bold, CUR if col not in "FSU" else None)
-for col in "SU":
-    put(sm, f"{col}{RT}", f"=SUM({col}{R0}:{col}{RT-1})", f_bold)
-for c in range(1, 24): sm.cell(RT, c).border = box; sm.cell(RT, c).fill = fill_sub
+for col in ["C","D","E","G","H","I","J","K","L","M","N","O","R","S","T","U","V","W","Y","Z"]:
+    put(sm, f"{col}{RT}", f"=SUM({col}{R0}:{col}{RT-1})", f_bold, CUR)
+put(sm, f"F{RT}", f"=SUM(F{R0}:F{RT-1})", f_bold)
+for c in range(1, 29): sm.cell(RT, c).border = box; sm.cell(RT, c).fill = fill_sub
 sm.freeze_panes = "C7"
 
 n = RT + 2
 notes = [
     ("How to read this", f_bold),
-    ("'Dormant today - SHORT period test' = unbooked deposits older than the state's wages/compensation period as of the as-of date. This is the UPPER BOUND of what could already be reportable, and only if 100% of each check is owed to someone else (an agent or the payer). It is NOT the amount to remit.", f_norm),
-    ("'Dormant today - LONG period test' = older than the state's general catch-all period. For Texas (the three largest balances) this is the more likely test for independent-contractor commissions, because Texas ties 'wages' to the Labor Code definition that excludes independent contractors.", f_norm),
-    ("The amount actually reportable = (agent share + any amount belonging to the payer) of each dormant item. The brokerage's own fee / E&O / company-dollar share of a check is the company's revenue and is never unclaimed property. The source workbook has 'E&O', 'FEE' and 'Commission' columns for this split, but they are EMPTY for every item, so the split is unknown today. See the Detail tab's yellow columns.", f_norm),
+    ("Classification (Detail col N) uses the fee amounts in row 4 and the threshold in B5: an exact fee amount = presumed company revenue (keep; book to revenue, not unclaimed property). At or under the threshold = likely fee, review. Memo-flagged = memo says not ours / unknown agent / duplicate / legal hold (owed back to the payer or needs resolution). Everything else = larger amount that likely includes an agent's commission split - this is the unclaimed-property population.", f_norm),
+    ("Columns R-S apply the dormancy tests to ALL unbooked items (upper bound). Columns T-W apply them only to the likely-commission and memo-flagged items. Even the T-W figures are upper bounds: within a larger check, only the agent's share (typically the check less the company's fee / split) is reportable; the company's share is revenue.", f_norm),
+    ("SHORT test = the state's period for wages / compensation for personal services. LONG test = the general catch-all period. Column X picks the likely test per state now that agents are confirmed to be independent contractors (Texas and Florida: LONG; Illinois, Pennsylvania, Alabama: SHORT), and columns Y-Z apply it. See State Rules cols M-N for the reasoning; it is a legal judgment for counsel to confirm.", f_norm),
+    ("Unknown agent = second priority rule. The user confirmed that many older checks cannot be tied to an agent. Those items do not become the company's; they are reportable to the state where the holding LLC was formed (still to be provided). If an LLC is formed in its office state, nothing changes; if formed elsewhere (e.g. Missouri or Delaware), that state's rules and report cycle apply to the unknown-owner items.", f_norm),
     ("Current-month accrued (column D) is all September/October 2026 deposits in normal matching workflow. It is included so the total ties to the cash-requirements Summary, but none of it is near any dormancy period.", f_norm),
     ("Nothing here is legal advice. Dormancy periods, report dates and due-diligence rules on the State Rules tab were sourced from statute summaries and state guidance found by web search; the statute pages themselves could not be opened from this session. Have counsel or your unclaimed-property advisor confirm before filing.", f_norm),
 ]
 for i, (t, f) in enumerate(notes):
-    put(sm, f"A{n+i}", t, f, wrap=True); sm.merge_cells(f"A{n+i}:P{n+i}"); sm.row_dimensions[n+i].height = 16 if f is f_bold else 44
+    put(sm, f"A{n+i}", t, f, wrap=True); sm.merge_cells(f"A{n+i}:P{n+i}"); sm.row_dimensions[n+i].height = 16 if f is f_bold else 52
 
 # ================================================================ Detail
 dt = wb.create_sheet("Detail", 1)
 put(dt, "A1", "Unbooked deposited checks - item detail (prior-month accrued commissions block of each entity tab)", f_title)
-put(dt, "A2", "Columns A-J are copied from the source workbook. K-R are formulas. S-X (yellow) are for you to fill in from Paperless Pipeline / Sage: once the agent share is entered, column Y shows the dollar amount that is both dormant (long test) and owed to someone else.", wrap=True)
-dt.merge_cells("A2:Y2"); dt.row_dimensions[2].height = 32
-put(dt, "A3", "Classification heuristics (col M) are only hints: 'Recurring flat amount' = $644 / $595 / $495 / $49 (amounts that repeat across unrelated payers and look like a flat transaction or E&O fee the company keeps - CONFIRM). 'Memo flag' = memo says not ours / unknown agent / duplicate / legal hold. Everything else = needs transaction match.", wrap=True)
-dt.merge_cells("A3:Y3"); dt.row_dimensions[3].height = 32
+put(dt, "A2", "Columns A-J are copied from the source workbook. K-S and Z-AA are formulas. T-Y (yellow) are for you to fill in from Paperless Pipeline / Sage: once the agent share is entered, column Z shows the dollar amount that is both dormant (long test) and owed to someone else. Column AA is the heuristic stand-in until then.", wrap=True)
+dt.merge_cells("A2:AA2"); dt.row_dimensions[2].height = 32
+put(dt, "A3", "Classification (col N) is driven by Summary row 4 (fee amounts) and Summary B5 (small-amount threshold). Col M flags memos that say not ours / unknown agent / duplicate / legal hold / '?'. Classifications are hints, not conclusions.", wrap=True)
+dt.merge_cells("A3:AA3"); dt.row_dimensions[3].height = 32
 put(dt, "A4", "As-of date (linked)"); put(dt, "B4", "=Summary!$B$3", f_link, DATE)
 labels = ["Entity", "State", "Bank / block", "Source row", "Deposit date", "Check #", "Payer / check writer", "Amount", "Memo (source)", "Booked in Sage?",
-          "Age (yrs)", "Age bucket", "Classification hint",
+          "Age (yrs)", "Age bucket", "Memo flag?", "Classification",
           "Short period (yrs)", "Dormant date - SHORT", "Dormant date - LONG", "Dormant at next cutoff - SHORT?", "Dormant at next cutoff - LONG?",
           "Agent / owner name (fill in)", "Owner last-known state (fill in)", "Brokerage fee / E&O share $ (fill in)", "Agent share $ (fill in)", "Refund to payer $ (fill in)", "Resolution / status (fill in)",
-          "Reportable if dormant (LONG test) = agent + refund share"]
-hdr(dt, 6, labels, [13, 7, 13, 8, 11, 14, 32, 12, 55, 8, 8, 9, 30, 8, 12, 12, 11, 11, 22, 10, 13, 13, 13, 28, 16])
-FLAT = {644.0, 595.0, 495.0, 49.0}
+          "Reportable if dormant (LONG test) = agent + refund share (from fill-in)", "Heuristic reportable population $ (larger-amount + memo-flagged items)"]
+hdr(dt, 6, labels, [13, 7, 13, 8, 11, 14, 32, 12, 55, 8, 8, 9, 8, 38, 8, 12, 12, 11, 11, 22, 10, 13, 13, 13, 28, 16, 16])
+dt.row_dimensions[6].height = 56
 FLAGS = ["not for this", "not in pp", "not sure", "unsure", "duplicate", "couldn't locate", "cant locate", "can't locate", "fraud", "on hold", "law enforcement", "unidentified", "possibly", "believe this transaction", "shortage", "supposed to be", "review check stub", "no memo", "?"]
-def classify(r):
+def memo_flag(r):
     memo = (r["memo"] or "").lower()
-    if any(k in memo for k in FLAGS): return "Memo flag - not ours / unknown / hold: confirm"
-    if round(r["amt"], 2) in FLAT: return "Recurring flat amount - possible brokerage fee: confirm"
-    return "Needs transaction match"
+    return "Yes" if any(k in memo for k in FLAGS) else "No"
 ent_order = {e[0]: i for i, e in enumerate(ENTITIES)}
 rows.sort(key=lambda r: (ent_order.get(r["entity"], 99), r["d"] or datetime.date(1900, 1, 1)))
 D0 = 7
@@ -224,24 +238,26 @@ for i, r in enumerate(rows):
     put(dt, f"I{rr}", r["memo"], wrap=False); put(dt, f"J{rr}", "No")
     put(dt, f"K{rr}", f"=IF(E{rr}=\"\",\"\",($B$4-E{rr})/365.25)", fmt="0.00")
     put(dt, f"L{rr}", f'=IF(K{rr}="","no date",IF(K{rr}<1,"0-1 yrs",IF(K{rr}<2,"1-2 yrs",IF(K{rr}<3,"2-3 yrs",IF(K{rr}<5,"3-5 yrs","5+ yrs")))))')
-    put(dt, f"M{rr}", classify(r))
-    put(dt, f"N{rr}", f"=IFERROR(INDEX('State Rules'!$C${SR_FIRST}:$C${SR_LAST},MATCH($B{rr},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
-    put(dt, f"O{rr}", f'=IF(OR(N{rr}="",E{rr}=""),"",EDATE(E{rr},12*N{rr}))', fmt=DATE)
-    put(dt, f"P{rr}", f"=IF(E{rr}=\"\",\"\",IFERROR(EDATE(E{rr},12*INDEX('State Rules'!$E${SR_FIRST}:$E${SR_LAST},MATCH($B{rr},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0))),\"\"))", fmt=DATE)
+    mf = memo_flag(r)
+    put(dt, f"M{rr}", mf, fill=fill_warn if mf == "Yes" else None)
+    put(dt, f"N{rr}", f'=IF(M{rr}="Yes","Memo flag - not ours / unknown / hold: resolve",IF(COUNTIF(Summary!$C$4:$J$4,H{rr})>0,"Fee amount - presumed company revenue",IF(H{rr}<=Summary!$B$5,"Small amount - likely fee, review","Larger amount - likely includes agent commission")))', f_link)
+    put(dt, f"O{rr}", f"=IFERROR(INDEX('State Rules'!$C${SR_FIRST}:$C${SR_LAST},MATCH($B{rr},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0)),\"\")", f_link)
+    put(dt, f"P{rr}", f'=IF(OR(O{rr}="",E{rr}=""),"",EDATE(E{rr},12*O{rr}))', fmt=DATE)
+    put(dt, f"Q{rr}", f"=IF(E{rr}=\"\",\"\",IFERROR(EDATE(E{rr},12*INDEX('State Rules'!$E${SR_FIRST}:$E${SR_LAST},MATCH($B{rr},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0))),\"\"))", fmt=DATE)
     nxt = f"INDEX('State Rules'!$I${SR_FIRST}:$I${SR_LAST},MATCH($B{rr},'State Rules'!$A${SR_FIRST}:$A${SR_LAST},0))"
-    put(dt, f"Q{rr}", f'=IF(O{rr}="","",IFERROR(IF(O{rr}<={nxt},"Yes","No"),""))')
     put(dt, f"R{rr}", f'=IF(P{rr}="","",IFERROR(IF(P{rr}<={nxt},"Yes","No"),""))')
-    for col in "STUVWX": put(dt, f"{col}{rr}", None, f_input, fill=fill_in)
-    for col in "UVW": dt[f"{col}{rr}"].number_format = CUR
-    put(dt, f"Y{rr}", f'=IF(P{rr}="","",IF(P{rr}<=$B$4,N(V{rr})+N(W{rr}),0))', fmt=CUR)
-    for c in range(1, 26): dt.cell(rr, c).border = box
-    if "Memo flag" in dt[f"M{rr}"].value: dt[f"M{rr}"].fill = fill_warn
+    put(dt, f"S{rr}", f'=IF(Q{rr}="","",IFERROR(IF(Q{rr}<={nxt},"Yes","No"),""))')
+    for col in "TUVWXY": put(dt, f"{col}{rr}", None, f_input, fill=fill_in)
+    for col in "VWX": dt[f"{col}{rr}"].number_format = CUR
+    put(dt, f"Z{rr}", f'=IF(Q{rr}="","",IF(Q{rr}<=$B$4,N(W{rr})+N(X{rr}),0))', fmt=CUR)
+    put(dt, f"AA{rr}", f'=IF(OR(LEFT(N{rr},6)="Larger",LEFT(N{rr},4)="Memo"),H{rr},0)', fmt=CUR)
+    for c in range(1, 28): dt.cell(rr, c).border = box
 DT_LAST = D0 + len(rows) - 1
 put(dt, f"A{DT_LAST+1}", "TOTAL", f_bold)
 put(dt, f"H{DT_LAST+1}", f"=SUM(H{D0}:H{DT_LAST})", f_bold, CUR)
-for col in "UVWY": put(dt, f"{col}{DT_LAST+1}", f"=SUM({col}{D0}:{col}{DT_LAST})", f_bold, CUR)
+for col in ["V","W","X","Z","AA"]: put(dt, f"{col}{DT_LAST+1}", f"=SUM({col}{D0}:{col}{DT_LAST})", f_bold, CUR)
 dt.freeze_panes = "E7"
-dt.auto_filter.ref = f"A6:Y{DT_LAST}"
+dt.auto_filter.ref = f"A6:AA{DT_LAST}"
 
 # ================================================================ Current Month
 cm = wb.create_sheet("Current Month", 2)
@@ -262,13 +278,13 @@ gp = wb.create_sheet("Gaps & Next Steps", 3)
 put(gp, "A1", "What is missing, and what to do next", f_title)
 hdr(gp, 3, ["#", "Item", "Why it matters", "Who / where"], [4, 55, 80, 30])
 gaps = [
-    ("DATA GAP: the fee vs. agent split of every check is unknown", "The source workbook has E&O / FEE / Commission columns but they are empty for all 181 items. Only the agent's share (and any amount that belongs to the payer) can ever be unclaimed property. The company's own fee is revenue. Until the split is known, every dollar figure on the Summary is an upper bound, not an amount to remit.", "Match each check to its Paperless Pipeline transaction; fill Detail cols U-W."),
-    ("DATA GAP: owner identity and last-known address", "The first priority rule sends property to the state of the owner's last-known address. Most items have no agent named. Without an address the property defaults to the holder entity's state of formation (second priority rule), not to the office's state.", "Agent master file / Paperless Pipeline; fill Detail cols S-T."),
-    ("DATA GAP: legal entity and state of formation for each office", "Needed for the second-priority rule and to know which state's VDA to approach. 'Corporate HQ in Kansas City' is not the test - the formation state of each JV entity is.", "Legal / entity org chart."),
-    ("CONFIRM: which tab is Florida and which is Alabama", "The analysis assumes Gallery = FL and Leading Edge = AL based on their banks. Both balances are small and entirely 2026, so the dollar effect of being wrong is nil today, but the rules differ (FL general period 5 yrs, AL 3 yrs).", "User."),
+    ("DATA GAP: the fee vs. agent split of every check is unknown", "The source workbook has E&O / FEE / Commission columns but they are empty for all 181 items. Per the user, fee checks are typically $644, $1,044, $69 or other small amounts, so items at those amounts are presumed company revenue and items at or under the small-amount threshold are treated as likely fees. Larger checks likely include an agent's commission split, but how much of each is the agent's is still unknown; only that share (plus anything owed back to a payer) can ever be unclaimed property. Until the split is known, every dollar figure on the Summary is an upper bound, not an amount to remit.", "Match each check to its Paperless Pipeline transaction; fill Detail cols U-W."),
+    ("DATA GAP: owner identity and last-known address", "The first priority rule sends property to the state of the owner's last-known address. User confirmed that for many older checks the agent is not known. Where the agent can be identified, record the name and state in Detail cols T-U. Where it cannot, the item falls to the second priority rule (state of formation of the LLC).", "Agent master file / Paperless Pipeline; fill Detail cols T-U."),
+    ("DATA GAP: state of formation for each LLC", "User confirmed each office is an LLC but not where each was formed. This decides where every unknown-agent item is reported and which state's voluntary disclosure program to approach. 'Corporate HQ in Kansas City' is not the test.", "Legal / entity org chart."),
+    ("RESOLVED: entity-to-state mapping", "User confirmed 10/6/2026: Dallas, Houston, TUR = Texas; Chicago = Illinois; Philly = Pennsylvania; Leading Edge = Alabama; Gallery = Florida.", "Done."),
     ("CONFIRM: payable date vs. deposit date", "Dormancy runs from when the amount became payable to the owner, not from when the check was deposited. Deposit date is used as a proxy throughout. If agents are paid on closing, the closing date is the better trigger and could be earlier.", "Paperless Pipeline closing dates."),
-    ("CONFIRM: independent-contractor status of agents (Texas especially)", "Texas' 1-year rule applies to 'wages' as defined in Labor Code 61.001, which excludes independent contractors. If agents are 1099 contractors, the 3-year general rule is the likely Texas test; if any are W-2, the 1-year rule applies to them.", "HR / agent agreements; confirm with counsel."),
-    ("CONFIRM: prior-year write-offs", "Ask whether any older unapplied deposits were ever written off to revenue in prior years. Amounts owed to others that were taken into income are still reportable ('private escheat' is not permitted) and audits typically look back 10+ years.", "Accounting."),
+    ("RESOLVED: agents are independent contractors", "User confirmed 10/6/2026. Texas' 1-year rule applies to 'wages' as defined in Labor Code 61.001, which excludes independent contractors, so the 3-year general rule is the likely Texas test. Illinois and Alabama reach 'other compensation for personal services' and Pennsylvania lists commissions, so their shorter periods likely apply. Florida's wage rule is not shown to reach contractors, so 5 years is likely. Counsel should confirm each.", "Confirm with counsel."),
+    ("RESOLVED: no prior write-offs", "User confirmed nothing has been done with the unapplied deposits so far, so the population in this workbook is the full population and there is no prior 'private escheat' to unwind.", "Done."),
     ("ACTION: work the oldest items first", "Houston has four items from 2022 and Dallas/TUR/Philly have 2023 items. Under the Texas 3-year test, every Texas item deposited before 3/1/2023 would already have been due on the July 1, 2026 report if it was owed to someone else; the Detail tab's 'Dormant date - LONG' column identifies them.", "Accounting."),
     ("ACTION: run due-diligence letters before any filing", "Every state in scope requires a written notice to the owner before remittance (TX: >$250, 60+ days before delivery; PA/IL/FL/AL/MO: $50 threshold per sources). A response from the owner stops the clock and lets you pay them directly instead of the state.", "Accounting; template letters."),
     ("ACTION: consider a Voluntary Disclosure Agreement for Texas", "Three Texas entities hold about 85% of the aged balance. Texas waives penalty and interest under a VDA but it must be requested before any Comptroller inquiry. Florida has a similar program. Confirm eligibility with the Comptroller or counsel.", "Counsel / Comptroller."),

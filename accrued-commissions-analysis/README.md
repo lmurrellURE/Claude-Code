@@ -37,24 +37,49 @@ All current-month items are September/October 2026 deposits.
 | Leading Edge | 645.00 | - | - | - |
 | **Total** | **114,234.35** | **57,512.62** | **40,304.24** | **14,713.25** |
 
-## Exposure bounds (upper bounds, before the fee/agent split is known)
+## Classification of the prior-month items
 
-| Test | Dormant today | Dormant at each state's next report cutoff |
+Per the user (10/6/2026), checks for the company's own fees are typically $644, $1,044, $69 or
+other small amounts. Agents are independent contractors. Many older checks cannot be tied to an
+agent. Entity states confirmed: Dallas, Houston, TUR = TX; Chicago = IL; Philly = PA; Leading
+Edge = AL; Gallery = FL. All are LLCs; state of formation still to be provided.
+
+| Class (Detail col N) | Items | $ |
 |---|---:|---:|
-| Short period (wages / compensation for personal services) | 102,452.86 | 115,241.60 |
-| Long period (general catch-all) | 14,713.25 | 18,856.25 |
+| Fee amount (exact match to $644 / $1,044 / $69) - presumed company revenue | 16 | 10,529.00 |
+| Small amount (at or under $250, an adjustable threshold) - likely fee, review | 33 | 4,575.33 |
+| Memo-flagged (not ours / unknown / duplicate / hold) - resolve with payer | 16 | 30,640.63 |
+| Larger amount - likely includes an agent commission split | 116 | 181,019.50 |
 
-These are the amounts of unbooked deposits older than the state period, assuming 100% of each
-check is owed to someone other than the company. The amount actually reportable is only the agent
-share plus anything that belongs back to the payer. The company's own fee / E&O / company-dollar
-share is revenue, not unclaimed property. The source workbook has E&O / FEE / Commission columns
-for this split and they are empty for every item.
+## Exposure (upper bounds, applied to the larger-amount and memo-flagged items only)
+
+| Entity | Likely test (IC agents) | Dormant today | Dormant at next report cutoff |
+|---|---|---:|---:|
+| Dallas | TX general, 3 yrs | 6,707.80 | 8,042.30 |
+| Houston | TX general, 3 yrs | 5,636.60 | 6,011.60 |
+| TUR | TX general, 3 yrs | 1,188.00 | 2,917.50 |
+| Philly | PA wages/commissions, 2 yrs | 10,651.41 | 15,347.66 |
+| Leading Edge | AL compensation, 1 yr | 0.00 | 395.00 |
+| Gallery | FL general, 5 yrs | 0.00 | 0.00 |
+| Chicago | IL compensation, 1 yr | 0.00 | 0.00 |
+| **Total** | | **24,183.81** | **32,714.06** |
+
+If Texas were instead held to its 1-year wage rule, the Texas figure today would be 80,411.74
+rather than 13,532.40. The Texas 1-year rule is tied to a Labor Code definition of wages that
+excludes independent contractors, which is why the 3-year test is treated as likely; counsel
+should confirm.
+
+Even these are upper bounds: within a larger check only the agent's share is reportable, and
+the company's split is revenue. Unknown-agent items are reportable to the state where the
+holding LLC was formed (second priority rule), not to the office's state.
 
 ## Files
 
-- `Accrued_Commissions_Unclaimed_Property_Analysis.xlsx` - Summary, Detail (181 items with yellow
-  fill-in columns for owner, owner state and the fee/agent/refund split), Current Month, State
-  Rules, Gaps & Next Steps, Method. Formulas re-age when the as-of date or a state period changes.
+- `Accrued_Commissions_Unclaimed_Property_Analysis.xlsx` - Summary (fee amounts and small-amount
+  threshold are inputs in rows 4-5), Detail (181 items with yellow fill-in columns for owner, owner
+  state and the fee/agent/refund split), Current Month, State Rules (with the likely test per state
+  for independent-contractor commissions), Gaps & Next Steps, Method. Formulas re-age and reclassify
+  when the as-of date, fee amounts, threshold or a state period changes.
 - `build_workbook.py` - rebuilds the workbook from the two CSV extracts.
 - `source-extract/` - the rows extracted from the cash-requirements workbook.
 
