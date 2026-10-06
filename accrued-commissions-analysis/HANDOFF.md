@@ -25,12 +25,12 @@ intermediate to the CA bundle and send a browser user agent); fltreasurehunt.gov
 firewall (use portal.claimyourcashfl.gov); palegis.us returned only a page shell (PA Treasury's PA_UCP_Law.pdf
 is the usable text).
 
-Decisions the user made on 10/6/2026 after the verification (reflected in every document): the semi-annual
+Decisions the user made on 10/6/2026 after the verification (reflected in every document): the annual
 review and annual filings are owned by the Director of Financial Reporting and Analysis, not the Controller;
 Texas applies the 3-year rule and the 1-year wage rule is ignored; the Philly/TUR forfeiture clauses are not
 relied on against an escheat claim; fee checks are NOT moved to revenue en masse (they stay in the ordinary
 matching process and the year-end revenue true-up; only an item being written off at a review is
-booked to revenue then); the review cadence is twice a year (early December, early June), not quarterly; the SOP and one-pager carry the verified penalty and interest consequences of a missed cutoff. The SOP body was updated for these (the earlier "appendix only" restriction no longer
+booked to revenue then); the review cadence is ONE ANNUAL CYCLE (early December review projected to every cutoff, one letter batch Jan 1 - Feb 14, filings on the statutory dates Apr 15 / May 1 / Jul 1 / Nov 1), not quarterly or semi-annual; the SOP and one-pager carry the verified penalty and interest consequences of a missed cutoff. The SOP body was updated for these (the earlier "appendix only" restriction no longer
 applies). The briefing doc has a second tab with the one-paragraph rollout note to the user's bosses.
 
 ## 1. What exists in this folder (branch `claude/accrued-commissions-analysis-mmu04n`)
@@ -47,7 +47,7 @@ applies). The briefing doc has a second tab with the one-paragraph rollout note 
 
 **How the user wants the process to work (stated 10/6/2026, after reviewing the SOP draft):**
 - Deposits are applied in the ordinary course with NO deadline. Accrued commissions often sit a long time and get applied much later; that is normal and not a control failure. Do not reintroduce 30-day or 90-day matching rules, aging KPIs, or "clear the backlog in a quarter" targets.
-- The threshold review (twice a year since the 10/6/2026 decision: early December and early June, ahead of the state cutoffs) is about items that have hit the dormancy THRESHOLD (or will hit it before the next state cutoff) and getting those officially off the books: pay the agent, refund the payer, remit to the state, or retain with counsel support. Everything younger is left alone.
+- The threshold review (once a year since the 10/6/2026 decision: early December, projected to every state cutoff) is about items that have hit the dormancy THRESHOLD (or will hit it before the next state cutoff) and getting those officially off the books: pay the agent, refund the payer, remit to the state, or retain with counsel support. Everything younger is left alone.
 - The SOP stays evergreen. Each review produces a short findings memo with that review's figures; the SOP itself is only changed when the policy changes (e.g. a verified statute citation in the appendix).
 
 The user also keeps copies at Desktop > Claude Code > Unclaimed Property Analysis. Nothing in a cloud session can write there; they download from GitHub or the chat file cards.
