@@ -48,7 +48,7 @@ The Director of Financial Reporting and Analysis owns the process end to end; th
 | Office accountant (per entity) | Apply deposits to transactions in the ordinary course. When an item is applied, book the fee to revenue, pay the agent, or refund the payer. Record the agent's name and address state whenever it becomes known. |
 | Director of Financial Reporting and Analysis | Run the annual threshold review, maintain the analysis workbook, approve estimated splits, approve due-diligence letters, prepare state reports and remittance JEs, write the annual findings memo, keep the filing calendar. |
 | Counsel or unclaimed property advisor | Confirm dormancy periods, the priority-rule application, treatment of forfeiture and offset clauses, VDA strategy, and sign off before each filing. |
-| CFO | Approve any VDA submission and any decision to retain an amount under a forfeiture clause. |
+| CFO | Approve any VDA submission and any retention under an offset, or under a forfeiture clause applied to an item settled before dormancy. |
 
 ## Ongoing application of deposits
 

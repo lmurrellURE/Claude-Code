@@ -60,7 +60,7 @@ second priority rule; an item switches to the agent's address state once that is
 
 ## Exposure (upper bounds, larger-amount and memo-flagged items, governing state = formation state until an agent address is entered)
 
-| Entity | Default governing state / likely test | Dormant today | Dormant at next report cutoff |
+| Entity | Default governing state / adopted test | Dormant today | Dormant at next report cutoff |
 |---|---|---:|---:|
 | Dallas | TX general, 3 yrs | 6,707.80 | 8,042.30 |
 | Houston | TX general, 3 yrs | 5,636.60 | 6,011.60 |
@@ -110,7 +110,7 @@ still reduce the agent's share.
 
 - `Accrued_Commissions_Unclaimed_Property_Analysis.xlsx` - Summary (fee amounts and small-amount
   threshold are inputs in rows 4-5), Detail (181 items with yellow fill-in columns for owner, owner
-  state and the fee/agent/refund split), Current Month, State Rules (with the likely test per state
+  state and the fee/agent/refund split), Current Month, State Rules (with the adopted test per state
   for independent-contractor commissions), Gaps & Next Steps, Method. Formulas re-age and reclassify
   when the as-of date, fee amounts, threshold or a state period changes.
 - `build_workbook.py` - rebuilds the workbook from the two CSV extracts.

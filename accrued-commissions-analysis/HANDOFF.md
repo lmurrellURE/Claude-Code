@@ -13,9 +13,7 @@ and Sources columns, and the README's "Verification of the state rules" section 
 what was corrected (IL business-holder deadline May 1 / Dec 31 cutoff; FL 717.1035 3-year rule for a
 Florida holder with an unknown owner address; PA commissions rule is 1301.10(2); VDA descriptions) and
 what is still open. No dollar figure moved. The Summary still ties to 226,764.46. The SOP appendix in the
-Claude Doc carries the verified citations; the SOP body (Legal framework section) still has the pre-
-verification wording (Florida 5 years, PA amnesty ended 2010, IL/MO VDAs not researched) because the user
-asked that only the appendix be changed - flag this to the user before editing it. A one-page CFO /
+Claude Doc carries the verified citations; the SOP body was later updated for every decision in the same session (see the decisions note below). A one-page CFO /
 Controller briefing was added as a Claude Doc (https://claude.ai/code/artifact/9241f6ec-bf29-48d4-b42c-1e258290ceb8)
 with a .docx snapshot in this folder.
 
@@ -43,7 +41,7 @@ applies). The briefing doc has a second tab with the one-paragraph rollout note 
 | `source-extract/current_month_unbooked.csv` | Current-month unbooked deposits (all Sept/Oct 2026). |
 | `README.md` | Memo-style summary with the current figures (the 10/6/2026 findings memo). Keep its numbers in sync with the workbook. |
 | `Accrued_Commissions_CFO_Controller_Briefing.docx` | Snapshot of the one-page CFO / Controller briefing Claude Doc (10/6/2026). |
-| `Accrued_Commissions_Unclaimed_Property_SOP.md` / `.docx` | Snapshots of the SOP. The editable master is the Claude Doc: https://claude.ai/code/artifact/047dd24f-815c-4fdd-8c8c-414c9201c552. The SOP is a STANDING POLICY with no figures in it (for the team and for auditors); it is not updated each quarter. Point-in-time figures and the backlog plan live in the README (which serves as the 10/6/2026 findings memo) and the workbook. |
+| `Accrued_Commissions_Unclaimed_Property_SOP.md` / `.docx` | Snapshots of the SOP. The editable master is the Claude Doc: https://claude.ai/code/artifact/047dd24f-815c-4fdd-8c8c-414c9201c552. The SOP is a STANDING POLICY with no figures in it (for the team and for auditors); it is not updated at each review. Point-in-time figures and the backlog plan live in the README (which serves as the 10/6/2026 findings memo) and the workbook. |
 
 **How the user wants the process to work (stated 10/6/2026, after reviewing the SOP draft):**
 - Deposits are applied in the ordinary course with NO deadline. Accrued commissions often sit a long time and get applied much later; that is normal and not a control failure. Do not reintroduce 30-day or 90-day matching rules, aging KPIs, or "clear the backlog in a quarter" targets.
